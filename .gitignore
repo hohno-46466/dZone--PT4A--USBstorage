@@ -1,0 +1,8 @@
+#
+# Last update: Sun Nov 21 23:30:02 JST 2021 by @hohno_at_kuimc
+#
+.DS_Store
+\#*.*
+*.swp
+*.bak
+*~
