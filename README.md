@@ -11,9 +11,50 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
     ./dZone--PT4A--USBstorage
      ├── README.md
      ├── USB128GB-20210601
+     │   ├── PT4A
+     │   │   └── README.md
+     │   ├── README.md
+     │   ├── Readme1_Rev.2.0.txt
+     │   ├── Readme2_tree.txt
+     │   ├── Readme3_USB_MOUNT_REV.2.0.txt
+     │   ├── Readme4_PT4A_REV.2.0.txt
+     │   ├── System Volume Information
+     │   │   ├── IndexerVolumeGuid
+     │   │   └── WPSettings.dat
+     │   └── data
+     │       ├── Structured_data
+     │       │   ├── Readme_Rev.2.0.txt
+     │       │   ├── amedas
+     │       │   ├── format
+     │       │   └── samples
+     │       └── Unstructured_data
+     │           ├── README.txt
+     │           ├── References
+     │           ├── TUTORIAL.txt
+     │           └── Tokyo2020
      └── USB256GB-20220612
+         ├── PT4A
+         │   ├──（PT4Aイメージ・本図では省略）
+         │   └── README.md
+         ├── README.md
+         ├── Readme1_Rev.2.1.txt
+         ├── Readme2_tree_2022.txt
+         ├── Readme3_USB_MOUNT_REV.2.1.txt
+         ├── Readme4_PT4A_REV.2.1.txt
+         └── data
+             ├── Structured_data
+             │   ├── Readme_Rev.2.0.txt
+             │   ├── amedas（amedas データ・本図では省略）
+             │   ├── format
+             │   └── samples
+             └── Unstructured_data
+                 ├── README.txt
+                 ├── References
+                 ├── TUTORIAL.txt
+                 └── Tokyo2020（Tweeter データ・本図では省略）
      
-     2 directories, 1 file (Mon Jun 13 06:15:40 JST 2022)
+     21 directories, 26 files (Thu Jun 16 03:38:14 JST 2022)
+
 
 Note:	url = https://github.com/hohno-46466/dZone--PT4A--USBstorage
 

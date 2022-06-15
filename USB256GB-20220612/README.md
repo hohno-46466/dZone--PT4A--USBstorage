@@ -8,12 +8,32 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
 
 これをマスターとして必要数を確保する場合は，適宜 USBメモリ複製機などを使うとよい．
 
-    ./dZone--PT4A--USBstorage
+    ./USB256GB-20220612
+     ├── PT4A
+     │   ├── PT4A_CentOS.tar.gz
+     │   ├── PT4A_Mac_Intel.tar.gz
+     │   ├── PT4A_Mac_M1.tar.gz
+     │   ├── PT4A_Ubuntu.tar.gz
+     │   ├── PT4A_WSL2.tar.gz
+     │   └── README.md
      ├── README.md
-     ├── USB128GB-20210601
-     └── USB256GB-20220612
+     ├── Readme1_Rev.2.1.txt
+     ├── Readme2_tree_2022.txt
+     ├── Readme3_USB_MOUNT_REV.2.1.txt
+     ├── Readme4_PT4A_REV.2.1.txt
+     └── data
+         ├── Structured_data
+         │   ├── Readme_Rev.2.0.txt
+         │   ├── amedas
+         │   ├── format
+         │   └── samples
+         └── Unstructured_data
+             ├── README.txt
+             ├── References
+             ├── TUTORIAL.txt
+             └── Tokyo2020
      
-     2 directories, 1 file (Mon Jun 13 06:15:40 JST 2022)
+     9 directories, 14 files (Thu Jun 16 03:41:12 JST 2022)
 
 Note:	url = https://github.com/hohno-46466/dZone--PT4A--USBstorage
 
