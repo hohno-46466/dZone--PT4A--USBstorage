@@ -1,4 +1,7 @@
 #
+# Last update: Wed Jul 20 05:52:54 JST 2022 by @hohno_at_kuimc
+.dummy4github
+#
 # Last update: Sun Nov 21 23:30:02 JST 2021 by @hohno_at_kuimc
 #
 .DS_Store
@@ -6,4 +9,11 @@
 *.swp
 *.bak
 *~
-.dummy4github
+# added by @hohno_at_kuimc at Thu Jun 30 20:28:17 JST 2022
+.#*.*
+#
+# added by @hohno_at_kuimc at Sat Jul 16 15:21:56 JST 2022
+#
+.dummy4GHCG.tsv
+.README.md-tmp*
+# -EOF-
