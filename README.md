@@ -1,4 +1,4 @@
-# dZone--PT4A--USBstorage
+# GitHub/dZone--PT4A--USBstorage
 
 USB storage skelton for PT4A lectures
 
