@@ -1,10 +1,10 @@
 # dZone--PT4A--USBstorage
 
-USB storage skelton for PT4A lectures
+USB storage skelton for PT4A lectures (USB256GB-20220806 Rev1.0)
 
-### Last modified: Fri Jun 17 08:07:53 JST 2022 by @hohno_at_kuimc
+### Last modified: Thu Aug  4 10:35:11 JST 2022 by @hohno_at_kuimc
 
-PT4A を用いた大規模データ処理演習で配布する USB メモリ（2022年8月版）の骨格は以下の通り
+PT4A を用いた大規模データ処理演習で使用する USB メモリ（2022年8月版）の骨格は以下の通り
 （表記の末尾が "/" で終わっているのはディレクトリ、それ以外はファイルである）。
 
     ./USB256GB-20220806/
@@ -98,7 +98,7 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリ（2
              ├──  TUTORIAL.txt
              └──  Tokyo2020/
      
-     10 directories, 79 files (Thu Aug  4 10:31:22 JST 2022)
+     10 directories, 79 files (Thu Aug  4 10:35:32 JST 2022)
 
 
 実際に配布した USB メモリには、上記のディレクトリとファイルに加え、大規模データ処理演習に供する定形および非定形のデータが以下の場所に格納されている。
