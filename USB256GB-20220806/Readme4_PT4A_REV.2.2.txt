@@ -15,7 +15,7 @@
 
 <<PT4A インストール方法(Windowds)>>
 
-（１）「Readme3_USB_MOUNT_REV.2.0.txt」で書かれている、
+（１）「Readme3_USB_MOUNT_REV.2.1.txt」で書かれている、
 　　　<<Windows10で、WSLを使用している場合のUSBメモリマウント方法>>の作業を終了させてください。
 
 
@@ -35,14 +35,13 @@ $ ls（↲エンターキーを押す）
 
 以下のような表示がされればOKです。
 
-
-PT4A_CentOS_20210122.tar  PT4A_Mac_Intel_20210610.tar  PT4A_Mac_M1_20210610.tar  PT4A_Ubuntu_20210125.tar  PT4A_WSL2_20210125.tar
+PT4A_CentOS.tar  PT4A_MacIntel.tar  PT4A_MacM1.tar  PT4A_Ubuntu20.tar  PT4A_WSL2_Ubuntu.tar
 
 
 （３）１回目のファイルの解凍作業をします。
 以下のコマンドを入力してファイルを解凍してください。
 
-$ tar -xvf PT4A_WSL2_20210125.tar（↲エンターキーを押す）
+$ tar -xvf PT4A_WSL2_Ubuntu.tar（↲エンターキーを押す）
 
 以下のような表示がされれば、（３）の作業成功です。
 
@@ -51,7 +50,7 @@ PT4A/INSTALL.SH
 PT4A/UNINSTALL.SH
 PT4A/INSTALL.TXT
 PT4A/ライセンス契約書.pdf
-PT4A/uspTukubai-20210125.tar.gz
+PT4A/uspTukubai-yyyymmdd.tar.gz  # yyyymmdd の部分は実施には年月日を示す８桁の数字
 
 
 （４）「PT4A」というディレクトリが作成されていることを確認します。
@@ -61,8 +60,7 @@ $ ls（↲エンターキーを押す）
 
 以下のような表示がされればOKです。
 
-PT4A                      PT4A_Mac_Intel_20210610.tar  PT4A_Ubuntu_20210125.tar
-PT4A_CentOS_20210122.tar  PT4A_Mac_M1_20210610.tar     PT4A_WSL2_20210125.tar
+PT4A PT4A_CentOS.tar  PT4A_MacIntel.tar  PT4A_MacM1.tar  PT4A_Ubuntu20.tar  PT4A_WSL2_Ubuntu.tar
 
 
 （５）「PT4A」のディレクトリに移動します。
