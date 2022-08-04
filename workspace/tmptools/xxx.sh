@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /home/hohno/GitHub/dZone--PT4A--USBstorage/USB256GB-20220612 || exit 99
+cd $HOME/GitHub/dZone--PT4A--USBstorage/USB256GB-20220612 || exit 99
 
 tar --exclude="kemotw*.pdf" --exclude=".dummy4github" -cf - . | ( cd /mnt/s; tar xmf - ); diff -r -w -q . /mnt/s  2>&1 | grep  '^Only' | egrep -v '/Tokyo2020/|/amedas/' | cat -n
 
