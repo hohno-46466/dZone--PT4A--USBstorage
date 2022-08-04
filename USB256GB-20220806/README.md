@@ -14,11 +14,9 @@ PT4A を用いた大規模データ処理演習で使用する USB メモリ（2
      ├──  Readme1_Rev.2.1.txt
      ├──  Readme2_tree_2022.txt
      ├──  Readme3_USB_MOUNT_REV.2.1.txt
-     ├──  Readme4_PT4A_REV.2.1.txt
      ├──  Readme4_PT4A_REV.2.2.txt
      └──  data/
          ├──  Structured_data/
-         │   ├──  Readme_Rev.2.0.txt
          │   ├──  Readme_Rev.2.1.txt
          │   ├──  amedas/
          │   ├──  format/

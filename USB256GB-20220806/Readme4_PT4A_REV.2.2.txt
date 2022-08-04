@@ -35,13 +35,12 @@ $ ls（↲エンターキーを押す）
 
 以下のような表示がされればOKです。
 
-PT4A_CentOS.tar  PT4A_MacIntel.tar  PT4A_MacM1.tar  PT4A_Ubuntu20.tar  PT4A_WSL2_Ubuntu.tar
-
+PT4A_MacIntel.tar.gz  PT4A_MacM1.tar.gz  PT4A_WSL2_Ubuntu.tar.gz  PT4A_ubuntu20.tar.gz  README.md
 
 （３）１回目のファイルの解凍作業をします。
 以下のコマンドを入力してファイルを解凍してください。
 
-$ tar -xvf PT4A_WSL2_Ubuntu.tar（↲エンターキーを押す）
+$ tar -zxvf PT4A_WSL2_Ubuntu.tar.gz（↲エンターキーを押す）
 
 以下のような表示がされれば、（３）の作業成功です。
 
@@ -50,7 +49,7 @@ PT4A/INSTALL.SH
 PT4A/UNINSTALL.SH
 PT4A/INSTALL.TXT
 PT4A/ライセンス契約書.pdf
-PT4A/uspTukubai-yyyymmdd.tar.gz  # yyyymmdd の部分は実施には年月日を示す８桁の数字
+PT4A/uspTukubai-yyyymmdd.tar.gz  # yyyymmdd の部分は実施には年月日を示す８桁の数字。たとえば 20220208
 
 
 （４）「PT4A」というディレクトリが作成されていることを確認します。
@@ -60,7 +59,7 @@ $ ls（↲エンターキーを押す）
 
 以下のような表示がされればOKです。
 
-PT4A PT4A_CentOS.tar  PT4A_MacIntel.tar  PT4A_MacM1.tar  PT4A_Ubuntu20.tar  PT4A_WSL2_Ubuntu.tar
+PT4A PT4A_MacIntel.tar.gz  PT4A_MacM1.tar.gz  PT4A_WSL2_Ubuntu.tar.gz  PT4A_ubuntu20.tar.gz  README.md
 
 
 （５）「PT4A」のディレクトリに移動します。
@@ -76,7 +75,7 @@ $ ls（↲エンターキーを押す）
 
 ここまでの作業が正しく進んでいたら以下のようなメッセージが表示されます。
 
-INSTALL.SH  INSTALL.TXT  UNINSTALL.SH  uspTsukubai-20210125.tar.gz  ライセンス契約書.pdf
+INSTALL.SH  INSTALL_EN.TXT  INSTALL_JP.TXT  UNINSTALL.SH  uspTukubai-20220208.tar.gz  ライセンス契約書.pdf
 
 
 （７）PT4Aをインストールするためのプログラム(INSTALL.SH)を実行します。
