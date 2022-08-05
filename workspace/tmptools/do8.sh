@@ -1,11 +1,10 @@
 #!/bin/sh
 
-# sh makeusb.sh h: usb  ; echo $?
-# sh makeusb.sh i: usb1 ; echo $?
-# sh makeusb.sh j: usb2 ; echo $?
-# sh makeusb.sh k: usb3 ; echo $?
-# sh makeusb.sh l: usb4 ; echo $?
-# sh makeusb.sh m: usb5 ; echo $?
-# sh makeusb.sh n: usb6 ; echo $?
-# sh makeusb.sh o: usb7 ; echo $?
-# sh makeusb.sh s: usb8 ; echo $?
+time sh ./makeusb.sh h: usb1 ; echo $?
+time sh ./makeusb.sh i: usb2 ; echo $?
+time sh ./makeusb.sh j: usb3 ; echo $?
+time sh ./makeusb.sh k: usb4 ; echo $?
+time sh ./makeusb.sh l: usb5 ; echo $?
+time sh ./makeusb.sh m: usb6 ; echo $?
+time sh ./makeusb.sh n: usb7 ; echo $?
+time sh ./makeusb.sh o: usb8 ; echo $?
