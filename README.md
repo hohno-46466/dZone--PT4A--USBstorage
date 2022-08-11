@@ -80,9 +80,9 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
      31 directories, 36 files (Thu Aug  4 07:58:39 JST 2022)
 
 
-Note: url = https://github.com/hohno-46466/dZone--PT4A--USBstorage
+Note: URL = https://github.com/hohno-46466/dZone--PT4A--USBstorage
 
-Note: url = git@github.com:hohno-46466/dZone--PT4A--USBstorage.git
+Note: URL = git@github.com:hohno-46466/dZone--PT4A--USBstorage.git
 
 -EOF-
 
