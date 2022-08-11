@@ -8,7 +8,7 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
 
 これをマスターとして必要数を確保する場合は，適宜 USBメモリ複製機などを使うとよい．
 
-      ../dZone--PT4A--USBstorage/
+    ./dZone--PT4A--USBstorage/
      ├──  README.md
      ├──  README.md.old
      ├──  USB128GB-20210601/
