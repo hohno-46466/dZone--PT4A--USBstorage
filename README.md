@@ -8,7 +8,7 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
 
 これをマスターとして必要数を確保する場合は，適宜 USBメモリ複製機などを使うとよい．
 
-     ./dZone--PT4A--USBstorage
+    ./dZone--PT4A--USBstorage
      ├──  README.md
      ├──  README.md.old
      ├──  USB128GB-20210601/
@@ -83,7 +83,7 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
              ├──  uuu.sh
              └──  xxx.sh
      
-     34 directories, 39 files (Sun Sep 25 19:07:10 JST 2022)
+     34 directories, 39 files (Fri Sep 30 22:41:57 JST 2022)
 
 
 Note: URL = https://github.com/hohno-46466/dZone--PT4A--USBstorage
