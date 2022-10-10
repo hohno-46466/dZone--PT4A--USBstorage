@@ -52,7 +52,7 @@ Structured_data
 │  │　└─ amed_2017.txt	2017年アメダス10分データPT4A用
 │  │　└─ amed_2018.txt	2018年アメダス10分データPT4A用
 │  │　└─ amed_2019.txt	2019年アメダス10分データPT4A用
-│  │　└─ amed_2020.txt      2020年アメダス10分データPT4A用
+│  │　└─ amed_2020.txt  2020年アメダス10分データPT4A用
 │  │　└─ amed_2021.txt	2021年アメダス 1分データPT4A用
 │  │
 │  ├─monthtext
@@ -132,10 +132,12 @@ Structured_data
 │   　└─ amed_202112.csv     2021年12月アメダス 1分データCSVファイル
 │
 ├─ format
-│   　└─ amed_list.csv	アメダス設置情報リスト CSVファイル
-│   　└─ amed_list.txt	アメダス設置情報リストPT4A用
-│   　└─ amed_item_list.csv	アメダスデータ 項目リスト CSVファイル
+│   　└─ amed_list.csv		アメダス設置情報リスト CSVファイル
+│   　└─ amed_list.txt		アメダス設置情報リストPT4A用
 │   　└─ amed_item_flag.csv	アメダスデータ 項目利用フラグ CSVファイル
+│   　└─ amed_item_list.csv	アメダスデータ 項目リスト CSVファイル
+│   　└─ amed_item_list_Update_202209.xlsx      アメダス 項目リスト_202209版 
+│   　└─ format_amedas.pdf                      アメダス フォーマット 
 │
 └─ samples
      　└─ SAIKO_SAITE_KION.sh	最高気温、最低気温の抽出
