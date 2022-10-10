@@ -2,14 +2,14 @@
 
 USB storage skelton for PT4A lectures (USB256GB-20220806 Rev1.0)
 
-### Last Modified: Tue Oct  4 10:57:41 JST 2022 by @hohno_at_kuimc
+### Last Modified: Tue Oct 11 08:42:07 JST 2022 by @hohno_at_kuimc
 
-PT4A を用いた大規模データ処理演習で使用する USB メモリ（2022年10月版）の骨格は以下の通り
+PT4A を用いた大規模データ処理演習で使用する USB メモリ（2022年10月版）の骨格（データファイル以外）は以下の通り
 （表記の末尾が "/" で終わっているのはディレクトリ、それ以外はファイルである）。
 
     (USBメモリ配布前に改訂予定あり）
 
-    ./USB256GB-20221001/
+    ./USB256GB-20221001
      ├──  PT4A/
      │   └──  README.md
      ├──  README.md
@@ -24,6 +24,7 @@ PT4A を用いた大規模データ処理演習で使用する USB メモリ（2
          │   ├──  format/
          │   │   ├──  amed_item_flag.csv
          │   │   ├──  amed_item_list.csv
+         │   │   ├──  amed_item_list_Update_202209.xlsx
          │   │   ├──  amed_list.csv
          │   │   └──  amed_list.txt
          │   └──  samples/
@@ -98,7 +99,7 @@ PT4A を用いた大規模データ処理演習で使用する USB メモリ（2
              ├──  TUTORIAL.txt
              └──  Tokyo2020/
      
-     10 directories, 79 files (Thu Aug  4 10:35:32 JST 2022)
+     10 directories, 78 files (Tue Oct 11 08:41:29 JST 2022)
 
 
 実際に配布した USB メモリには、上記のディレクトリとファイルに加え、大規模データ処理演習に供する定形および非定形のデータが以下の場所に格納されている。
