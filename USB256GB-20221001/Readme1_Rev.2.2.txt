@@ -24,9 +24,13 @@
 講義で配布したUSBメモリに保存されているビッグデータおよびサンプルスクリプトは、
 金沢大学学術メディア創成センター大野、森とUSP研究所との共同研究によって、
 USP研究所から提供されました。
+The big data and sample scripts stored on the USB memory stick distributed 
+at the lecture were provided by Universal Shell Programming Laboratory 
+in collaboration with Ohno and Mori of Emerging Media Initiative, Kanazawa University 
+and Universal Shell Programming Laboratory.
 
-定型データ（data/Structured_data/amedas内の各種ファイル）と
-非定型データ（data/Unstructured_data/Tokyo2020内の各種ファイル）で200GBのサイズがあります。
+構造化データ（data/Structured_data/amedas内の各種ファイル）と
+非構造化データ（data/Unstructured_data/Tokyo2020内の各種ファイル）で200GBのサイズがあります。
 これらのデータは、年月日などでファイルが分かれていますが、1つのファイルあたり「100万行」以上の大きさがあり、
 Excelなどの表計算ソフトウェアでは処理できません。
 
