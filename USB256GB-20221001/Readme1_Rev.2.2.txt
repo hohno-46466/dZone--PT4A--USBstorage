@@ -12,19 +12,18 @@
 # Author/Contact: 
 #     金沢大学学術メディア創成センター 大野、森
 #     Emerging Media Initiative, Kanazawa University: Ohno, Mori
-# 　　USP研究所 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
-#     UniversalShellProgrammingLaboratory: Watano, Yamada, Matsuura
+# 　　USP研究所（https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
+#     Universal Shell Programming Laboratory: Watano, Yamada, Matsuura
 # 最終更新日   : 2022年10月12日
 # Last updated : October 12, 2022
 #
 ################################################################################
 
-<<概要 >>
+<< 概要/Overview >>
 
 講義で配布したUSBメモリに保存されているビッグデータおよびサンプルスクリプトは、
-金沢大学学術メディア創成センター大野、森と、
-USP研究所（https://www.usp-lab.com/）との共同研究によって、
-USP研究所から提供されたものです。
+金沢大学学術メディア創成センター大野、森とUSP研究所との共同研究によって、
+USP研究所から提供されました。
 
 定型データ（data/Structured_data/amedas内の各種ファイル）と
 非定型データ（data/Unstructured_data/Tokyo2020内の各種ファイル）で200GBのサイズがあります。
