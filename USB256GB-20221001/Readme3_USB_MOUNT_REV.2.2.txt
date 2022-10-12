@@ -1,14 +1,21 @@
 ################################################################################
 #
 # 金沢大学 大学院科目
+# Kanazawa University Graduate School Subjects
 # 「2022年度 スマート創成科学（第1回から第3回）」向け
+# For "2022 Smart Science and Technology for Innovation(1st-3rd)"
 #
-# USBメモリ内のビッグデータ（定型、非定型）およびサンプルスクリプトについて
+# Windows10/11のWSLでUSBメモリを使用するためのマウント方法
+# How to mount USB memory stick for use with WSL on Windows 10/11
 #
 # 作成者・連絡先: 
-# 　　金沢大学学術メディア創成センター 大野、森
+# Author/Contact: 
+#     金沢大学学術メディア創成センター 大野、森
+#     Emerging Media Initiative, Kanazawa University: Ohno, Mori
 # 　　USP研究所 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
-# 最終更新日    : 2022年10月11日
+#     UniversalShellProgrammingLaboratory: Watano, Yamada, Matsuura
+# 最終更新日   : 2022年10月12日
+# Last updated : October 12, 2022
 #
 ################################################################################
 
