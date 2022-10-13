@@ -1,24 +1,36 @@
 #!/bin/bash -vx
 #
-# 金沢大学 共通教育科目
-# 「シェルスクリプトを用いた『大規模データ処理』演習 2021」ほか向け
+# 金沢大学 大学院科目
+# Kanazawa University Graduate School Subjects
+# 「2022年度 スマート創成科学（第1回から第3回）」向け
+# For "2022 Smart Science and Technology for Innovation(1st-3rd)"
 # 気象データ処理用サンプルスクリプト
+# Sample scripts for weather data processing
 #
 # サンプル1.最高気温、最低気温の抽出
+# Sample 1. Extraction of maximum and minimum temperatures
 #
 # 実行方法: ./SAIKO_SAITE_KION.sh
+# Execution method: . /SAIKO_SAITE_KION.sh
 #
 # 作成者: USP研究所 山田将誉 (m-yamada@usp-lab.com)
+# Author: Masataka Yamada, USP Laboratory (m-yamada@usp-lab.com)
 # 前回更新日: 2021/06/10
+# Last updated: 2021/06/10
 # 最終更新日: 2022/08/04 (modified by @hohno_at_kuimc)
+# Last modified by @hohno_at_kuimc on 2022/08/04 (modified by @hohno_at_kuimc)
 #
 
 ################################################################
 
 # 気温のランキング付けを行う
+# Rank temperatures.
 # 2020年の全国の気温データ(10分単位)から
+# From national temperature data (in 10-minute increments) for the year 2020
 # 観測地点ごと、日ごとの最高気温、最低気温を求める
+# Find the highest and lowest temperatures for each observation point and each day.
 # そこから、最高気温、最低気温のTop10をそれぞれ算出する
+# Calculate the top 10 highest and lowest temperatures from the data.
 
 ################################################################
 
@@ -32,6 +44,12 @@ export LANG=ja_JP.UTF8
 # 6:風向 7:風向利用フラグ 8:風速m/s 9:風速利用フラグ 
 # 10:気温 11:気温利用フラグ 12:日照時間(s) 13:日照時間利用フラグ 
 # 14:積雪量 15:積雪量利用フラグ
+# amed_yyyy.txt Data items 
+# 1:AMEDAS station number 2:Observation date (yyyymmdd) 3:Observation time (hhmm) 
+# 4:Rain (precipitation intensity) mm/h 5:Rain (precipitation intensity) usage flag 
+# 6:Wind direction 7:Wind direction usage flag 8:Wind speed m/s 9:Wind speed usage flag 
+# 10: Temperature 11: Temperature usage flag 12: Sunshine hours (s) 13: Sunshine hours usage flag 
+# 14: Snow amount 15: Snow amount usage flag
 
 # ファイル読み込み
 cat ../amedas/yeartext/amed_2020.txt		|
