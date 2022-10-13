@@ -31,8 +31,14 @@ and Universal Shell Programming Laboratory.
 
 構造化データ（data/Structured_data/amedas内の各種ファイル）と
 非構造化データ（data/Unstructured_data/Tokyo2020内の各種ファイル）で200GBのサイズがあります。
+Structured data (various files in data/Structured_data/amedas) and 
+Unstructured data (various files in data/Unstructured_data/Tokyo2020) is over 200 GB in size.
+
 これらのデータは、年月日などでファイルが分かれていますが、1つのファイルあたり「100万行」以上の大きさがあり、
 Excelなどの表計算ソフトウェアでは処理できません。
+These data are divided into files by date and time, etc., 
+but each file is over "1 million rows" in size 
+and cannot be processed by spreadsheet software such as Excel. 
 
 講義では、このようなビッグデータを、学生の皆さんが使用している携帯型パソコンで処理する方法を学び、
 これらのデータを使って、さまざまなデータ処理をしてもらいます。
