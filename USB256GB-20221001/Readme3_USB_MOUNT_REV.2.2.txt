@@ -19,100 +19,122 @@
 #
 ################################################################################
 
-<<注意>>
+<<注意/Attention>>
 
 以下の内容は、Windows10/11のパソコン（ノート型、デスクトップ型を問わない）を使用している方のみに向けたものです。
+The following content is intended only for users of Windows 10/11 computers (whether laptop or desktop).
 macOSの場合は、以下の内容の作業を行わなくてもターミナルからアクセスすることができます。
+For macOS, the following operations are not performed.
 
-なお、分からない単語がある場合は、Google検索等を行い、調べておきましょう。
+なお、分からない単語がある場合は、Google検索等で検索して、調べてください。　
+If you do not understand a word, please search for it on Google or other search engines.　
 作業内容が分からない、上手く行かない場合は、アカンサスポータルから、担当教員（大野、森）にメッセージで質問してください。
+If you do not understand the work or if it does not go well, 
+please send a message to the faculty members in charge (Ohno or Mori) via the Acanthus Portal.
 
 
 
 ################################################################################
 
-<<Windows10/11で、WSLを使用している場合のUSBメモリマウント方法>>
+<<Windows10/11で、WSLを使用している場合のUSBメモリマウント方法/How to mount a USB memory stick when using WSL on Windows 10/11>>
 
 （１）USBメモリをパソコンに挿し込み、エクスプローラーなどでUSBメモリにアクセスできることを確認する。
+      Insert the USB memory stick into the PC.
 
 （２）以下のコマンドを実行し、マウントポイントとなるディレクトリ（フォルダ）を作成する。
-ここからの操作は「WSL」のウインドウで実行してください。
-なお、以下の内容において、入力すべきコマンドの最初の一文字目には「$」が書かれています。
-これは、この「$」以降にコマンドを表示するという目印です。
-コマンドを入力するときには、「$」は入力してはいけません。
+      Execute the following command to create a directory (folder) that will be the mount point.
+
+$ sudo mkdir /mnt/usb（↲エンターキーを押す/Press the Enter key）
+
+注意：（２）から（５）の作業は、最初の１回だけ行います。
+Note: Perform operations (2) through (5) only the first time.
+      ２回目以降のマウントでは、（２）から（５）の作業は行いません。
+      For the second and subsequent "mounts," do not perform operations (2) through (5).
 
 
-$ sudo mkdir /mnt/usb（↲エンターキーを押す）
+    ※ここからの操作は「WSL」のウインドウで実行してください。
+      All future operations should be performed in the "WSL" window.
+      なお、これからは入力するコマンドを書いた行の行頭には「$」を書きます。
+      Note that from now on, a "$" is written at the beginning of the line on which the command to be entered is written.
+      これは、この「$」以降にコマンドを表示するという目印です。
+      This "$" is a marker that the command is to be displayed.
+      コマンドを入力するときには、「$」は入力してはいけません。
+       When entering a command, do not type "$".
 
-すると、WSLの初期設定で入力したパスワードの入力を要求されるので、入力してください。
-なお、ここでパスワードを入力しても、画面上は●や＊が表示されることはありません。
-しかし、システム上は入力されているので、そのままパスワードを入力し、入力し終わったら、エンターキーを押してください。
+
+（３）（２）を実行すると、WSLの初期設定で入力したパスワードの入力を要求されるので、入力してください。
+      After executing (2), you will be asked to enter the password you entered in the initial WSL setup.
+      Please enter the password.
+   ※なお、ここでパスワードを入力しても、画面上は●や＊が表示されることはありません。
+     Note that even if you enter the password, ● or * will not appear on the screen.
+     しかし、システム上は入力されているので、そのままパスワードを入力し、入力し終わったら、エンターキーを押してください。
+     However, the password is entered in the system, so press the Enter key after entering the password.
 
 
-（３）ディレクトリが作成されているか確認
+（４）ディレクトリが作成されているか確認
+      Check if the directory has been created.
 画面上で、行が１つだけ下に移動したのなら（２）の作業は成功しています。
+If only one line has moved down on the screen, then (2) has succeeded.
 成功し、ディレクトリが作成されているか確認してみましょう。
+Confirm that the directory has been created.
 確認のためには、以下のコマンドを入力します。
+To confirm, enter the following command
 
-$ ls /mnt（↲エンターキーを押す）
+$ ls /mnt（↲エンターキーを押す/Press the Enter key）
 
-このときに画面に、以下のような感じで表示がされれば、（２）の作業が成功しています。
+画面に、usbの表示が出れば、（２）の作業が成功しています。
+If "usb" appears on the screen, the operation (2) has been successful.
 
 
 c  usb
 
 
-ちなみに、「c」とは、パソコンのディスクに振られているアルファベット名で、
-エクスプローラーでは、「ボリューム（C:）」などのように表示されている部分の括弧内のアルファベットです。
-　　※ボリューム部分には、パソコンによって、適当な名称が表示されています。
 
-パソコンによっては、「ボリューム（D:）」や「ボリューム（E:）」といったものもあるかもしれません。
-
-
-（４）以下のコマンドを入力して、USBメモリを（２）で作ったディレクトリにマウントします。
-
-注意点としては、以下のコマンドで入力している「z:」というアルファベット部分は、
-皆さんのパソコンによって異なります。
+（５）以下のコマンドを入力して、USBメモリを（２）で作ったディレクトリにマウントします。
+      Enter the following command to mount the USB flash drive in the directory created in (2).
+注意：以下のコマンドで入力している「z:」というアルファベット部分は、使っているパソコンによって異なります。
+Note: The "z:" in the following command is a different alphabet on different computers.
 Windows10/11のエクスプローラーなどを起動させて、自分のパソコン上で、USBメモリに割り振られたアルファベットを特定してください。
+Please start Windows 10/11 Explorer to identify the alphabet assigned to the USB flash drive and then type it in.
 
-$ sudo mount -t drvfs z: /mnt/usb（↲エンターキーを押す）
+$ sudo mount -t drvfs z: /mnt/usb（↲エンターキーを押す/Press the Enter key）
 
 
-（５）マウントしたが成功しているかどうかを、USBメモリ内の内容が表示されることで確認します。
-画面上で、行が１つだけ下に移動したのなら（４）の作業は成功しています。
-成功し、USBメモリがマウントされて、USBメモリ内の各ディレクトリやファイルを見ることができるか確認してみましょう。
-確認のためには、以下のコマンドを入力します。
+（６）「マウント」の成功を、USBメモリの内容を表示して確認します。
+      Confirm the success of "Mount" by displaying the contents of the USB flash drive.
+注意：画面上で、行が１つだけ下に移動したのならマウントは成功しています。
+Note: If only one row is moved down on the screen, the "mount" has succeeded.
+確認のために、以下のコマンドを入力します。
+To confirm, enter the following command
 
-$ ls /mnt/usb（↲エンターキーを押す）
+$ ls /mnt/usb（↲エンターキーを押す/Press the Enter key）
 
 以下のような表示がされればOKです。
+If you see the following, it is OK.
+
 
 PT4A				Readme2_tree.txt		         Readme4_PT4A_REV.2.0.txt          data
 Readme1_Rev.2.0.txt		Readme3_USB_MOUNT_REV.2.0.txt	'System Volume Information'
 
 
 何も表示されない場合は、マウントが失敗していると考えられます。
-入力したコマンドに打ち間違いが無いか、
-USBメモリに割り振られたアルファベットが正しいかを確認し、
-改めてコマンドを入力してみましょう。
+If nothing is displayed, the mount has failed.
+コマンドの打ち間違いがないか、USBメモリーに割り当てられているドライブのアルファベットが正しいかを確認し、
+改めて（５）のコマンドを入力してください。
+Check that you have not typed the command incorrectly and that the alphabet of the drive assigned to the USB flash drive is correct, 
+and then type the command (5) again.
 
 
-
-（６）講義でUSBメモリ内のデータを使う場合は、USBメモリのディレクトリに移動する
-ここまで作業をしてきたコマンドを入力して操作する方法では、
-作業をするためには、コマンドを入力して、作業を行うディレクトリまで移動する必要があります。
-　　※マウスを使って、エクスプローラーで該当のフォルダを開く作業に該当します。
+（７）USBメモリのディレクトリに移動する
+      Go to the directory of the USB memory stick
 
 以下のコマンドを入力して、ディレクトリを移動します。
+Enter the following command to move the directory
 
-$ cd /mnt/usb（↲エンターキーを押す）
+$ cd /mnt/usb（↲エンターキーを押す/Press the Enter key）
 
-さらに、データが保存されているディレクトリに移動する場合は、
 
-$ cd data（↲エンターキーを押す）
-
-などのコマンドを入力して移動します。
-ディレクトリの移動について、
+注意：ディレクトリの移動について、
 
 https://eng-entrance.com/linux-command-cd
 
@@ -121,30 +143,35 @@ https://eng-entrance.com/linux-command-cd
 
 ################################################################################
 
-<<Windows10/11で、WSLを使用している場合のUSBメモリアンマウント方法>>
+<<Windows10/11で、WSLを使用している場合のUSBメモリアンマウント方法/How to mount USB memory card on Windows 10/11 when using WSL>>
 
-（１）作業を終了し、USBメモリをパソコンから抜き取る前には、必ずアンマウントという作業をします。
-画面に表示されている作業中のディレクトリが、USBメモリ内のディレクトリの場合、アンマウントできないので、
-最初に以下のコマンドを入力して、ディレクトリを移動します。
+Linuxでは、使用していたUSBメモリをパソコンから抜き取る前には、必ず「アンマウント」という作業をします。
+In Linux (WSL), before removing a USB memory stick that has been in use from a computer, you must "unmount".
 
-$ cd（↲エンターキーを押す）
+（１）USBメモリ内のディレクトリで作業をしている場合、アンマウントできないので、
+      最初に以下のコマンドを入力して、ディレクトリを移動します。
+      If you are working in a directory on a USB flash drive, you cannot unmount it, 
+      so first move the directory by entering the following command
 
-次に以下のコマンドを入力してください。
-
-$ sudo umount /mnt/usb（↲エンターキーを押す）
-
-（２）パソコン（Windows）で、USBメモリの取り出し作業をします。
-WSL（Linux）上からのアンマウントは（１）の操作で完了しますが、
-接続しているパソコン（Windows）では、まだUSBメモリとして認識されたままです。
-
-そこで、（１）の作業後に、いつも、Windows10/11のパソコン上でUSBメモリを取り外すときに行っている操作をしてください。
+$ cd（↲エンターキーを押す/Press the Enter key）
 
 
-（３）（２）の作業後、USBメモリをパソコンから取り外します。
+（２）次に以下のコマンドを入力して、アンマウントします。
+      Next, enter the following command to unmount.
+
+$ sudo umount /mnt/usb（↲エンターキーを押す/Press the Enter key）
+
+
+（３）パソコン（Windows）で、USBメモリの取り出し作業をします。
+      On your PC (Windows), eject the USB memory stick.
+
+
+（４）（３）の作業後、USBメモリをパソコンから取り外します。
+      After the operation in (3), remove the USB memory from the computer.
 
 ################################################################################
 
-≪履歴≫
+≪履歴/Update History≫
 
  2021年8月5日  Ver.2.0
  2022年6月14日 Ver.2.1
