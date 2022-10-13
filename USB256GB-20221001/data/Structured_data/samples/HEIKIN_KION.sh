@@ -1,12 +1,17 @@
 #!/bin/bash -vx
 #
-# 金沢大学 共通教育科目
-# 「シェルスクリプトを用いた『大規模データ処理』演習 2021」ほか向け
+# 金沢大学 大学院科目
+# Kanazawa University Graduate School Subjects
+# 「2022年度 スマート創成科学（第1回から第3回）」向け
+# For "2022 Smart Science and Technology for Innovation(1st-3rd)"
 # 気象データ処理用サンプルスクリプト
+# Sample scripts for weather data processing
 #
 # サンプル2.平均気温の推移
+# Sample 2. Average temperature
 # 
 # 実行方法: ./HEIKIN_KION.sh
+# Execution method: . /HEIKIN_KION.sh
 #
 # 作成者: USP研究所 山田将誉 (m-yamada@usp-lab.com)
 # 前回更新日: 2021/06/10
