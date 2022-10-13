@@ -111,7 +111,7 @@ cat 2.NENGAPPI_KION.56227			|
 # 1: Date of observation 2: Temperature
 
 # 年ごとに集計するために、第1フィールドの年月日(yyyymmdd)から年(yyyy)のみを抜き出す
-# Extract only the year (yyyy) from the date (yyyymmdd) in the first field to aggregate by year
+# Extract only the year (yyyy) from the date (yyyymmdd) in the 1st field to aggregate by year
 self 1.1.4 2					|
 # 1:年 2:気温
 # 1:year 2:temperature
