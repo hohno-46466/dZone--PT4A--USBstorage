@@ -222,7 +222,7 @@ Structured_data
 <<サンプルスクリプト/Sample Script>>
 
 このUSBメモリ内に保存されているサンプルスクリプトは、USP研究所から提供されたものです。
-The sample scripts stored on this USB stick were provided by the USP Laboratory.
+The sample scripts stored on this USB flash drive were provided by the USP Laboratory.
 
 samplesというディレクトリ（フォルダ）の中に、アメダスデータを用いたサンプル・スクリプトが置かれています。
 In the directory (folder) named "samples," sample scripts using AMeDAS data are placed.
