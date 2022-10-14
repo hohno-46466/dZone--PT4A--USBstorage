@@ -1,21 +1,16 @@
 ################################################################################
 #
-# 金沢大学 大学院科目
-# Kanazawa University Graduate School Subjects
-# 「2022年度 スマート創成科学（第1回から第3回）」向け
-# For "2022 Smart Science and Technology for Innovation(1st-3rd)"
+# 金沢大学 共通教育科目
+# 「2022年度Q2 シェルスクリプトを用いた『大規模データ処理』演習」および
+# 「2022年度Q2 シェルスクリプトを用いた『ものグラミングと大規模データ処理』演習」および
+# 「2022年度Q3/Q4 スマート創成科学」向け
 #
 # USBメモリ内のディレクトリ（フォルダ）およびファイル構成
-# Directory (folder) and file structure in USB memory
 #
 # 作成者・連絡先: 
-# Author/Contact: 
-#     金沢大学学術メディア創成センター 大野、森
-#     Emerging Media Initiative, Kanazawa University: Ohno, Mori
+# 　　金沢大学学術メディア創成センター 大野、森
 # 　　USP研究所 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
-#     UniversalShellProgrammingLaboratory: Watano, Yamada, Matsuura
-# 最終更新日   : 2022年10月12日
-# Last updated : October 12, 2022
+# 最終更新日    : 2022年10月1日
 #
 ################################################################################
 
@@ -128,7 +123,7 @@
     │   ├── format
     │   │   ├── amed_item_flag.csv
     │   │   ├── amed_item_list.csv
-    │   │   ├── amed_item_list_Update_202209A.xlsx
+    │   │   ├── amed_item_list_Update_202209.xlsx
     │   │   ├── amed_list.csv
     │   │   └── amed_list.txt
     │   └── samples
@@ -20329,4 +20324,4 @@
             │   └── 23.txt
             └── gyodata
 
-819 directories, 19482 files
+819 directories, 19480 files

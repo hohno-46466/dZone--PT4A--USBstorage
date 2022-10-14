@@ -1,52 +1,42 @@
 ################################################################################
 #
-# 金沢大学 大学院科目
-# Kanazawa University Graduate School Subjects
-# 「2022年度 スマート創成科学（第1回から第3回）」向け
-# For "2022 Smart Science and Technology for Innovation(1st-3rd)"
+# 金沢大学 共通教育科目
+# 「2022年度Q2 シェルスクリプトを用いた『大規模データ処理』演習」および
+# 「2022年度Q2 シェルスクリプトを用いた『ものグラミングと大規模データ処理』演習」および
+# 「2022年度Q3/Q4 スマート創成科学」向け
 #
-# 構造化データおよびサンプルスクリプトについて
-# About Structured Data and Sample Scripts
+# 定型データおよびサンプルスクリプトについて
 #
-# 作成者・連絡先:
-# Author/Contact:
-#     金沢大学学術メディア創成センター 大野、森
-#     Emerging Media Initiative, Kanazawa University: Ohno, Mori
-# 　　USP研究所（https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
-#     Universal Shell Programming Laboratory: Watano, Yamada, Matsuura
-# 最終更新日   : 2022年10月13日
-# Last updated : October 13, 2022
+# 作成者・連絡先: 
+# 　　金沢大学学術メディア創成センター 大野
+# 　　USP研究所 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
+# 最終更新日    : 2022年10月1日
 #
 ################################################################################
 
+<<定型データ概要 >>
 
-<<構造化データ概要/Structured Data Overview>>
-
-この構造化データは、USP研究所が、金沢大学学術メディア創成センターとの共同研究の一環として、
+この定型データは、USP研究所が、金沢大学学術メディア創成センターとの共同研究の一環として、
 日本の気象庁によって、日本各地に設置されているアメダスから送られてくるデータを入手し、授業で使用できるように処理したものです。
-This structured data was obtained by the USP Laboratory as part of a joint research project with Emerging Media Initiative, Kanazawa University,
-from data sent by the Japan Meteorological Agency from AMeDAS stations located throughout Japan, and processed for use in the lecture.
 
 データ自体は、気象庁のアメダスのデータを10分毎に保存、テキストファイルとして保存したものです。
-The data itself is the JMA's AMeDAS data saved every 10 minutes and saved as a text file.
 
 データのフォーマット（保存形式や設置場所の情報など）は、「format」というディレクトリの中に、csvファイルの形式で保存されています。
-The format of the data (storage format, location information, etc.) is stored in the directory "format" in the form of csv files.
 
 ################################################################################
 
-<<動作条件/Operating Conditions>>
+<<動作条件>>
 
 ・2022年度版 Personal Tukubai for Academic（PT4A）がインストールされていること。
-  Personal Tukubai for Academic (PT4A) must be installed.
+
 
 ################################################################################
 
-<<ファイル構成/File Structure>>
+<<ファイル構成>>
 
 
 Structured_data
-│ 　
+│ 　  
 ├─ amedas
 │  │
 │  ├─yeartext
@@ -63,7 +53,7 @@ Structured_data
 │  │　└─ amed_2017.txt	2017年アメダス10分データPT4A用
 │  │　└─ amed_2018.txt	2018年アメダス10分データPT4A用
 │  │　└─ amed_2019.txt	2019年アメダス10分データPT4A用
-│  │　└─ amed_2020.txt      2020年アメダス10分データPT4A用
+│  │　└─ amed_2020.txt  2020年アメダス10分データPT4A用
 │  │　└─ amed_2021.txt	2021年アメダス 1分データPT4A用
 │  │
 │  ├─monthtext
@@ -143,13 +133,12 @@ Structured_data
 │   　└─ amed_202112.csv     2021年12月アメダス 1分データCSVファイル
 │
 ├─ format
-│   　└─ amed_list.csv	アメダス設置情報リスト CSVファイル
-│   　└─ amed_list.txt	アメダス設置情報リストPT4A用
+│   　└─ amed_list.csv		アメダス設置情報リスト CSVファイル
+│   　└─ amed_list.txt		アメダス設置情報リストPT4A用
+│   　└─ amed_item_flag.csv	アメダスデータ 項目利用フラグ CSVファイル
 │   　└─ amed_item_list.csv	アメダスデータ 項目リスト CSVファイル
-│   　└─ amed_item_flag.csv  アメダスデータ 項目利用フラグ CSVファイル
-│   　└─ amed_item_list.csv    アメダスデータ 項目リスト CSVファイル
-│   　└─ amed_item_list_Update_202209A.xlsx     アメダス 項目リスト_202209版
-│   　└─ format_amedas.pdf                      アメダス フォーマット
+│   　└─ amed_item_list_Update_202209.xlsx      アメダス 項目リスト_202209版 
+│   　└─ format_amedas.pdf                      アメダス フォーマット 
 │
 └─ samples
      　└─ SAIKO_SAITE_KION.sh	最高気温、最低気温の抽出
@@ -214,86 +203,58 @@ Structured_data
                 ├── KAIKA_MASTER.91197.txt 那覇
                 ├── KAIKA_MASTER.92011.txt 南大東島
                 ├── KAIKA_MASTER.93041.txt 宮古島
-                └── KAIKA_MASTER.94081.txt 石垣島
+                └── KAIKA_MASTER.94081.txt 石垣島              	
 
 
 ################################################################################
 
-<<サンプルスクリプト/Sample Script>>
+<<サンプルスクリプト>>
 
 このUSBメモリ内に保存されているサンプルスクリプトは、USP研究所から提供されたものです。
-The sample scripts stored on this USB stick were provided by the USP Laboratory.
 
 samplesというディレクトリ（フォルダ）の中に、アメダスデータを用いたサンプル・スクリプトが置かれています。
-In the directory (folder) named "samples," sample scripts using AMeDAS data are placed.
 
 サンプル1. 最高気温、最低気温の抽出
-Sample 1. Extraction of maximum and minimum temperatures
-  年ごとに最高気温が最も高い日、最低気温が最も低い日を抽出する。
-  Extract the highest and lowest maximum and minimum temperatures for each year.
-  サンプルスクリプトファイル: SAIKO_SAITE_KION.sh
-  Sample script file: SAIKO_SAITE_KION.sh
-  実行方法: ./SAIKO_SAITE_KION.sh
-  Execution method: . /SAIKO_SAITE_KION.sh
+年ごとに最高気温が最も高い日、最低気温が最も低い日を抽出する。
+サンプルスクリプトファイル: SAIKO_SAITE_KION.sh
+実行方法: ./SAIKO_SAITE_KION.sh
 
 サンプル2. 平均気温の推移
-Sample 2. Trends in average temperature
-  年平均気温を求め、その推移を確認する。
-  Find the annual average temperature and check its transition.
-  サンプルスクリプトファイル: HEIKIN_KION.sh
-  Sample script file: HEIKIN_KION.sh
-  実行方法: ./HEIKIN_KION.sh
-  Execution method: . /HEIKIN_KION.sh
+年平均気温を求め、その推移を確認する。
+サンプルスクリプトファイル: HEIKIN_KION.sh
+実行方法: ./HEIKIN_KION.sh
 
 サンプル3. 桜の開花時期
-Sample 3: Cherry blossom season
-　※桜の開花時期について
-　　　「２月１日以降の最高気温の積算が600度を超えると開花する」
-　　　「２月１日以降の平均気温の積算が400度を超えると開花する」
-    という法則（経験則）が知られている。
-    A rule of thumb is known regarding the timing of cherry blossom blooming:
-    Cherry blossoms bloom
-    "when the maximum temperature total after February 1 exceeds 600 degrees Celsius"
-     or "when the average temperature total after February 1 exceeds 400 degrees Celsius."
-    気温データを計算し、実際の開花情報と比較して、これらの法則が適用可能か調べる。
-    Calculate temperature data and compare with actual bloom information to determine if these laws are applicable.
-  サンプルスクリプトファイル: SAKURA_KAIKA.sh
-  Sample script file: SAKURA_KAIKA.sh
-  実行方法: ./SAKURA_KAIKA.sh
-  Execution method: . /SAKURA_KAIKA.sh
-  さくらの開花日(気象庁): https://www.data.jma.go.jp/sakura/data/sakura003_06.html
-  Cherry blossom bloom date (Japan Meteorological Agency): https://www.data.jma.go.jp/sakura/data/sakura003_06.html
+　桜の開花時期について
+　「２月１日以降の最高気温の積算が600度を超えると開花する」
+　「２月１日以降の平均気温の積算が400度を超えると開花する」
+という法則が知られている。気温データを積算し、実際の開花情報と比較することで
+これらの法則が実際に適用されているかどうかについて調べる。
+サンプルスクリプトファイル: SAKURA_KAIKA.sh
+実行方法: ./SAKURA_KAIKA.sh
+さくらの開花日(気象庁): https://www.data.jma.go.jp/sakura/data/sakura003_06.html
 
 ################################################################################
 
-≪著作権および免責事項/Copyright and Disclaimer≫
+≪著作権および免責事項≫
 
 ・この媒体に含まれる数値データは、日本の著作権法では、著作権保護の対象ではありませんので、自由に利用できます。
-  Numerical data stored in this USB flash drive is not subject to copyright protection under Japanese copyright law,
-  and may be used freely.
 
 ・この媒体に含まれるサンプルプログラム（シェルスクリプト）や技術資料は、
   USP研究所の許諾により、複製、翻訳・変形等の翻案等、自由に利用できます。
-  The sample programs (shell scripts) and technical materials contained in this medium
-  may be freely used, including reproduction, translation, transformation, and other adaptations,
-  with the permission of the USP Laboratory.
   ただし、商用利用はできません
-  However, commercial use is not permitted.
 
 ・この媒体に含まれる数値データ、サンプルプログラム（シェルスクリプト）を使用したことによって生じた
 　すべての障害・損害・不具合等に関しては、
 　USP研究所、金沢大学学術メディア創成センターは一切の責任を負いません。
-  USP Laboratory and Emerging Media Initiative, Kanazawa University are not responsible for any failure, damage, or malfunction caused by the use of the numerical data and sample programs (shell scripts) contained in this medium.
   各自の責任においてご使用ください。
-  Use at your own risk.
 
 
 ################################################################################
 
-≪履歴/Update History≫
+≪履歴≫
 
  2021年6月11日 Ver.1.0 初版
  2021年8月 5日 Ver.2.0 改訂版
  2022年6月17日 Ver.2.1 改訂版
- 2022年10月1日 Ver.2.1a 改訂版
- 2022年10月13日 Ver.2.2
+ 2022年10月1日 Ver.2.1a 改訂版（ファイル名は変更せず）

@@ -1,34 +1,39 @@
 # dZone--PT4A--USBstorage
 
-USB storage skelton for PT4A lectures (USB256GB-20220806 Rev1.0)
+USB storage skelton for PT4A lectures (USB256GB-20221001 Rev1.1)
 
-### Last Modified: Tue Oct 11 08:42:07 JST 2022 by @hohno_at_kuimc
+### Last Modified: Fri Oct 14 09:51:12 JST 2022 by @hohno_at_kuimc
 
 PT4A を用いた大規模データ処理演習で使用する USB メモリ（2022年10月版）の骨格（データファイル以外）は以下の通り
 （表記の末尾が "/" で終わっているのはディレクトリ、それ以外はファイルである）。
 
     (USBメモリ配布前に改訂予定あり）
 
-    ./USB256GB-20221001
+     ./USB256GB-20221001
      ├──  PT4A/
      │   └──  README.md
      ├──  README.md
-     ├──  Readme1_Rev.2.1.txt
+     ├──  Readme1_Rev.2.1_JPonly.txt
+     ├──  Readme1_Rev.2.2.txt
      ├──  Readme2_tree_2022.txt
-     ├──  Readme3_USB_MOUNT_REV.2.1.txt
-     ├──  Readme4_PT4A_REV.2.2.txt
+     ├──  Readme2_tree_2022_JPonly.txt
+     ├──  Readme3_USB_MOUNT_REV.2.1_JPonly.txt
+     ├──  Readme3_USB_MOUNT_REV.2.2.txt
+     ├──  Readme4_PT4A_REV.2.2_JPonly.txt
+     ├──  Readme4_PT4A_REV.2.3.txt
      └──  data/
          ├──  Structured_data/
          │   ├──  Readme_Rev.2.1.txt
-         │   ├──  amedas/
+         │   ├──  Readme_Rev.2.1_JPonly.txt
          │   ├──  format/
          │   │   ├──  amed_item_flag.csv
          │   │   ├──  amed_item_list.csv
-         │   │   ├──  amed_item_list_Update_202209.xlsx
+         │   │   ├──  amed_item_list_Update_202209A.xlsx
          │   │   ├──  amed_list.csv
          │   │   └──  amed_list.txt
          │   └──  samples/
          │       ├──  HEIKIN_KION.sh
+         │       ├──  HEIKIN_KION_JPonly.sh
          │       ├──  KAIKA_MASTER/
          │       │   ├──  KAIKA_MASTER.11016.txt
          │       │   ├──  KAIKA_MASTER.12442.txt
@@ -90,27 +95,28 @@ PT4A を用いた大規模データ処理演習で使用する USB メモリ（2
          │       │   ├──  KAIKA_MASTER.93041.txt
          │       │   └──  KAIKA_MASTER.94081.txt
          │       ├──  SAIKO_SAITE_KION.sh
-         │       └──  SAKURA_KAIKA.sh
+         │       ├──  SAIKO_SAITE_KION_JPonly.sh
+         │       ├──  SAKURA_KAIKA.sh
+         │       └──  SAKURA_KAIKA_JPonly.sh
          └──  Unstructured_data/
              ├──  README.txt
              ├──  References/
              │   ├──  kemotw.pdf
              │   └──  kemotw2.pdf
-             ├──  TUTORIAL.txt
-             └──  Tokyo2020/
+             └──  TUTORIAL.txt
      
-     10 directories, 78 files (Tue Oct 11 08:41:29 JST 2022)
+     8 directories, 86 files (Fri Oct 14 11:15:30 JST 2022)
 
+%%%%
 
 実際に配布した USB メモリには、上記のディレクトリとファイルに加え、大規模データ処理演習に供する定形および非定形のデータが以下の場所に格納されている。
 
-・定形データ： ./USB256GB-20220806/data/Structured_data/amedas
+・定形データ： ./USB256GB-20221001/data/Structured_data/amedas
 
-・非定形データ： ./USB256GB-20220806/data/Unstructured_data/Tokyo2020
+・非定形データ： ./USB256GB-20221001/data/Unstructured_data/Tokyo2020
 
 Note:	url = https://github.com/hohno-46466/dZone--PT4A--USBstorage
 
 Note:	url = git@github.com:hohno-46466/dZone--PT4A--USBstorage.git
 
 -EOF-
-
