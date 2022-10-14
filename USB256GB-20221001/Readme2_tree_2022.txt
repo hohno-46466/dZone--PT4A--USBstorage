@@ -6,7 +6,7 @@
 # For "2022 Smart Science and Technology for Innovation(1st-3rd)"
 #
 # USBメモリ内のディレクトリ（フォルダ）およびファイル構成
-# Directory (folder) and file structure in USB memory
+# Directory (folder) and file structure in the USB flash drive
 #
 # 作成者・連絡先: 
 # Author/Contact: 

@@ -24,7 +24,7 @@
 （１）「Readme3_USB_MOUNT_REV.2.2.txt」で書かれている、
 　　　<<Windows10/11で、WSLを使用している場合のUSBメモリマウント方法>>の作業を終了させてください。
       Finish the work written in "Readme3_USB_MOUNT_REV.2.2.txt",
-      <<How to mount USB memory stick when using WSL on Windows10/11>>.
+      <<How to mount USB flash drive when using WSL on Windows10/11>>.
 
 ここからの操作は「WSL」のウインドウで実行してください。
 From this point on, please execute the operation with "WSL".

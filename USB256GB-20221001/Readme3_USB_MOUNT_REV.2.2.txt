@@ -6,7 +6,7 @@
 # For "2022 Smart Science and Technology for Innovation(1st-3rd)"
 #
 # Windows10/11のWSLでUSBメモリを使用するためのマウント方法
-# How to mount USB memory stick for use with WSL on Windows 10/11
+# How to mount USB flash drive for use with WSL on Windows 10/11
 #
 # 作成者・連絡先:
 # Author/Contact:
@@ -36,10 +36,10 @@ please send a message to the faculty members in charge (Ohno or Mori) via the Ac
 
 ################################################################################
 
-<<Windows10/11で、WSLを使用している場合のUSBメモリマウント方法/How to mount a USB memory stick when using WSL on Windows 10/11>>
+<<Windows10/11で、WSLを使用している場合のUSBメモリマウント方法/How to mount a USB flash drive when using WSL on Windows 10/11>>
 
 （１）USBメモリをパソコンに挿し込み、エクスプローラーなどでUSBメモリにアクセスできることを確認する。
-      Insert the USB memory stick into the PC.
+      Insert the USB flash drive into the PC.
 
 （２）以下のコマンドを実行し、マウントポイントとなるディレクトリ（フォルダ）を作成する。
       Execute the following command to create a directory (folder) that will be the mount point.
@@ -126,7 +126,7 @@ and then type the command (5) again.
 
 
 （７）USBメモリのディレクトリに移動する
-      Go to the directory of the USB memory stick
+      Go to the directory of the USB flash drive
 
 以下のコマンドを入力して、ディレクトリを移動します。
 Enter the following command to move the directory
@@ -143,10 +143,10 @@ https://eng-entrance.com/linux-command-cd
 
 ################################################################################
 
-<<Windows10/11で、WSLを使用している場合のUSBメモリアンマウント方法/How to mount USB memory card on Windows 10/11 when using WSL>>
+<<Windows10/11で、WSLを使用している場合のUSBメモリアンマウント方法/How to mount USB flash drive on Windows 10/11 when using WSL>>
 
 Linuxでは、使用していたUSBメモリをパソコンから抜き取る前には、必ず「アンマウント」という作業をします。
-In Linux (WSL), before removing a USB memory stick that has been in use from a computer, you must "unmount".
+In Linux (WSL), before removing a USB flash drive that has been in use from a computer, you must "unmount".
 
 （１）USBメモリ内のディレクトリで作業をしている場合、アンマウントできないので、
       最初に以下のコマンドを入力して、ディレクトリを移動します。
@@ -163,11 +163,11 @@ $ sudo umount /mnt/usb（↲エンターキーを押す/Press the Enter key）
 
 
 （３）パソコン（Windows）で、USBメモリの取り出し作業をします。
-      On your PC (Windows), eject the USB memory stick.
+      On your PC (Windows), eject the USB flash drive.
 
 
 （４）（３）の作業後、USBメモリをパソコンから取り外します。
-      After the operation in (3), remove the USB memory from the computer.
+      After the operation in (3), remove the USB flash drive from the computer.
 
 ################################################################################
 

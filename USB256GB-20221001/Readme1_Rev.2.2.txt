@@ -6,7 +6,7 @@
 # For "2022 Smart Science and Technology for Innovation(1st-3rd)"
 #
 # USBメモリ内のビッグデータ（構造化、非構造化）およびサンプルスクリプトについて
-# Big data (Structured and Unstructured) and sample scripts in USB memory stick
+# Big data (Structured and Unstructured) and sample scripts in USB flash drive
 #
 # 作成者・連絡先:
 # Author/Contact:
@@ -24,7 +24,7 @@
 講義で配布したUSBメモリに保存されているビッグデータおよびサンプルスクリプトは、
 金沢大学学術メディア創成センター大野、森とUSP研究所との共同研究によって、
 USP研究所から提供されました。
-The big data and sample scripts stored on the USB memory stick distributed
+The big data and sample scripts stored on the USB flash drive distributed
 at the lecture were provided by Universal Shell Programming Laboratory
 in collaboration with Ohno and Mori of Emerging Media Initiative, Kanazawa University
 and Universal Shell Programming Laboratory.
@@ -91,7 +91,7 @@ Please check the file composition in "Readme2_tree.txt" stored in this USB flash
 <<サンプルスクリプト/Sample Scripts>>
 
 このUSBメモリ内に保存されているサンプルスクリプトは、USP研究所から提供されたものです。
-Sample scripts stored on this USB stick were provided by the USP Laboratory.
+Sample scripts stored on this USB flash drive were provided by the USP Laboratory.
 
 
 構造化データ（Structured_data）の場合は、
