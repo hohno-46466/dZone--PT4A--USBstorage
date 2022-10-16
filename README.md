@@ -51,10 +51,14 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
      │   ├──  PT4A/
      │   │   └──  README.md
      │   ├──  README.md
-     │   ├──  Readme1_Rev.2.1.txt
+     │   ├──  Readme1_Rev.2.1_JPonly.txt
+     │   ├──  Readme1_Rev.2.2.txt
      │   ├──  Readme2_tree_2022.txt
-     │   ├──  Readme3_USB_MOUNT_REV.2.1.txt
-     │   ├──  Readme4_PT4A_REV.2.2.txt
+     │   ├──  Readme2_tree_2022_JPonly.txt
+     │   ├──  Readme3_USB_MOUNT_REV.2.1_JPonly.txt
+     │   ├──  Readme3_USB_MOUNT_REV.2.2.txt
+     │   ├──  Readme4_PT4A_REV.2.2_JPonly.txt
+     │   ├──  Readme4_PT4A_REV.2.3.txt
      │   └──  data/
      │       ├──  Structured_data/
      │       └──  Unstructured_data/
@@ -66,7 +70,7 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
              ├──  uuu.sh
              └──  xxx.sh
      
-     23 directories, 33 files (Mon Oct 10 21:50:52 JST 2022)
+     23 directories, 37 files (Mon Oct 17 00:31:05 JST 2022)
 
 
 Note: URL = https://github.com/hohno-46466/dZone--PT4A--USBstorage
