@@ -2,7 +2,7 @@
 
 USB storage skelton for PT4A lectures (USB256GB-20221001 Rev1.1)
 
-### Last updated: Fri Oct 14 09:51:12 JST 2022 by @hohno_at_kuimc
+### Last update: Fri Oct 14 09:51:12 JST 2022 by @hohno_at_kuimc
 
 PT4A を用いた大規模データ処理演習で使用する USB メモリ（2022年10月版）の骨格（データファイル以外）は以下の通り
 （表記の末尾が "/" で終わっているのはディレクトリ、それ以外はファイルである）。
