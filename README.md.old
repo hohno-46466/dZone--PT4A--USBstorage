@@ -70,7 +70,7 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
              ├──  uuu.sh
              └──  xxx.sh
      
-     23 directories, 37 files (Sun Nov 13 11:08:53 JST 2022)
+     23 directories, 37 files (Sat Nov 19 06:26:14 JST 2022)
 
 
 Note: URL = https://github.com/hohno-46466/dZone--PT4A--USBstorage
