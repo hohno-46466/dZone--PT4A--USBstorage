@@ -8,7 +8,7 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
 
 これをマスターとして必要数を確保する場合は，適宜 USBメモリ複製機などを使うとよい．
 
-     ./dZone--PT4A--USBstorage
+    ./dZone--PT4A--USBstorage
      ├──  README.md
      ├──  README.md.old
      ├──  USB128GB-20210601/
@@ -29,6 +29,7 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
      │   ├──  PT4A/
      │   │   └──  README.md
      │   ├──  README.md
+     │   ├──  README.md.bak
      │   ├──  Readme1_Rev.2.1.txt
      │   ├──  Readme2_tree_2022.txt
      │   ├──  Readme3_USB_MOUNT_REV.2.1.txt
@@ -40,6 +41,7 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
      │   ├──  PT4A/
      │   │   └──  README.md
      │   ├──  README.md
+     │   ├──  README.md.bak
      │   ├──  Readme1_Rev.2.1.txt
      │   ├──  Readme2_tree_2022.txt
      │   ├──  Readme3_USB_MOUNT_REV.2.1.txt
@@ -51,6 +53,7 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
      │   ├──  PT4A/
      │   │   └──  README.md
      │   ├──  README.md
+     │   ├──  README.md.bak
      │   ├──  Readme1_Rev.2.1_JPonly.txt
      │   ├──  Readme1_Rev.2.2.txt
      │   ├──  Readme2_tree_2022.txt
@@ -70,7 +73,7 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
              ├──  uuu.sh
              └──  xxx.sh
      
-     23 directories, 37 files (Tue Dec 20 21:46:42 JST 2022)
+     23 directories, 40 files (Wed Dec 21 23:58:50 JST 2022)
 
 
 Note: URL = https://github.com/hohno-46466/dZone--PT4A--USBstorage
