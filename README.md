@@ -7,7 +7,6 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
 このディレクトリ内の任意の USBメモリイメージをコピーし，そこに別途用意したデータを追記することで「大規模データ処理演習用のUSBメモリ」ができあがる
 
 これをマスターとして必要数を確保する場合は，適宜 USBメモリ複製機などを使うとよい．
-
     ./dZone--PT4A--USBstorage
      ├──  README.md
      ├──  README.md.old
@@ -73,12 +72,14 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
              ├──  uuu.sh
              └──  xxx.sh
      
-     23 directories, 40 files (Wed Dec 21 23:58:50 JST 2022)
+     23 directories, 40 files (Mon Dec 26 23:53:51 JST 2022)
 
 
-Note: URL = https://github.com/hohno-46466/dZone--PT4A--USBstorage
+USB storage skelton for PT4A lectures
 
-Note: URL = git@github.com:hohno-46466/dZone--PT4A--USBstorage.git
+PT4A を用いた大規模データ処理演習で配布する USB メモリの骨格（ただしデータを除く）
 
--EOF-
+このディレクトリ内の任意の USBメモリイメージをコピーし，そこに別途用意したデータを追記することで「大規模データ処理演習用のUSBメモリ」ができあがる
+
+これをマスターとして必要数を確保する場合は，適宜 USBメモリ複製機などを使うとよい．
 
