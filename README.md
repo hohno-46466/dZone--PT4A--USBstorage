@@ -72,7 +72,7 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
              ├──  uuu.sh
              └──  xxx.sh
      
-     23 directories, 40 files (Mon Dec 26 23:53:51 JST 2022)
+     23 directories, 40 files (Tue Dec 27 22:44:38 JST 2022)
 
 
 USB storage skelton for PT4A lectures
