@@ -83,7 +83,7 @@ for i in 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021; do
 
 	# 利用フラグ0,1,2,3（正常数値、正常数値、正常現象無し、正常現象無し）のものだけ抜き出す
 	# Extract only those with use flag 0,1,2,3 (normal value, normal value, no normal phenomenon, no normal phenomenon)
-	cond '$4 le 4'				|
+	cond '$4 le 3'				|
 
 	delf 4
 	# 1: 観測年月日 2: 観測時分 3:気温
