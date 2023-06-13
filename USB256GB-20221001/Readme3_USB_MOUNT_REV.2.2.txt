@@ -6,10 +6,10 @@
 # For "2022 Smart Science and Technology for Innovation(1st-3rd)"
 #
 # Windows10/11のWSLでUSBメモリを使用するためのマウント方法
-# How to mount USB memory stick for use with WSL on Windows 10/11
+# How to mount USB flash drive for use with WSL on Windows 10/11
 #
-# 作成者・連絡先: 
-# Author/Contact: 
+# 作成者・連絡先:
+# Author/Contact:
 #     金沢大学学術メディア創成センター 大野、森
 #     Emerging Media Initiative, Kanazawa University: Ohno, Mori
 # 　　USP研究所 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
@@ -29,17 +29,17 @@ For macOS, the following operations are not performed.
 なお、分からない単語がある場合は、Google検索等で検索して、調べてください。　
 If you do not understand a word, please search for it on Google or other search engines.　
 作業内容が分からない、上手く行かない場合は、アカンサスポータルから、担当教員（大野、森）にメッセージで質問してください。
-If you do not understand the work or if it does not go well, 
+If you do not understand the work or if it does not go well,
 please send a message to the faculty members in charge (Ohno or Mori) via the Acanthus Portal.
 
 
 
 ################################################################################
 
-<<Windows10/11で、WSLを使用している場合のUSBメモリマウント方法/How to mount a USB memory stick when using WSL on Windows 10/11>>
+<<Windows10/11で、WSLを使用している場合のUSBメモリマウント方法/How to mount a USB flash drive when using WSL on Windows 10/11>>
 
 （１）USBメモリをパソコンに挿し込み、エクスプローラーなどでUSBメモリにアクセスできることを確認する。
-      Insert the USB memory stick into the PC.
+      Insert the USB flash drive into the PC.
 
 （２）以下のコマンドを実行し、マウントポイントとなるディレクトリ（フォルダ）を作成する。
       Execute the following command to create a directory (folder) that will be the mount point.
@@ -121,12 +121,12 @@ Readme1_Rev.2.0.txt		Readme3_USB_MOUNT_REV.2.0.txt	'System Volume Information'
 If nothing is displayed, the mount has failed.
 コマンドの打ち間違いがないか、USBメモリーに割り当てられているドライブのアルファベットが正しいかを確認し、
 改めて（５）のコマンドを入力してください。
-Check that you have not typed the command incorrectly and that the alphabet of the drive assigned to the USB flash drive is correct, 
+Check that you have not typed the command incorrectly and that the alphabet of the drive assigned to the USB flash drive is correct,
 and then type the command (5) again.
 
 
 （７）USBメモリのディレクトリに移動する
-      Go to the directory of the USB memory stick
+      Go to the directory of the USB flash drive
 
 以下のコマンドを入力して、ディレクトリを移動します。
 Enter the following command to move the directory
@@ -143,14 +143,14 @@ https://eng-entrance.com/linux-command-cd
 
 ################################################################################
 
-<<Windows10/11で、WSLを使用している場合のUSBメモリアンマウント方法/How to mount USB memory card on Windows 10/11 when using WSL>>
+<<Windows10/11で、WSLを使用している場合のUSBメモリアンマウント方法/How to mount USB flash drive on Windows 10/11 when using WSL>>
 
 Linuxでは、使用していたUSBメモリをパソコンから抜き取る前には、必ず「アンマウント」という作業をします。
-In Linux (WSL), before removing a USB memory stick that has been in use from a computer, you must "unmount".
+In Linux (WSL), before removing a USB flash drive that has been in use from a computer, you must "unmount".
 
 （１）USBメモリ内のディレクトリで作業をしている場合、アンマウントできないので、
       最初に以下のコマンドを入力して、ディレクトリを移動します。
-      If you are working in a directory on a USB flash drive, you cannot unmount it, 
+      If you are working in a directory on a USB flash drive, you cannot unmount it,
       so first move the directory by entering the following command
 
 $ cd（↲エンターキーを押す/Press the Enter key）
@@ -163,11 +163,11 @@ $ sudo umount /mnt/usb（↲エンターキーを押す/Press the Enter key）
 
 
 （３）パソコン（Windows）で、USBメモリの取り出し作業をします。
-      On your PC (Windows), eject the USB memory stick.
+      On your PC (Windows), eject the USB flash drive.
 
 
 （４）（３）の作業後、USBメモリをパソコンから取り外します。
-      After the operation in (3), remove the USB memory from the computer.
+      After the operation in (3), remove the USB flash drive from the computer.
 
 ################################################################################
 
@@ -175,5 +175,5 @@ $ sudo umount /mnt/usb（↲エンターキーを押す/Press the Enter key）
 
  2021年8月5日  Ver.2.0
  2022年6月14日 Ver.2.1
+ 2022年10月1日 Ver.2.1a
  2022年10月11日 Ver.2.2
-

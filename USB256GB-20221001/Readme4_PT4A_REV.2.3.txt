@@ -8,8 +8,8 @@
 # PT4A インストール方法
 # PT4A installation instructions
 #
-# 作成者・連絡先: 
-# Author/Contact: 
+# 作成者・連絡先:
+# Author/Contact:
 #     金沢大学学術メディア創成センター 大野、森
 #     Emerging Media Initiative, Kanazawa University: Ohno, Mori
 # 　　USP研究所 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
@@ -23,8 +23,8 @@
 
 （１）「Readme3_USB_MOUNT_REV.2.2.txt」で書かれている、
 　　　<<Windows10/11で、WSLを使用している場合のUSBメモリマウント方法>>の作業を終了させてください。
-      Finish the work written in "Readme3_USB_MOUNT_REV.2.2.txt", 
-      <<How to mount USB memory stick when using WSL on Windows10/11>>.
+      Finish the work written in "Readme3_USB_MOUNT_REV.2.2.txt",
+      <<How to mount USB flash drive when using WSL on Windows10/11>>.
 
 ここからの操作は「WSL」のウインドウで実行してください。
 From this point on, please execute the operation with "WSL".
@@ -66,7 +66,7 @@ PT4A/INSTALL.SH
 PT4A/UNINSTALL.SH
 PT4A/INSTALL.TXT
 PT4A/ライセンス契約書.pdf
-PT4A/uspTukubai-yyyymmdd.tar.gz  
+PT4A/uspTukubai-yyyymmdd.tar.gz
   ※yyyymmdd の部分は実施には年月日を示す８桁の数字。たとえば 20220208
     The yyyymmdd part is an 8-digit number indicating the date and time for implementation. For example, 20220208
 
@@ -136,5 +136,5 @@ If anything is displayed, the work is completed here.
 
  2021年8月5日 Ver.2.0
  2022年8月4日 Ver.2.2
+ 2022年10月1日 Ver.2.2a
  2022年10月11日 Ver.2.3
-

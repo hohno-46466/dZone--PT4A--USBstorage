@@ -1,234 +1,196 @@
 ################################################################################
 #
-# 金沢大学 大学院科目
-# Kanazawa University Graduate School Subjects
-# 「2022年度 スマート創成科学（第1回から第3回）」向け
-# For "2022 Smart Science and Technology for Innovation(1st-3rd)"
+# 金沢大学 共通教育科目
+# 「シェルスクリプトを用いた『大規模データ処理』演習」 2021 向け
+# 「2021年度Q2 シェルスクリプトを用いた『ものグラミングと大規模データ処理』演習」向け
+# 「シェルスクリプトを用いた『大規模データ処理』演習」 2022 向け
+# 「2022年度Q2 シェルスクリプトを用いた『ものグラミングと大規模データ処理』演習」向け
 #
-# 非構造化データ（東京五輪ツイートデータ）用サンプルスクリプト
-# Sample script for unstructured data (Tokyo Olympics tweet data)
+# 非定型データ（東京五輪ツイートデータ）用サンプルスクリプト
 #
 # 作成者・連絡先: USP研究所 松浦智之 <t-matsuura@usp-lab.com>
-# Author/Contact: Tomoyuki Matsuura, USP Research Institute <t-matsuura@usp-lab.com>
 # 最終更新日    : 2021年8月4日
-# Last modified : August 4, 2021
 #
 ################################################################################
 
 
 
-===== ０. はじめに/Introduction =============================================================
+===== ０. はじめに =============================================================
 
-このファイルには、講義のためのサンプルスクリプト（ワンライナーコマンド）とその説明を収録しています。
-This file contains sample scripts (one liner commands) for the lecture and their descriptions.
+このファイルには、上記演習のためのサンプルスクリプト（ワンライナーコマンド）と
+その説明を収録しています。
 
-なお、サンプルスクリプトでは"Personal Tukubai for Academic"（PT4A）を用いていますので、予めインストールを済ませておいてください。PT4Aに関しては、別途配布れされる定型データのUSBフラッシュメモリを参照してください。
-The sample script uses "Personal Tukubai for Academic" (PT4A), so please install it in advance. For PT4A, refer to USB flash memory of fixed data supplied separately.
+なお、サンプルスクリプトでは"Personal Tukubai for Academic"（PT4A）を
+用いていますので、予めインストールを済ませておいてください。PT4Aに関しては、
+別途配布れされる定型データのUSBフラッシュメモリを参照してください。
 
 また、一部のTukubaiコマンドのマニュアルページはwebブラウザーでも閲覧可能です。
-You can also view the man pages for some Tukubai commands in a web browser.
 （今後説明するコマンドは随時増やしていく予定）
-(More commands will be added as needed.)
 https://pt.usp-lab.com/html/man/
 
 
-===== １. ツイートデータ分析の（今回の）方針/Twitter Data Analysis Policy ===================================
+===== １. ツイートデータ分析の（今回の）方針 ===================================
 
-○様々な分析テーマについて/Various Analysis Themes
+○様々な分析テーマについて
 
-ツイート情報には文章や投稿者名、位置情報（全体の1%未満）が含まれており、これらを分析すれば、
-Tweeting information includes text, names of contributors, and location information (less than 1 percent of the total), which can be analyzed.
+ツイート情報には文章や投稿者名、位置情報（全体の1%未満）が含まれており、
+これらを分析すれば、
 
 ・どんな単語や固有名詞（人名・地名・組織名等）が多く含まれているか
-  What words or proper nouns (names of people, places, organizations, etc.) are included?
 ・どの地域からツイートが多く発信されているか
-  Which regions are sending many tweets?
 
 ということもわかるでしょう。さらには、
-And what's more
 
 ・特手の人や組織に対して、好感意見が優勢か、嫌悪意見が優勢か。
-  Whether a favorable opinion or an unfavorable opinion is dominant with respect to a special person or organization.
 ・ある話題・人・物は、別のどの話題・人・物と関連が強いか。
-  Whether a topic, person, or thing is closely related to another topic, person, or thing.
 ・位置情報を発している人はどういう移動をしているか。
-  How does the person who is transmitting the location information move?
 
-など、いくらでも興味深い分析テーマがあるでしょう。
-There are probably any number of interesting analytical topics.
-しかしながら、限られた講義時間の中で、それらすべてを説明し、演習することはできません。
-However, it is not possible to explain and practice all of them in the limited lecture time.
-そこで今回は次のテーマを演習課題とします。
-Therefore, we will take the following theme as an exercise subject.
+など、いくらでも興味深い分析テーマがあるでしょう。しかしながら、限られた
+講義時間の中で、それらすべてを説明し、演習することはできません。そこで今回は
+次のテーマを演習課題とします。
 
-○ツイート頻度の時間推移を分析する/Analyzing Time Trends in Tweet Frequency
+○ツイート頻度の時間推移を分析する
 
-今回収集したツイートは、「オリンピック」等を含むという条件ですが、例えばそれが、2020年3月24日21時台にたくさん発生していたとしたら、人々はその日にオリンピック関連で何か盛り上がっていたと想像できます。
-The condition of the tweets collected this time is that they include the "Olympics", etc. For example, if there were a lot of them around 21 : 00 on March 24, 2020, people can imagine that there was something exciting related to the Olympics on that day.
+今回収集したツイートは、「オリンピック」等を含むという条件ですが、
+例えばそれが、2020年3月24日21時台にたくさん発生していたとしたら、人々は
+その日にオリンピック関連で何か盛り上がっていたと想像できます。
 （実際には、その頃にオリンピックの1年延期が発表されていました）
-(Actually, it was around that time that the Olympics had been postponed for a year.)
 
-そこで、そのような世間を揺るがすようなオリンピック関連の出来事がいつ発生していたのか。そしてその時、具体的に何が原因でツイートがそんなに盛んに投稿されていたのかを解明してみましょう。
-So let's try to figure out when these world-shaking Olympic-related events occurred, and what exactly caused the Tweets to be so popular at that time.
+そこで、そのような世間を揺るがすようなオリンピック関連の出来事がいつ
+発生していたのか。そしてその時、具体的に何が原因でツイートがそんなに
+盛んに投稿されていたのかを解明してみましょう。
 
-○分析の大まかな流れ/General Flow of Analysis
+○分析の大まかな流れ
 
 では具体的にどうやればいいのでしょうか。手順をまとめます。
-Then, how exactly should I do it? Let me summarize the procedure.
 
 0) 日単位、時単位、分単位、秒単位など、頻度を数える粒度を決めます。
-0) Determine the granularity for counting frequencies, such as days, hours, minutes, or seconds.
 
 1) （時単位だとするなら）各1時間のツイート数を数えます。
-1) Count the number of tweets for each hour (if hourly).
    ----------
    2020年01月01日00時台のツイート数はn個
    2020年01月01日01時台のツイート数はn個
           :
           :
    ----------
-   ----------
-   The number of tweets at 00:00 on 01 / 01 / 2020 was n.
-   The number of tweets at 01:00 on 01 / 01 / 2020 was n.
-          :
-          :
-   ----------
 
-2) Microsoft Excel（有料）やLibre Office（無料）、Google スプレッドシート等の表計算ソフトに各時刻とその間のツイート数を与え、グラフを作図します。
-2) Give each time and the number of tweets during that time to a spreadsheet software such as Microsoft Excel (paid), Libre Office (free), Google Spreadsheet, etc. and draw a graph.
-   ※ 日単位、時単位、分単位、秒単位のどれでグラフを作図するかによって、傾向の見えやすさが変わりますし、あるいは別の傾向が見える場合があります。
-     Depending on whether you draw a graph in units of days, hours, minutes, or seconds, the visibility of the trend will change or you may see another trend.
+2) Microsoft Excel（有料）やLibre Office（無料）、Google スプレッドシート等の
+   表計算ソフトに各時刻とその間のツイート数を与え、グラフを作図します。
+   ※ 日単位、時単位、分単位、秒単位のどれでグラフを作図するかによって、
+      傾向の見えやすさが変わりますし、あるいは別の傾向が見える場合があります。
       どれを選ぶかは試行錯誤しながら決めてください。
-      Please decide which one to choose by trial and error.
 
-3) グラフを観察すると、極大になっている箇所が見えると思いますが、その中で気になる時刻（時単位だったら何年何月何日何時まで）をいくつかメモします。
-3) When I observe the graph, I think I can see the maximum points, but I will make a note of some of the times I am concerned about (if it is an hour unit, what year, month, date, and time).
+3) グラフを観察すると、極大になっている箇所が見えると思いますが、その中で
+   気になる時刻（時単位だったら何年何月何日何時まで）をいくつかメモします。
 
-4) （例えば2020年3月24日21時だったとして）、"20200324"というディレクトリーの中の"21.txt"というファイルを開いて閲覧してください。
-4) Open the file "21. txt" in the directory "20200324" to view it (for example, March 24, 2020 at 21 : 00).
+4) （例えば2020年3月24日21時だったとして）、"20200324"というディレクトリーの
+   中の"21.txt"というファイルを開いて閲覧してください。
    そこにある本文を眺めると、当時何が話題だったのかがわかります。
-   If you look at the text there, you can see what was talked about at that time.
 
 
-===== ２. 分析のためのコマンド入力の詳細/Details of Command Input for Analysis =======================================
+===== ２. 分析のためのコマンド入力の詳細 =======================================
 
 分析に関する大まかな流れがわかったところで、実際のコマンド操作を解説します。
-Now that we have a general flow of analysis, we will walk through the actual command operations.
 なお、ここで示すコマンドは飽くまで例ですから、必要に応じてアレンジしてください。
-Note that the commands shown here are examples only, so you can arrange them as needed.
 
-また、ツイートデータの構造に関しては、README.txtファイルに掲載していますので、そちらを併読しながら読んでください。
-Also, the structure of the tweet data is described in the README. txt file, so please read it along with it.
+また、ツイートデータの構造に関しては、README.txtファイルに掲載していますので、
+そちらを併読しながら読んでください。
 
-○ツイート数の数え方（その１…時単位）/Counting the Number of Tweets (Part 1. hourly)
+○ツイート数の数え方（その１…時単位）
 
-このデータは、1ツイートが1行に配置されています。従って、ツイート数を数えるという分析は、行数を数えるという操作に置き換えられます。そこで用いるのはTukubaiに収録されている"gyo"コマンドです。
-Each tweet is placed on a single line, so the analysis of counting tweets is replaced by the operation of counting lines, which uses the "gyo" command from Tukubai.
-
-If you write 
+このデータは、1ツイートが1行に配置されています。従って、ツイート数を数える
+という分析は、行数を数えるという操作に置き換えられます。そこで用いるのは
+Tukubaiに収録されている"gyo"コマンドです。
 
 $ gyo FILENAME
 
-と書けば、"FILENAME"というファイルの行数がわかります。
-you will see the number of rows of "FILENAME".
-行数を調べたいファイルが大量にある場合は一つ一つやるのは大変ですので、次のように書きます。
-If you have a large number of files for which you want to check the number of lines, it is difficult to do this one by one, so you can write the following.
+と書けば、"FILENAME"というファイルの行数がわかります。行数を調べたいファイルが
+大量にある場合は一つ一つやるのは大変ですので、次のように書きます。
 
 $ gyo -f FILENAME1 FILENAME2 FILENAME3 ...
 
-上記の"-f"オプションは、ファイル名を併記させるためのものです。これがなければ、どのファイルがどの行数なのか対応がわかりませんので付けるようにしましょう。
-The "-f" option above is intended to be used together with the file name ; without it you don't know which file corresponds to which number of lines, so you should add it.
+上記の"-f"オプションは、ファイル名を併記させるためのものです。これがなければ、
+どのファイルがどの行数なのか対応がわかりませんので付けるようにしましょう。
 
-また、ワイルドカードの仕組みを使えば、例えば拡張子が".txt"のものを一気に指定できます。
-You can also use a wild-card mechanism to specify, for example, ". txt" at once.
+また、ワイルドカードの仕組みを使えば、例えば拡張子が".txt"のものを一気に
+指定できます。
 
 $ gyo -f *.txx
 
-しかし、日を跨ぐなどで、別ディレクトリーにあるファイルも一気に数えたい場合には、次のように、"find"、"xargs"コマンドと併用してこなします。例えば今、本教材のデータディレクトリーの最上位（"Tokyo2020"）に居て、そのディレクトリーを含む、配下のディレクトリーすべてに収録されている"*.txt"ファイル全ての行数を数えたいのであればこうします。
-However, if you want to count files in other directories at once, such as across days, you can use the "find" and "xargs" commands as follows : For example, if you are at the top level ("Tokyo2020") of the data directory of this material and you want to count the lines of all "*. txt" files contained in all the directories under it, including that directory.
+しかし、日を跨ぐなどで、別ディレクトリーにあるファイルも一気に数えたい場合には
+次のように、"find"、"xargs"コマンドと併用してこなします。例えば今、本教材の
+データディレクトリーの最上位（"Tokyo2020"）に居て、そのディレクトリーを含む
+配下のディレクトリーすべてに収録されている"*.txt"ファイル全ての行数を数えたい
+のであればこうします。
 
 $ find . -name '*.txt' | xargs gyo -f
 （全部表示するのは時間がかかるので、[CTRL]+[C]を押して中断しましょう）
-(It takes time to show everything, so press CTRL + C to stop.)
 
-"find"コマンドでは、指定したディレクトリー（上記例では"."）以下にあって、なおかつ"-name"というオプションで指定した条件に一致するファイル名を全て列挙しています。
-The "find" command lists all file names under the specified directory ("." in the example above) that meet the criteria specified by the "-name" option.
-それを"xargs"コマンドに送ると、"xargs"コマンドは、その後ろに指定されている文字列のさらに後ろに、流れて来たファイル名を付け足して実行します。
-If you send it to the "xargs" command, the "xargs" command will execute the string specified after it, followed by the name of the file that came in.
+"find"コマンドでは、指定したディレクトリー（上記例では"."）以下にあって、
+なおかつ"-name"というオプションで指定した条件に一致するファイル名を全て
+列挙しています。それを"xargs"コマンドに送ると、"xargs"コマンドは、その後ろに
+指定されている文字列のさらに後ろに、流れて来たファイル名を付け足して実行します。
 すなわち、
-i.e. :
 
 $ gyo -f ./20200101/00.txt ./20200101/01.txt ./20200101/02.txt ...
 
 というコマンドを打ち込むのと同等の動作をします。
-It is equivalent to typing the command.
 
 これで、2020/01/01 0時台から、2021/06/05 8時台までの全てが数えられます。
-This will count everything from 2020/01/01 0 to 2021/06/05 8.
 上記のコマンド（"find"で始まるもの）を実行するとこんな感じになるはずです。
-The above command (starting with "find") should look something like this.
 ----------
 ./20200101/00.txt 123  （数字は適当です!）
 ./20200101/01.txt 45
       :
 ----------
 すなわち、"./年月日/時.txt ツイート数"のような感じです。
-It's like ". / year / hour. txt tweets".
 
-ただ、余計な文字が入っていて邪魔なので消してしまいましょう。不要な文字を掃除するにはTukubaiの"fsed"というコマンドが便利です。これは、"sed"コマンドの文字列置換を列単位に実行できるようにしたものです。次のように打ち込んで実行してください。
-However, let's erase it because it contains unnecessary characters and it is a nuisance. To clean up unnecessary characters, the Tukubai "fsed" command is useful. This command allows string substitution of the "sed" command to be performed on a column-by-column basis. Type :
+ただ、余計な文字が入っていて邪魔なので消してしまいましょう。不要な文字を
+掃除するにはTukubaiの"fsed"というコマンドが便利です。これは、"sed"コマンドの
+文字列置換を列単位に実行できるようにしたものです。次のように打ち込んで
+実行してください。
 
 $ find . -name '*.txt' | xargs gyo -f | fsed -e 's/[^0-9]//1'
 （これも、全部表示するのは時間がかかるので、[CTRL]+[C]を押して中断しましょう）
-(Also, it takes time to display all of them, so press [CTRL] + [C] to stop.)
 
-上記の例では正規表現を使っていますので、それが分からない方は調べておいてもらいたいのですが、"fsed"特有のルールとして、"s///"の後ろに数字を書くというものがあります。
-The above example uses a regular expression, so if you don't understand it, check it out, but there is a unique rule of "fsed" that writes a number after "s / / /".
-これは、その数字が指し示す番号の列に対して置換を適用するという意味です。また、（単純一致による置換ではなく）正規表現に基づく置換を行うという意図を示すため、必ず"-e"オプションをつけてください。
-This means that the substitution will be applied to the column with the number that the number points to, and be sure to include the "-e" option to indicate your intention to use regular expression-based substitution (not simple match substitution).
+上記の例では正規表現を使っていますので、それが分からない方は調べておいて
+もらいたいのですが、"fsed"特有のルールとして、"s///"の後ろに数字を書く
+というものがあります。これは、その数字が指し示す番号の列に対して置換を適用する
+という意味です。また、（単純一致による置換ではなく）正規表現に基づく置換を
+行うという意図を示すため、必ず"-e"オプションをつけてください。
+
 
 さて、上記のコマンドを実行すると、結果はこんな感じになります。
-Now, when you run the above command, the result looks like this :
 ----------
 2020010100 123
 2020010101 45
       :
 ----------
 1列目の文字列が、年月日時を表す10桁の数字になりました。
-The text in the first column is now a 10-digit number representing the year, month, and time.
 
-今は画面に表示して終わりでしたが、後で利用できるようにするため、ファイルに保存しましょう。
-It was displayed on the screen now, but let's save it to a file so that you can use it later.
-そのために、次のように打ち込んでください。
-To do so, type :
+今は画面に表示して終わりでしたが、後で利用できるようにするため、ファイルに
+保存しましょう。そのために、次のように打ち込んでください。
 
 $ find . -name '*.txt' | xargs gyo -f | fsed -e 's/[^0-9]//1' >Tokyo2020tw_hour-n.txt
 
 なお、大量のデータを数えるので、終わるまで相当時間がかかります。
-In addition, it takes a considerable amount of time to finish because it counts a large amount of data.
 寝る前にコマンドを実行して、朝を待つのがいいかもしれません。
-It might be good to execute the command before going to bed and wait for the morning.
 
-○ツイート数の数え方（その２…日単位）/How to Count Tweets (Part 2 : Daily)
+○ツイート数の数え方（その２…日単位）
 
 その１では時単位でしたが、日単位にするのはどうすればいいでしょうか？
-In the first, it was by hour, but how can I make it by day?
-既に、日より細かい時の単位で数えてありますので、各日の0時台から23時台の数を集計すればよいのですが、そこで使えるコマンドがTukubaiにはあります。
-It is already counted by the unit of time which is more detailed than the day, so it is good to sum up the number from 0 to 23 o'clock of each day, but there is a command which can be used there in Tukubai.
-"sm2"というコマンドで、"sum-up"（サム・アップ）という集計操作がその名の由来です。
-The command is called "sm2" and the name comes from the aggregation operation "sum-up".
+既に、日より細かい時の単位で数えてありますので、各日の0時台から23時台の数を
+集計すればよいのですが、そこで使えるコマンドがTukubaiにはあります。
+"sm2"というコマンドで、"sum-up"（サム・アップ）という集計操作がその名の
+由来です。
 
-既に"Tokyo2020tw_hour-n.txt"を作成済であるものとして例を示します。
-For example, assume that you have already created "Tokyo2020tw _ hour-n. txt".
-まずは、次のように打ち込んで実行してください。
-First, type and execute as follows.
+既に"Tokyo2020tw_hour-n.txt"を作成済であるものとして例を示します。まずは、
+次のように打ち込んで実行してください。
 
 $ cat Tokyo2020tw_hour-n.txt | self 1.1.8 2
 （今は最後まで表示しても仕方無いので、途中で [CTRL]+[C]を押して止めましょう）
-(Since it can't be helped to display it until the end now, press [CTRL] + [C] in the middle to stop it.)
 
 すると、1列目が年月日の8桁だけになって、次のような表示になったはずです。
-Then, the first column should be only 8 digits of the year, month and date, and it should be displayed as follows.
 ----------
 20200101 123
 20200101 45
@@ -236,25 +198,25 @@ Then, the first column should be only 8 digits of the year, month and date, and 
 ----------
 
 "self"もまたTukubaiのコマンドの一つで、"SELect Fields"が由来です。
-"self" is also a Tukubai command, derived from "SeLect Fields".
-上の例の"self 1.1.8 2"とは、「1列目の1文字目から8文字と、2列目全てを選べ」という意味であり、結果として、1列目にあった、年月日以外の不要な文字列が削ぎ落されます。
-In the example above, "self 1.1.8 2" means "select the first eight characters of the first column and all of the second column." As a result, unnecessary characters in the first column other than the date are trimmed.
+上の例の"self 1.1.8 2"とは、「1列目の1文字目から8文字と、2列目全てを選べ」
+という意味であり、結果として、1列目にあった、年月日以外の不要な文字列が
+削ぎ落されます。
 
-そして次に、上記のコマンドに、次のようにして"sm2"コマンドを追加して実行してください。
-Then add the "sm2" command to the above command as follows :
+そして次に、上記のコマンドに、次のようにして"sm2"コマンドを追加して
+実行してください。
 
 $ cat Tokyo2020tw_hour-n.txt | self 1.1.8 2 | sm2 1 1 2 2
 
-すると、それまで、1列目に同じ年月日の行が複数（0時台から23時台までの24行）ありましたが、一つの年月日は一行だけになったはずです。これは、同じ年月日を持つ行にある2列目の値（行数）が合算・集約されたからです。
-Then, there were multiple rows of the same date in the first column (24 rows from 0 : 00 to 23 : 00), but there should be only one row for each date because the values in the second column (the number of rows) in the rows with the same date were added and aggregated.
+すると、それまで、1列目に同じ年月日の行が複数（0時台から23時台までの24行）
+ありましたが、一つの年月日は一行だけになったはずです。これは、同じ年月日
+を持つ行にある2列目の値（行数）が合算・集約されたからです。
 
-"sm2 1 1 2 2"とは、「1列目から1列目までが同じ列同士のものについて、2行目から2行目までの各列をそれぞれ、縦（つまり行）に加算せよ」という意味です。
-"sm2 1 1 1 2 2" means "Add each column from row 2 to row 2 vertically (i.e., rows) when the first to first columns are the same."
-今回の例では、開始列と終了列がたまたま同じだったので、"1 1"とか"2 2"というのが不自然に思えますが、例えば次のようなデータの集計には便利です。
-In our example, the start column and end column happen to be the same, so "1 1" or "2 2" sounds unnatural, but it is useful for aggregating the following data, for example :
+"sm2 1 1 2 2"とは、「1列目から1列目までが同じ列同士のものについて、
+2行目から2行目までの各列をそれぞれ、縦（つまり行）に加算せよ」という意味です。
+今回の例では、開始列と終了列がたまたま同じだったので、"1 1"とか"2 2"というのが
+不自然に思えますが、例えば次のようなデータの集計には便利です。
 ----------
 #店番  店名 年・月  食品売上高 雑貨売上高 家電売上高
-#Store_Name Year/Month Food_Sales Miscellaneous_Sales Home_Appliance_Sales
 0001   A店  2020001   11111111   21111111  31111111
 0001   A店  2020002   11111112   21111112  31111112
 0001   A店     :          :          :         :
@@ -266,197 +228,169 @@ In our example, the start column and end column happen to be the same, so "1 1" 
 0003   C店     :          :          :         :
   :     :      :          :          :         :
 ----------
-↓ "sum 1 2 3 5" によって、同一の店番・店名（1,2列目）の各商品部門（3から5列目）毎の合計を求める
-↓ Use "sum 1 2 3 5" to calculate the total for each product category (columns 3 to 5) with the same store number and name (columns 1 and 2).
+↓ "sum 1 2 3 5" によって、同一の店番・店名（1,2列目）の
+   各商品部門（3から5列目）毎の合計を求める
 ----------
 #店番  店名 食品売上高 雑貨売上高 家電売上高
-#Store_number Store_Name Food_sales Miscellaneous_sales Home_appliances_sales
 0001   A店   111111111  211111111  311111111
 0002   B店   111111122  211111122  311111122
 0003   C店     :          :            :
   :     :      :          :            :
 ----------
 
-ツイート数集計の話に戻しますが、この結果もまた、後で利用できるように、次のようにしてファイルに書き込んでおきましょう。
-Back to the tweet count, I'll write the result to a file for later use, as follows :
+ツイート数集計の話に戻しますが、この結果もまた、後で利用できるように
+次のようにしてファイルに書き込んでおきましょう。
 
 $ cat Tokyo2020tw_hour-n.txt | self 1.1.8 2 | sm2 1 1 2 2 >Tokyo2020tw_day-n.txt
 
 "Tokyo2020tw_day-n.txt"の中身は年月日の8桁が重複しない形になったはずです。
-The contents of "Tokyo2020tw_day-n.txt" should be in a form that does not overlap with 8 digits of the date.
 ----------
 20200101 12345
 20200102 6789
       :
 ----------
 
-○ツイート数の数え方（その３…分単位・秒単位）/Counting the Number of Tweets (Part 3 : Minutes and Seconds)
+○ツイート数の数え方（その３…分単位・秒単位）
 
-各ファイルは時単位に区切って作られていますので、単純に各ファイルの行数を数えても分単位や秒単位など、より細かい粒度でのツイート数はわかりません。
-Since each file is divided into time units, simply counting the lines in each file doesn't tell you the number of tweets in finer granularity, such as minutes or seconds.
+各ファイルは時単位に区切って作られていますので、単純に各ファイルの行数を数えても
+分単位や秒単位など、より細かい粒度でのツイート数はわかりません。
 一から考えましょう。
-Let's think from the beginning.
 
-README.txtでも示したように、ツイートデータの各ファイル内の行頭が"YYYY/MM/DD-HH:MM:SS" （年/月/日-時:分:秒）になっていることに注目してください。
-As indicated in README.txt, note that each line in the tweet data file begins with "YYYYY/MM/DD-HH:MM:SS" (year/month/day-hours:minutes:seconds).
-
-つまり、秒単位であれば、これらの数字が完全に一致するものを数えればよいですし、分単位であれば、これらの数字が分単位まで完全に一致するものを数えればよいのです。
-In other words, in seconds, you can count the exact match of these numbers, and in minutes, you can count the exact match of these numbers to minutes.
-というわけで、まずはそれぞれの場合において、不要な文字列をカット、すなわち必要な文字列だけを抽出することを考えます。
-So, in each case, consider first cutting out the unwanted strings, that is, extracting only the needed strings.
+README.txtでも示したように、ツイートデータの各ファイル内の行頭が
+"YYYY/MM/DD-HH:MM:SS" （年/月/日-時:分:秒）
+になっていることに注目してください。つまり、
+秒単位であれば、これらの数字が完全に一致するものを数えればよいですし、
+分単位であれば、これらの数字が分単位まで完全に一致するものを数えればよいのです。
+というわけで、まずはそれぞれの場合において、不要な文字列をカット、すなわち
+必要な文字列だけを抽出することを考えます。
 
 そのためには「その２」で説明した"self"コマンドが使えます。
-You can do this with the "self" command described in Part 2.
-まずは、数える対象の全ファイルを開きます。これは、「その１」の最後で説明したfind、xargs、それに、単純にファイルの中身を表示する"cat"コマンドの応用です。
-First, open all the files you want to count ; this is an application of find, xargs, and the "cat" command described at the end of Part 1, which simply displays the contents of a file.
+まずは、数える対象の全ファイルを開きます。これは、「その１」の最後で説明した
+find、xargs、それに、単純にファイルの中身を表示する"cat"コマンドの応用です。
 
 $ find . -name '*.txt' | xargs cat
 （これも、全部表示するのは時間がかかるので、[CTRL]+[C]を押して中断しましょう）
-(Also, it takes time to display all of them, so press [CTRL] + [C] to stop.)
 
 上記を実行すると、次のような表示されたはずです。
-When you do the above, you should see something like this :
 ----------
-2020/01/01-00:00:00 （以降ツイートデータ/hereafter tweet data）
-2020/01/01-00:00:00 （以降ツイートデータ/hereafter tweet data）
+2020/01/01-00:00:00 （以降ツイートデータ）
+2020/01/01-00:00:00 （以降ツイートデータ）
     :
-2020/01/01-00:00:01 （以降ツイートデータ/hereafter tweet data）
-2020/01/01-00:00:01 （以降ツイートデータ/hereafter tweet data）
+2020/01/01-00:00:01 （以降ツイートデータ）
+2020/01/01-00:00:01 （以降ツイートデータ）
     :
 ----------
 そして今欲しいのは、時刻を表す1列目の、全て（秒単位の場合）または分までです。
-And what I want now is all (in seconds) or minutes of the first column of time.
 
 そこで、"self"コマンドを次のように使います。
-So use the "self" command as follows :
 
-$ find . -name '*.txt' | xargs cat | self 1      ←秒単位の場合/for seconds
+$ find . -name '*.txt' | xargs cat | self 1      ←秒単位の場合
 
-$ find . -name '*.txt' | xargs cat | self 1.1.16 ←分単位の場合/for minutes
+$ find . -name '*.txt' | xargs cat | self 1.1.16 ←分単位の場合
 
-秒単位の場合は1列目全てなので、単純に"self 1"でいいですが、分単位の場合は1列目の1文字目から16文字だけが欲しいので、"self 1.1.16"です。
-In the case of the second unit, it is all in the first column, so it can be simply "self 1", but in the case of the minute unit, it is "self 1.1.16" because I want only 16 characters from the first character of the first column.
+秒単位の場合は1列目全てなので、単純に"self 1"でいいですが、
+分単位の場合は1列目の1文字目から16文字だけが欲しいので、"self 1.1.16"です。
 
-次は、今のようにして抽出した、年月日時分秒または年月日時分の文字列のうち、同一のものの個数を数えます、これで分単位・秒単位のツイート数がわかります。
-Next, we count the number of the same character string among the date, time, minute and second or date, time and second extracted like now. This tells us the number of tweets per minute and second.
+次は、今のようにして抽出した、年月日時分秒または年月日時分の文字列のうち、
+同一のものの個数を数えます、これで分単位・秒単位のツイート数がわかります。
 それにはTukubaiの"count"というコマンドを使います。
-Use the Tukubai command "count" to do this.
-分単位、秒単位、どちらの場合も、後ろに" | count 1 1"を書き足してから再実行してみたください。
-Either in minutes or seconds, add "count1 1" at the end and try again.
+分単位、秒単位、どちらの場合も、後ろに" | count 1 1"を書き足してから
+再実行してみたください。
 
 $ find . -name '*.txt' | xargs cat | self 1 | count 1 1      ←秒単位
 
 $ find . -name '*.txt' | xargs cat | self 1.1.16 | count 1 1 ←分単位
 
 すると次のように表示されるはずです。
-You should see something like this :
 ----------
 2020/01/01-00:00:00 123
 2020/01/01-00:00:01 45
         :
 ----------
-または/or
+または
 ----------
 2020/01/01-00:00 123
 2020/01/01-00:00 45
         :
 ----------
 （これも、全部表示するのは時間がかかるので、[CTRL]+[C]を押して中断しましょう）
-(Also, it takes time to display all of them, so press [CTRL] + [C] to stop.)
 
 左側の文字列が時刻、右側の数字がその時刻に集まったツイート数です。
-The character string on the left is the time, and the number on the right is the number of tweets gathered at that time.
 
-"count 1 1"というのは、「1列目から1列目までの文字列が一致する行の行数を数えよ」という意味です。
-"count1 1" means "count the number of rows where the strings in columns 1 through 1 match".
-今回の例もまた、開始列と終了列が同一なので不自然に見えますが、複数の列に渡って同一な行数を数えたい場合に役に立ちます。
-This example is also useful if you want to count the same number of rows across multiple columns, although it may look strange because the start and end columns are the same.
+"count 1 1"というのは、「1列目から1列目までの文字列が一致する行の行数を数えよ」
+という意味です。今回の例もまた、開始列と終了列が同一なので不自然に見えますが、
+複数の列に渡って同一な行数を数えたい場合に役に立ちます。
 
-さて、今数えた結果についても、後で利用できるように、1列目にある数字以外の文字の掃除（fsedコマンドの使用）をして、さらにファイルに保存しましょう。
-Now, let's clean up the non-numeric characters in the first column (using the fsed command) and save it to a file for later use.
+さて、今数えた結果についても、後で利用できるように、1列目にある数字以外の文字の
+掃除（fsedコマンドの使用）をして、さらにファイルに保存しましょう。
 
 $ find . -name '*.txt' | xargs cat | self 1 | count 1 1 | fsed -e 's/[^0-9]//1' >Tokyo2020tw_sec-n.txt
 
 $ find . -name '*.txt' | xargs cat | self 1.1.16 | count 1 1 | fsed -e 's/[^0-9]//1' >Tokyo2020tw_min-n.txt
 
-○数えたファイルを細切れにする/Shred the counted files.
+○数えたファイルを細切れにする
 
 日単位でツイート数を数えた場合ならファイルの行数はたかだか数百行です。
-If you count the number of tweets per day, the number of lines in the file is at most several hundred lines.
-一方、秒単位で数えた場合、365日×12か月×30日×24時間×60分×60秒くらいのオーダーの行数ですから、そのまま表計算ソフトに渡そうものなら、表計算ソフトはフリーズするか強制終了するでしょう。
-On the other hand, when counting in seconds, the number of lines is on the order of 365 days × 12 months × 30 days × 24 hours × 60 minutes × 60 seconds, so if you are going to pass it to spreadsheet software as it is, spreadsheet software will freeze or kill.
-そもそもそのような大量の行のデータでグラフを描いてもまともに読めません。
-In the first place, if you draw a graph with such a large number of rows of data, you can't read it properly.
+一方、秒単位で数えた場合、365日×12か月×30日×24時間×60分×60秒
+くらいのオーダーの行数ですから、そのまま表計算ソフトに渡そうものなら、
+表計算ソフトはフリーズするか強制終了するでしょう。そもそも
+そのような大量の行のデータでグラフを描いてもまともに読めません。
 
-もし秒単位にツイート数を数えたデータからグラフを書くのであれば、現実的にはどこか1日（0時から24時まで）のグラフにすることになるでしょう。
-If you're going to graph the number of tweets per second, you might actually want to graph it for one day (0 to 24).
+もし秒単位にツイート数を数えたデータからグラフを書くのであれば、現実的には
+どこか1日（0時から24時まで）のグラフにすることになるでしょう。
 そこで、数え上げたデータの中から、特定の期間を抽出する方法を解説します。
-Then, I will explain how to extract a specific period of time from the counted data.
 
-秒単位に数えたファイル"Tokyo2020tw_sec-n.txt"が既にあり、ここから2020年7月24日の秒毎のツイート数だけを抽出したいとしましょう。
-Let's say you already have a file, "Tokyo2020tw_sec-n.txt", where you want to extract only the number of tweets per second for July 24, 2020.
-その場合は次のようなコマンドでできます。
-You can do this with the following command :
+秒単位に数えたファイル"Tokyo2020tw_sec-n.txt"が既にあり、ここから2020年7月24日の
+秒毎のツイート数だけを抽出したいとしましょう。その場合は次のようなコマンドで
+できます。
 
 $ uawk '$1>=20200724000000 && $1<20200725000000' Tokyo2020tw_sec-n.txt
 （結果が出るまで時間がかかるかもしれません）
-(It may take some time to get the results.)
 
 "uawk"とはAWKコマンドの無駄を省いて高速化したTukubaiのコマンドです。
-"uawk" is an accelerated Tukubai command that eliminates the waste of AWK commands.
 AWKコマンドの使い方を知っていれば説明不要かもしれませんが、一応説明します。
-If you know how to use the AWK command, you may not need to explain it, but I will explain it to you.
-"uawk"の引数にある"$1>=20200724000000"とは、1列目の値が20200724000000以上（つまり2020年7月24日0時0分0秒以上）であるかどうかの条件判定文です。
-The argument "$ 1> = 20200724000000" in "uawk" is a conditional statement that determines whether the value in the first column is greater than or equal to 20200724000000 (that is, greater than or equal to 0 : 0 : 0, July 24, 2020).
-同様にして"$1<20200725000000"とは、1列目の値が20200725000000未満であるかどうかの条件判定文であり、この両者を"&&"で結んでいるので両者のAND条件になります。
-Similarly, "$ 1 <20200725000000" is a condition judgment statement for determining whether the value of the first column is less than 20200725000000, and it becomes an AND condition of both because both are connected by "& &".
+"uawk"の引数にある"$1>=20200724000000"とは、1列目の値が20200724000000以上
+（つまり2020年7月24日0時0分0秒以上）であるかどうかの条件判定文です、同様にして
+"$1<20200725000000"とは、1列目の値が20200725000000未満であるかどうかの
+条件判定文であり、この両者を"&&"で結んでいるので両者のAND条件になります。
 このようにして、時刻の範囲を14桁の数値で大小比較すれば簡単に範囲を絞り込めます。
-In this way, it is easy to narrow the range by comparing the size of the range of time with a 14-digit number.
 
 もちろんこれも後で再利用できるよう、次のようにしてファイルに保存ししましょう。
-Of course, you can save it to a file for later reuse as follows :
 $ uawk '$1>=20200724000000 && $1<20200725000000' Tokyo2020tw_sec-n.txt >Tokyo2020tw_sec-n_20200724.txt
 
-○数えたツイート数を表計算ソフトに渡せる形式（CSV）にする/Put the counted number of tweets into a format (CSV) that can be passed to a spreadsheet software.
+○数えたツイート数を表計算ソフトに渡せる形式（CSV）にする
 
-ここまで説明してきたようにして、数えたり、細切れにしてきたデータですが、それらを表計算ソフトに読み込ませるには一工夫要ります。表計算ソフト側が賢ければ、そちら側で何とかすることもできますが、UNIX（Tukubai）側でCSVファイル化するという手段の方がおそらく簡単です。
-It takes a little bit of effort to read them into a spreadsheet, as I've explained so far. If the spreadsheet is smart, you can do something about it, but it's probably easier to create a CSV file on the UNIX (Tukubai) side.
-というわけで最後に、CSVファイル化の方法を解説します。
-Finally, I will explain how to create a CSV file.
+ここまで説明してきたようにして、数えたり、細切れにしてきたデータですが、
+それらを表計算ソフトに読み込ませるには一工夫要ります。表計算ソフト側が賢ければ、
+そちら側で何とかすることもできますが、UNIX（Tukubai）側でCSVファイル化する
+という手段の方がおそらく簡単です。というわけで最後に、CSVファイル化の方法を
+解説します。
 
 その前にまず、時刻のフォーマットを直さねばなりません。現状では、
-First of all, we have to reformat the time.
 
 ・日単位の場合の1列目 ... "20200724"等の8桁整数
-  First column for days ... 8-digit integer such as "20200724
 ・時単位の場合の1列目 ... "2020072421"等の10桁整数
-  First column for hours ... 10-digit integer such as "2020072421
 ・分単位の場合の1列目 ... "202007242100"等の12桁整数
-  First column for minutes ... 12-digit integer such as "202007242100
 ・秒単位の場合の1列目 ... "20200724210010"等の14桁整数
-  First column for seconds ... 14-digit integer such as "20200724210010
 
-このように、いずれも単なる整数であるため、表計算ソフトからは時刻として認識されません。
-Thus, since both are mere integers, they are not recognized as time by the spreadsheet software.
-表計算ソフトで認識されるようにするには、"2020/07/24 21:00:10"のような形式にしなければなりません。
-To be recognized by spreadsheets, the format must be something like "2020/07/24 21 : 00 : 10".
+のように、いずれも単なる整数であるため、表計算ソフトからは時刻として
+認識されません。表計算ソフトで認識されるようにするには、"2020/07/24 21:00:10"
+のような形式にしなければなりません。
 
-ちなみに、国際規格ISO 8601では、"2020-07-24T21:00:10"のように記述することと定められているのですが、Microsoft Excelをはじめ、認識してくれないソフトがあるので残念ながら今はオススメできません。
-By the way, the international standard ISO 8601 stipulates that it should be described as "2020-07-24T21 : 00 : 10", but unfortunately I don't recommend it at this time because there are some software that doesn't recognize it such as Microsoft Excel.
-そもそも世界各国で、年月日のフォーマットが、"日/年/月"、"月/日/年"だったりとバラバラなのでそれを統一するために"年-月-日"が提唱されたのですが……。
-In the first place, various countries around the world have different date formats such as "day / year / month" and "month / day / year", so "year / month / day" was proposed to unify them.
+ちなみに、国際規格ISO 8601では、"2020-07-24T21:00:10"のように記述することと
+定められているのですが、Microsoft Excelをはじめ、認識してくれないソフトが
+あるので残念ながら今はオススメできません。そもそも世界各国で、年月日の
+フォーマットが、"日/年/月"、"月/日/年"だったりとバラバラなので
+それを統一するために"年-月-日"が提唱されたのですが……。
 
 さて、話を戻して、"年/月/日 時:分:秒"にする方法を解説します。
-Back to the story, I'll show you how to make it "year / month / day hour : minute : second".
 この種の文字列置換をするには先程も登場した"fsed"コマンドが便利です。
-The "fsed" command mentioned earlier is useful for this type of string substitution.
 正規表現（fsedは「拡張正規表現」に対応）を使い、次のように書けばOKです。
-You can use a regular expression (fsed corresponds to "extended regular expression") and write the following :
-（参考→ http://www.kt.rim.or.jp/~kbk/regex/regex.html#POSIX にある「EREで使える正規表現演算子」）
-(Refer to "Regular Expression Operators for ERE" in http://www.kt.rim.or.jp/~kbk/regex/regex.html#POSIX)
+（参考→ http://www.kt.rim.or.jp/~kbk/regex/regex.html#POSIX にある
+          「EREで使える正規表現演算子」）
 
-以下の例は上から順に、日単位の場合、時単位の場合、分単位の場合、秒単位の場合です。
-The following examples, from top to bottom, are for days, hours, minutes, and seconds.
+以下の例は上から順に、日単位の場合、時単位の場合、分単位の場合、秒単位
+の場合です。
 
 $ fsed 's|(....)(..)(..)|\1/\2/\3|1' Tokyo2020tw_day-n.txt
 
@@ -467,34 +401,30 @@ $ fsed 's|(....)(..)(..)(..)(..)|\1/\2/\3-\4:\5:00|1' Tokyo2020tw_min-n.txt
 $ fsed 's|(....)(..)(..)(..)(..)(..)|\1/\2/\3-\4:\5:\6|1' Tokyo2020tw_sec-n.txt
 
 （今は最後まで表示しても仕方無いので、途中で [CTRL]+[C]を押して止めましょう）
-(Since it can't be helped to display it until the end now, press [CTRL] + [C] in the middle to stop it.)
 
-なおこれらの例では、秒単位の場合についても、ファイルを細切れにする前のもので例示していますが、先程も言ったように、表計算ソフトが異常動作をしますので、適切な範囲で細切れにしてください。
-In addition, in these examples, the case of the second unit is also shown before shredding the file. However, as I mentioned before, the spreadsheet program will behave abnormally, so please shred it within the appropriate range.
-（分単位、時単位の場合も加減を見ながら細切れにすべきです）
-(In the case of minutes or hours, you should cut it into small pieces depending on the amount.)
+なおこれらの例では、秒単位の場合についても、ファイルを細切れにする前のもので
+例示していますが、先程も言ったように、表計算ソフトが異常動作をしますので、
+適切な範囲で細切れにしてください。（分単位、時単位の場合も加減を見ながら
+細切れにすべきです）
 
 （正規表現のことは各自調べてもらうとして、それ以外のことを）詳しく説明します。
-I'll give you more details (except for regular expressions, which you'll have to look into yourself).
-まず、日単位ですが、この場合は"年/月/日"であればよく、"年/月/日 時:分:秒"にする必要はありませんので、このような簡単な正規表現になっています。
-First of all, the day is a simple regular expression, because in this case it should be "year / month / day" instead of "year / month / day hour : minute : second".
+まず、日単位ですが、この場合は"年/月/日"であればよく、"年/月/日 時:分:秒"に
+する必要はありませんので、このような簡単な正規表現になっています。
 
-一方、それ以下の粒度の場合には"年/月/日 時:分:秒"にする必要がありますが、時単位の場合には分・秒が、分単位の場合には秒がありませんので、便宜的に"00"で埋めています。
-On the other hand, when the granularity is less than that, it should be set to "year / month / day hour : minute : second". However, since there is no minute and second in the case of the time unit and there is no second in the case of the minute unit, it is filled with "00" for convenience.
-秒単位の場合は、素直に6個の要素を当てはめています。
-In the case of the second unit, we apply 6 elements honestly.
+一方、それ以下の粒度の場合には"年/月/日 時:分:秒"にする必要がありますが、
+時単位の場合には分・秒が、分単位の場合には秒がありませんので、便宜的に"00"で
+埋めています。秒単位の場合は、素直に6個の要素を当てはめています。
 
-さて、ここで"年/月/日 時:分:秒"ではなく、"年/月/日-時:分:秒"という具合に、年月日と時分秒の間に空白ではなく"-"（ハイフン）を置いていることに疑問を抱いたと思います。
-Now, I think you wondered why you put a "-" (hyphen) between the year, month, day and hour, minute, second instead of a space, such as "year / month / day-hour : minute : second" instead of "year / month / day : hour : minute : second".
-これは、CSVファイル化するにあたって、「年月日」と「時分秒」が、それぞれ独立した列であると誤解されることを防ぐためのトリックです。
-This is a trick to prevent the misunderstanding that "year, month, day" and "hour, minute and second" are separate columns when creating a CSV file.
+さて、ここで"年/月/日 時:分:秒"ではなく、"年/月/日-時:分:秒"という具合に、
+年月日と時分秒の間に空白ではなく"-"（ハイフン）を置いていることに疑問を抱いた
+と思います。これは、CSVファイル化するにあたって、「年月日」と「時分秒」が、
+それぞれ独立した列であると誤解されることを防ぐためのトリックです。
 （もちろん後で直します）
-(Of course I'll fix it later.)
 
-こうして、時刻フォーマットが表計算ソフトの認識可能な形式（の一歩手前）になったので、CSVデータに変換しましょう。
-Now that the time format is (a step closer to) a spreadsheet recognizable format, let's convert it to CSV data.
-変換にはTukubaiの"tocsv"というコマンドを使えば一発です。先程と同様に、日単位、時単位、分単位、秒単位の順に入力すべきコマンドを例示します。
-If you use the Tukubai "tocsv" command for conversion, you can do it in one shot. As before, here are examples of commands that should be entered in the order of days, hours, minutes, and seconds.
+こうして、時刻フォーマットが表計算ソフトの認識可能な形式（の一歩手前）に
+なったので、CSVデータに変換しましょう。変換にはTukubaiの"tocsv"という
+コマンドを使えば一発です。先程と同様に、日単位、時単位、分単位、秒単位の順に
+入力すべきコマンドを例示します。
 
 $ fsed 's|(.{4})(..)(..)|\1/\2/\3|1' Tokyo2020tw_day-n.txt | tocsv 1
 
@@ -505,13 +435,12 @@ $ fsed 's|(.{4})(..)(..)(..)(..)|\1/\2/\3-\4:\5:00|1' Tokyo2020tw_min-n.txt | to
 $ fsed 's|(.{4})(..)(..)(..)(..)(..)|\1/\2/\3-\4:\5:\6|1' Tokyo2020tw_sec-n.txt | tocsv 1
 
 （今は最後まで表示しても仕方無いので、途中で [CTRL]+[C]を押して止めましょう）
-(Since it can't be helped to display it until the end now, press [CTRL] + [C] in the middle to stop it.)
 
-tocsvの後ろには、文字列扱いすべき列があればその列番号を入れる（数値扱いする列番号は書かなくていい）のですが、1列目の時刻は数値でないのでこの例では"1"を指定しています。
-After the tocsv, if there is a column to be treated as a character string, the column number is entered (the column number to be treated as a numeric value is not required), but the time in the first column is not a numeric value, so "1" is specified in this example.
+tocsvの後ろには、文字列扱いすべき列があればその列番号を入れる
+（数値扱いする列番号は書かなくていい）のですが、1列目の時刻は数値でないので
+この例では"1"を指定しています。
 
 これでCSVデータに変換され、次のような内容になったはずです（秒単位の場合）。
-It should now be converted to CSV data and look something like this (in seconds) :
 ----------
 "2020/01/01-00:00:00",123
 "2020/01/01-00:00:01",45
@@ -520,9 +449,7 @@ It should now be converted to CSV data and look something like this (in seconds)
 ----------
 
 しかし、年月日と時分秒の間を"-"で区切っていたことを思い出しましょう。
-But remember that we used to separate the year, month, day, hour, minute and second with a "-".
 最後にこれを空白にします。fsedでやればいいことはもうわかりますね？
-Finally, leave this blank. Do you already know what I should do at the fsed?
 
 $ fsed 's|(.{4})(..)(..)|\1/\2/\3|1' Tokyo2020tw_day-n.txt | tocsv 1
 
@@ -533,23 +460,20 @@ $ fsed 's|(.{4})(..)(..)(..)(..)|\1/\2/\3-\4:\5:00|1' Tokyo2020tw_min-n.txt | to
 $ fsed 's|(.{4})(..)(..)(..)(..)(..)|\1/\2/\3-\4:\5:\6|1' Tokyo2020tw_sec-n.txt | tocsv 1 | fsed 's/-/ /1'
 
 （今は最後まで表示しても仕方無いので、途中で [CTRL]+[C]を押して止めましょう）
-(Since it can't be helped to display it until the end now, press [CTRL] + [C] in the middle to stop it.)
 
 なお、日単位のものに関してはもともと"-"が無いのでfsed不要です。
-In addition, since there is no "-" in the day unit, there is no need to make a fsed.
-また、それ以外のものに関しても正規表現が不要なごく単純な置換のため"-e"オプションを省略して大丈夫です。
-You can also omit the "-e" option for everything else because it's a very simple replacement that doesn't require regular expressions.
+また、それ以外のものに関しても正規表現が不要なごく単純な置換のため"-e"オプションを
+省略して大丈夫です。
 
 ハイフンが消えて、中身はこんな感じなっているはずです。
-The hyphen has disappeared and the contents should look like this.
 ----------
 "2020/01/01 00:00:00",123
 "2020/01/01 00:00:01",45
        :
        :
 ----------
-それが確認できたら、最後は表計算ソフトに渡せるように、次のようにしてファイルに書き出します。
-Once it is confirmed, it is written to a file so that it can be passed to a spreadsheet at the end as follows.
+それが確認できたら、最後は表計算ソフトに渡せるように、次のようにしてファイルに
+書き出します。
 
 $ fsed 's|(.{4})(..)(..)|\1/\2/\3|1' Tokyo2020tw_day-n.txt | tocsv 1 >Tokyo2020tw_day-n.csv
 
@@ -560,11 +484,9 @@ $ fsed 's|(.{4})(..)(..)(..)(..)|\1/\2/\3-\4:\5:00|1' Tokyo2020tw_min-n.txt | to
 $ fsed 's|(.{4})(..)(..)(..)(..)(..)|\1/\2/\3-\4:\5:\6|1' Tokyo2020tw_sec-n.txt | tocsv 1 | fsed 's/-/ /1' >Tokyo2020tw_sec-n.csv
 
 （拡張子部分を".csv"に変えたファイル名で保存しています）
-(It is saved with a file name with the extension changed to ". csv")
 
-お疲れさまでした。後は、こうしてできたCSVファイルを表計算ソフトで開いてグラフを描き、極大点を探しながら、当時起こった出来事を推定してください。
-Thank you for your hard work. After that, please open the CSV file created in this way with spreadsheet software, draw a graph, look for the maximum point, and guess what happened at that time.
+お疲れさまでした。後は、こうしてできたCSVファイルを表計算ソフトで開いて
+グラフを描き、極大点を探しながら、当時起こった出来事を推定してください。
 
 
-以上/End
-
+以上
