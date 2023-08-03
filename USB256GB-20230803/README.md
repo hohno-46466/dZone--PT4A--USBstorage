@@ -1,39 +1,39 @@
 # dZone--PT4A--USBstorage
 
-USB storage skelton for PT4A lectures (USB256GB-20221001 Rev1.1)
+USB storage skelton for PT4A lectures (USB256GB-20230803 Rev1.1)
 
 ### Last update: Fri Oct 14 09:51:12 JST 2022 by @hohno_at_kuimc
 
-PT4A を用いた大規模データ処理演習で使用する USB メモリ（2022年10月版）の骨格（データファイル以外）は以下の通り
+PT4A を用いた大規模データ処理演習で使用する USB メモリ（2023年8月版）の骨格（データファイル以外）は以下の通り
 （表記の末尾が "/" で終わっているのはディレクトリ、それ以外はファイルである）。
 
     (USBメモリ配布前に改訂予定あり）
 
-    ./USB256GB-20221001
+    ./USB256GB-20230803
      ├──  PT4A/
      │   └──  README.md
      ├──  README.md
      ├──  Readme1_Rev.2.1_JPonly.txt
      ├──  Readme1_Rev.2.2.txt
-     ├──  Readme2_tree_2022.txt
-     ├──  Readme2_tree_2022_JPonly.txt
+     ├──  Readme2_tree_2023.txt
      ├──  Readme3_USB_MOUNT_REV.2.1_JPonly.txt
      ├──  Readme3_USB_MOUNT_REV.2.2.txt
-     ├──  Readme4_PT4A_REV.2.2_JPonly.txt
-     ├──  Readme4_PT4A_REV.2.3.txt
+     ├──  Readme4_PT4A_REV.2.4.txt
+     ├──  Readme4_PT4A_REV.2.4_JPonly.txt
      └──  data/
          ├──  Structured_data/
-         │   ├──  Readme_Rev.2.1.txt
-         │   ├──  Readme_Rev.2.1_JPonly.txt
+         │   ├──  Readme_Rev.2.3.txt
          │   ├──  format/
          │   │   ├──  amed_item_flag.csv
+         │   │   ├──  amed_item_flag_Eng.csv
          │   │   ├──  amed_item_list.csv
-         │   │   ├──  amed_item_list_Update_202209A.xlsx
+         │   │   ├──  amed_item_list_Eng.csv
          │   │   ├──  amed_list.csv
-         │   │   └──  amed_list.txt
+         │   │   ├──  amed_list_Eng.csv
+         │   │   └──  format_amedas.pdf
          │   └──  samples/
          │       ├──  HEIKIN_KION.sh
-         │       ├──  HEIKIN_KION_JPonly.sh
+         │       ├──  HEIKIN_KION23.sh
          │       ├──  KAIKA_MASTER/
          │       │   ├──  KAIKA_MASTER.11016.txt
          │       │   ├──  KAIKA_MASTER.12442.txt
@@ -95,9 +95,7 @@ PT4A を用いた大規模データ処理演習で使用する USB メモリ（2
          │       │   ├──  KAIKA_MASTER.93041.txt
          │       │   └──  KAIKA_MASTER.94081.txt
          │       ├──  SAIKO_SAITE_KION.sh
-         │       ├──  SAIKO_SAITE_KION_JPonly.sh
-         │       ├──  SAKURA_KAIKA.sh
-         │       └──  SAKURA_KAIKA_JPonly.sh
+         │       └──  SAKURA_KAIKA.sh
          └──  Unstructured_data/
              ├──  README.txt
              ├──  References/
@@ -105,7 +103,7 @@ PT4A を用いた大規模データ処理演習で使用する USB メモリ（2
              │   └──  kemotw2.pdf
              └──  TUTORIAL.txt
      
-     8 directories, 86 files (Fri Oct 14 11:15:30 JST 2022)
+     9 directories, 86 files (Thu Oct 03 13:56:40 JST 2023)
 
 %%%%
 
