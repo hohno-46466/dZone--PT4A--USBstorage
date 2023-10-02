@@ -1,7 +1,7 @@
 項目,型,桁,MaxByte,備考
 アメダス観測所番号,Text,5,5,
 空白,Text,1,1,空白
-観測日,Test,8,8,yyyymmdd
+観測日,Text,8,8,yyyymmdd
 空白,Text,1,1,空白
 観測時間,Text,4,4,hhmm
 空白,Text,1,1,空白
