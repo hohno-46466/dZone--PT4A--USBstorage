@@ -12,8 +12,8 @@
 #
 # 作成者: USP研究所 山田将誉 (m-yamada@usp-lab.com)
 # Author: Masataka Yamada, USP Laboratory (m-yamada@usp-lab.com)
-# 最終更新日: 2023/06/13 (modified by @hohno_at_kuimc)
-# Last modified by @hohno_at_kuimc on 2023/06/13 (modified by @hohno_at_kuimc)
+# 最終更新日: 2023/10/03 (modified by @mori4416)
+# Last modified by @mori4416 on 2023/10/03
 #
 
 #####注意/Attention#####
@@ -63,9 +63,9 @@ export LANG=ja_JP.UTF8
 # for文をもちいることでdoからdoneまでの処理を繰り返すことができる
 # The for statement can be used to repeat the process from do to done.
 
-for i in 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022; do
+for i in 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022; do
 
-	cat ../amedas/yeartext/amed_$i.txt	|
+	zcat ../amedas/yeargzip/amed_$i.txt.gz	|
 
 	# 観測所番号でデータを抜きだし
 	# Extract data by Observatory number

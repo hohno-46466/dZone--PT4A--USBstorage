@@ -1,9 +1,5 @@
 #!/bin/bash -vx
 #
-# 金沢大学 大学院科目
-# Kanazawa University Graduate School Subjects
-# 「2022年度 スマート創成科学（第1回から第3回）」向け
-# For "2022 Smart Science and Technology for Innovation(1st-3rd)"
 # 気象データ処理用サンプルスクリプト
 # Sample scripts for weather data processing
 #
@@ -15,10 +11,8 @@
 #
 # 作成者: USP研究所 山田将誉 (m-yamada@usp-lab.com)
 # Author: Masataka Yamada, USP Laboratory (m-yamada@usp-lab.com)
-# 前回更新日: 2021/06/10
-# Last updated: 2021/06/10
-# 最終更新日: 2022/08/04 (modified by @hohno_at_kuimc)
-# Last modified by @hohno_at_kuimc on 2022/08/04 (modified by @hohno_at_kuimc)
+# 最終更新日: 2023/10/03 (modified by @mori4416)
+# Last modified by @mori4416 on 2022/08/04
 #
 
 ################################################################
@@ -83,11 +77,11 @@ export LANG=ja_JP.UTF8
 # 10: Temperature 11: Temperature usage flag 12: Sunshine hours (s) 13: Sunshine hours usage flag 
 # 14: Snow amount 15: Snow amount usage flag
 
-for i in 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020; do
+for i in 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022; do
 
 	# データの読み込みを行う
 	# Load data.
-	cat ../amedas/yeartext/amed_$i.txt	|
+	zcat ../amedas/yeargzip/amed_$i.txt.gz	|
 
 	# 観測所番号でデータの抜き出しを行う
 	# Extract data by observatory station number

@@ -1,9 +1,5 @@
 #!/bin/bash -vx
 #
-# 金沢大学 大学院科目
-# Kanazawa University Graduate School Subjects
-# 「2022年度 スマート創成科学（第1回から第3回）」向け
-# For "2022 Smart Science and Technology for Innovation(1st-3rd)"
 # 気象データ処理用サンプルスクリプト
 # Sample scripts for weather data processing
 #
@@ -15,10 +11,8 @@
 #
 # 作成者: USP研究所 山田将誉 (m-yamada@usp-lab.com)
 # Author: Masataka Yamada, USP Laboratory (m-yamada@usp-lab.com)
-# 前回更新日: 2021/06/10
-# Last updated: 2021/06/10
-# 最終更新日: 2022/08/04 (modified by @hohno_at_kuimc)
-# Last modified by @hohno_at_kuimc on 2022/08/04 (modified by @hohno_at_kuimc)
+# 最終更新日: 2023/10/03 (modified by @mori4416)
+# Last modified by @mori4416 on 2022/08/04
 #
 
 ################################################################
@@ -53,7 +47,7 @@ export LANG=ja_JP.UTF8
 
 # ファイル読み込み
 # Read file
-cat ../amedas/yeartext/amed_2020.txt		|
+cat ../amedas/yeargzip/amed_2020.txt.gz		|
 # 2020年のファイルを用いる
 # Use file 2020
 
