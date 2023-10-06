@@ -81,7 +81,7 @@ for i in 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022; 
 
 	# データの読み込みを行う
 	# Load data.
-	zcat ../amedas/yeargzip/amed_$i.txt.gz	|
+	zcat < ../amedas/yeargzip/amed_$i.txt.gz	|
 
 	# 観測所番号でデータの抜き出しを行う
 	# Extract data by observatory station number

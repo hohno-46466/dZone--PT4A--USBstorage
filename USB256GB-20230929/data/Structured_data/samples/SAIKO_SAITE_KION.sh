@@ -47,7 +47,7 @@ export LANG=ja_JP.UTF8
 
 # ファイル読み込み
 # Read file
-cat ../amedas/yeargzip/amed_2020.txt.gz		|
+cat < ../amedas/yeargzip/amed_2020.txt.gz		|
 # 2020年のファイルを用いる
 # Use file 2020
 

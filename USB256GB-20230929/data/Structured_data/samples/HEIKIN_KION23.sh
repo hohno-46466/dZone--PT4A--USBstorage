@@ -19,16 +19,13 @@
 #####注意/Attention#####
 # 本サンプルスクリプトは /data/samples で実行してください
 # This sample script should be run in /data/samples
-
 ################################################################
-
 # 年平均気温の推移を観察する
 # Observe the annual average temperature trend
 # 気温データを年ごとに集計し、平均値を求める処理を行う
 # Aggregate temperature data by year and process to obtain average values
 # 本サンプルスクリプトでは金沢の気温を抽出して処理を行っている
 # In this sample script, extract and process temperatures in Kanazawa
-
 ################################################################
 
 export LANG=ja_JP.UTF8
@@ -65,7 +62,7 @@ export LANG=ja_JP.UTF8
 
 for i in 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022; do
 
-	zcat ../amedas/yeargzip/amed_$i.txt.gz	|
+	zcat < ../amedas/yeargzip/amed_$i.txt.gz	|
 
 	# 観測所番号でデータを抜きだし
 	# Extract data by Observatory number

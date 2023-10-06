@@ -64,7 +64,7 @@ export LANG=ja_JP.UTF8
 
 for i in 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022; do
 
-	zcat ../amedas/yeargzip/amed_$i.txt.gz	|
+	zcat < ../amedas/yeargzip/amed_$i.txt.gz	|
 
 	# 観測所番号でデータを抜きだし
 	# Extract data by Observatory number
