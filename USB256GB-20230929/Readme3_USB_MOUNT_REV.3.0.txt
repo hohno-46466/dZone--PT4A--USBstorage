@@ -4,7 +4,7 @@
 # MONK Team, Emerging Media Initiative, Kanazawa University
 #
 # Windows10/11のWSLでUSBメモリを使用するためのマウント方法
-# How to mount USB flash drive for use with WSL on Windows 10/11
+# How to mount USB memory device for use with WSL on Windows 10/11
 #
 # 作成者・連絡先:
 # Author/Contact:
@@ -12,8 +12,8 @@
 #     Emerging Media Initiative, Kanazawa University: Ohno, Mori
 #     USP研究所 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
 #     UniversalShellProgrammingLaboratory: Watano, Yamada, Matsuura
-# 最終更新日   : 2023年9月29日
-# Last updated : September 29, 2023
+# 最終更新日   : 2023年10月17日
+# Last updated : October 17, 2023
 #
 ################################################################################
 
@@ -36,11 +36,11 @@ please send a message to the faculty members in charge (Ohno or Mori) via the Ac
 ################################################################################
 
 <<Windows10/11で、WSLを使用している場合のUSBメモリマウント方法
-       /How to mount a USB flash drive when using WSL on Windows 10/11>>
+       /How to mount a USB memory device when using WSL on Windows 10/11>>
 
 (0) USBメモリをパソコンに差し込み、Windows10/11のエクスプローラーでUSBメモリにアクセスできることを確認する。
-(0) Insert the USB flash drive into your computer 
-    and confirm that the USB flash drive can be accessed in Explorer of Windows10/11.
+(0) Insert the USB memory device into your computer 
+    and confirm that the USB memory device can be accessed in Explorer of Windows10/11.
 
 
 ------------------
@@ -93,7 +93,7 @@ Note: Perform steps (1) and (2) only once for the first mount.
 
 
 (3) WSLで以下のコマンドを実行し、USBメモリを(1)で作ったディレクトリにマウントする。
-(3) Execute the following command in WSL to mount the USB flash drive in the directory created in (1).
+(3) Execute the following command in WSL to mount the USB memory device in the directory created in (1).
 
 $ sudo mount -t drvfs z: /mnt/usb（↲エンターキーを押す/Press the Enter key）
 
@@ -104,15 +104,15 @@ $ sudo mount -t drvfs z: /mnt/usb（↲エンターキーを押す/Press the Ent
      USBメモリに割り振られたアルファベットを確認すること。
 
 Note: The alphabetical part of "z:" entered in this command represents the drive 
-     that is automatically set by the computer into which the USB flash drive is inserted.
+     that is automatically set by the computer into which the USB memory device is inserted.
      Therefore, different alphabets are set for different computers.
-     After inserting the USB flash drive, 
-     check the alphabet assigned to the USB flash drive in Windows 10/11 Explorer.
+     After inserting the USB memory device, 
+     check the alphabet assigned to the USB memory device in Windows 10/11 Explorer.
 
 
 
 (4) WSLで以下のコマンドを実行し、USBメモリをマウントできたことを確認する。
-(4) Execute the following command in WSL and confirm that the USB flash drive has been mounted.
+(4) Execute the following command in WSL and confirm that the USB memory device has been mounted.
 
 $ ls /mnt/usb（↲エンターキーを押す/Press the Enter key）
 
@@ -138,7 +138,7 @@ Check a) and b) and perform (3) again.
 
 
 (5) WSLで以下のコマンドを実行し、USBメモリのディレクトリに移動する
-(5) Execute the following command in WSL and move to the USB flash drive directory
+(5) Execute the following command in WSL and move to the USB memory device directory
 
 $ cd /mnt/usb（↲エンターキーを押す/Press the Enter key）
 
@@ -156,20 +156,20 @@ That is all.
 ################################################################################
 
 <<Windows10/11で、WSLを使用している場合のUSBメモリアンマウント方法
-       /How to mount USB flash drive on Windows 10/11 when using WSL>>
+       /How to mount USB memory device on Windows 10/11 when using WSL>>
 
 Linux(WSL)では、マウントしたUSBメモリをパソコンから抜き取る前に、
 必ず「アンマウント」をしなくてはならない。
-In Linux (WSL), a mounted USB flash drive 
+In Linux (WSL), a mounted USB memory device 
 must be "unmounted" before it can be removed from the computer.
 
 パソコンからUSBメモリを抜く前に、以下の手順に従って、必ずアンマウントすること。
-Before unplugging the USB flash drive from the computer, 
+Before unplugging the USB memory device from the computer, 
 be sure to unmount it according to the following procedure.
 
 (1) WSLでUSBメモリ内のディレクトリで作業をしている場合、アンマウントできないので、
     WSLで以下のコマンドを実行し、ディレクトリを移動する。
-(1) If you are working in a directory in a USB flash drive in WSL, 
+(1) If you are working in a directory in a USB memory device in WSL, 
     you cannot unmount it, Execute the following command in WSL to move the directory.
 
 $ cd（↲エンターキーを押す/Press the Enter key）
@@ -182,10 +182,10 @@ $ sudo umount /mnt/usb（↲エンターキーを押す/Press the Enter key）
 
 
 (3) パソコン（Windows）で、USBメモリを取り出す操作をする。
-(3) On your PC (Windows), perform the operation to eject the USB flash drive.
+(3) On your PC (Windows), perform the operation to eject the USB memory device.
 
 (4) (3)の作業後、USBメモリをパソコンから抜く。
-(4) After the operation described in (3), unplug the USB flash drive from the computer.
+(4) After the operation described in (3), unplug the USB memory device from the computer.
 
 
 以上

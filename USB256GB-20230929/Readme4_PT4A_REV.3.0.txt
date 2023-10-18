@@ -12,8 +12,8 @@
 #     Emerging Media Initiative, Kanazawa University: Ohno, Mori
 #     USP研究所 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
 #     UniversalShellProgrammingLaboratory: Watano, Yamada, Matsuura
-# 最終更新日   : 2023年9月29日
-# Last updated : September 29, 2023
+# 最終更新日   : 2023年10月17日
+# Last updated : October 17, 2023
 #
 ################################################################################
 
@@ -22,7 +22,7 @@
 (0) 「Readme3_USB_MOUNT_REV.3.0.txt／Readme3_USB_MOUNT_REV.3.0_JPonly.txt」に書かれている、
     <<Windows10で、WSLを使用している場合のUSBメモリマウント方法>>の作業を終了させる。
 (0) In "Readme3_USB_MOUNT_REV.3.0.txt/Readme3_USB_MOUNT_REV.3.0_JPonly.txt",
-    <<How to mount a USB flash drive when using WSL on Windows 10/11>>.
+    <<How to mount a USB memory device when using WSL on Windows 10/11>>.
 
 
 ------------------

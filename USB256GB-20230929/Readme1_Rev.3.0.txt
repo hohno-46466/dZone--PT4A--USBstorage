@@ -4,7 +4,7 @@
 # MONK Team, Emerging Media Initiative, Kanazawa University
 #
 # USBメモリ内のビッグデータ（構造化、非構造化）およびサンプルスクリプトについて
-# Big data (Structured and Unstructured) and sample scripts in USB flash drive
+# Big data (Structured and Unstructured) and sample scripts in USB memory device
 #
 # 作成者・連絡先:
 # Author/Contact:
@@ -12,16 +12,16 @@
 #     Emerging Media Initiative, Kanazawa University: Ohno, Mori
 #     USP研究所（https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
 #     Universal Shell Programming Laboratory: Watano, Yamada, Matsuura
-# 最終更新日   : 2023年9月29日
-# Last updated : September 29, 2023
-#
+# 最終更新日   : 2023年10月17日
+# Last updated : October 17, 2023
+
 ################################################################################
 
 << 概要/Overview >>
 
 講義で配布したUSBメモリに保存されているビッグデータおよびサンプルスクリプトは、
 金沢大学学術メディア創成センター大野、森と、USP研究所（https://www.usp-lab.com/）との共同研究によるものです。
-The big data and sample scripts stored on the USB flash drives distributed at the lecture 
+The big data and sample scripts stored on the USB memory devices distributed at the lecture 
 were the result of collaboration between Ohno and Mori of EMI,KU and USP Laboratory.
 
 構造化データ（data/Structured_data/amedas内の各種ファイル）と
@@ -84,7 +84,7 @@ in the <<Copyright and Disclaimer>> at the end of this file, so please use them 
 
 配布したUSBメモリ内に保存されているファイルの構成は、
 USBメモリに保存されている「Readme2_tree_2023.txt／Readme2_tree_2023_JPonly.txt」で確認してください。
-Please check the file composition in "Readme2_tree.txt" stored in this USB flash drive.
+Please check the file composition in "Readme2_tree.txt" stored in this USB memory device.
 
 
 ################################################################################
@@ -92,7 +92,7 @@ Please check the file composition in "Readme2_tree.txt" stored in this USB flash
 <<サンプルスクリプト/Sample Scripts>>
 
 このUSBメモリ内に保存されているサンプルスクリプトは、USP研究所から提供されたものです。
-Sample scripts stored on this USB flash drive were provided by the USP Laboratory.
+Sample scripts stored on this USB memory device were provided by the USP Laboratory.
 
 
 構造化データ（Structured_data）の場合は、
@@ -159,7 +159,7 @@ In addition, references are placed in a directory (folder) called References.
 ≪著作権および免責事項/Copyright and Disclaimer≫
 
 ・この媒体に含まれる数値データは、日本の著作権法では、著作権保護の対象ではありませんので、自由に利用できます。
-  Numerical data stored in this USB flash drive is not subject to copyright protection under Japanese copyright law,
+  Numerical data stored in this USB memory device is not subject to copyright protection under Japanese copyright law,
   and may be used freely.
 
 ・この媒体に含まれるサンプルプログラム（シェルスクリプト）や技術資料は、

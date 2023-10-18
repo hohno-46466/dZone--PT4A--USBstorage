@@ -1,7 +1,7 @@
 ################################################################################
 #
 # USBメモリ内のディレクトリ（フォルダ）およびファイル構成
-# Directory (folder) and file structure in the USB flash drive
+# Directory (folder) and file structure in the USB memory device
 #
 # 作成者・連絡先: 
 # Author/Contact: 

@@ -222,7 +222,7 @@ Structured_data
 <<サンプルスクリプト/Sample Script>>
 
 このUSBメモリ内に保存されているサンプルスクリプトは、USP研究所から提供されたものです。
-The sample scripts stored on this USB flash drive were provided by the USP Laboratory.
+The sample scripts stored on this USB memory device were provided by the USP Laboratory.
 
 samplesというディレクトリ（フォルダ）の中に、アメダスデータを用いたサンプル・スクリプトが置かれています。
 In the directory (folder) named "samples," sample scripts using AMeDAS data are placed.
@@ -269,7 +269,7 @@ Sample 3: Cherry blossom season
 ≪著作権および免責事項/Copyright and Disclaimer≫
 
 ・この媒体に含まれる数値データは、日本の著作権法では、著作権保護の対象ではありませんので、自由に利用できます。
-  Numerical data stored in this USB flash drive is not subject to copyright protection under Japanese copyright law,
+  Numerical data stored in this USB memory device is not subject to copyright protection under Japanese copyright law,
   and may be used freely.
 
 ・この媒体に含まれるサンプルプログラム（シェルスクリプト）や技術資料は、
