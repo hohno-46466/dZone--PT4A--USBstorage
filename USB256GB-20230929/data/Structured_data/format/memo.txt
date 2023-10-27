@@ -19,3 +19,12 @@ https://www.data.jma.go.jp/obd/stats/data/mdrr/chiten/sindex2.html
 地上気象観測1分値データの配信ファイルとファイル命名規約
 http://www.jmbsc.or.jp/jp/online/file/Surface-Met-Obs_guide.pdf
 
+
+データサイズについて
+amd_10sec_202201　を解凍すると84GBになる。
+　→1日1ヶ所分で2.16MB
+sfc_10sec_202201　を解凍すると10GBになる。
+　→1日1ヶ所分で2.16MB
+
+
+
