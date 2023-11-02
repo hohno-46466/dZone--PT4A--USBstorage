@@ -27,4 +27,7 @@ sfc_10sec_202201　を解凍すると10GBになる。
 　→1日1ヶ所分で2.16MB
 
 
+気象観測統計の解説
+https://www.data.jma.go.jp/obd/stats/data/kaisetu/index.html
+
 
