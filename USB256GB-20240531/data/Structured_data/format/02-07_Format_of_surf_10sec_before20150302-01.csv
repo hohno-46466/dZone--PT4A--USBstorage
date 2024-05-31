@@ -1,0 +1,11 @@
+﻿Serial Number,Observation element,Detailed Item,Unit,Bytes,Start Byte,Japanese,Remarks
+0,Information of station,Institution number,,2,0,機関番号,Observations by JMA are always 1
+1,Information of station,Station number (upper 2 digits),,2,2,観測所番号（上2桁）,
+2,Information of station,Station number (last 3 digits),,4,4,観測所番号（下3桁）,
+3,Information of station,Station type,,2,8,観測所種別,Always 0
+4,Information of station,Latitude,Degree + 0.1 minute,4,10,緯度,"For latitude, multiply degrees by 100, add minutes (to the nearest 0.1 minute), and then multiply by 10. Example: 42 degrees 51.7 minutes is 4251.7 multiplied by 10 and contains 42517."
+5,Information of station,Longitude,Degree + 0.1 minute,4,14,経度,"For longitude, multiply degrees by 100, add minutes (to the nearest 0.1 minute), and then multiply by 10. Example: 42 degrees 51.7 minutes is 4251.7 multiplied by 10 and contains 42517."
+6,Information of station,Elevation,0.1m,2,18,標高,Elevation is 2000m added and multiplied by 10. Example: 2.1m plus 2000m multiplied by 10 gives 20021
+7,Information of station,Year,,2,20,年,
+8,Information of station,Month,,2,22,月,
+9,Information of station,Day,,2,24,日,

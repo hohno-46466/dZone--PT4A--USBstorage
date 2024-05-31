@@ -1,0 +1,12 @@
+After 2008-11-19JST
+Code, Precipitation Type
+40, Precipitation (weak)
+60, Rain (weak)
+70, Snow (weak)
+77, Sleet
+
+Before 2008-11-19JST
+Code, Precipitation Type
+62, Rain
+68, "Rain and sleet, rain and sleet snow"
+72, Snow
