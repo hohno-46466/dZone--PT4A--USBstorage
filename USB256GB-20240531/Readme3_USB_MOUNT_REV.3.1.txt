@@ -10,10 +10,10 @@
 # Author/Contact:
 #     金沢大学学術メディア創成センター 大野、森
 #     Emerging Media Initiative, Kanazawa University: Ohno, Mori
-#     USP研究所 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
-#     UniversalShellProgrammingLaboratory: Watano, Yamada, Matsuura
-# 最終更新日   : 2023年10月17日
-# Last updated : October 17, 2023
+#     有限会社ユニバーサル・シェル・プログラミング研究所（USP研究所、https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
+#     Universal Shell Programming Laboratory LLC: Watano, Yamada, Matsuura
+# 最終更新日   : 2024年5月31日
+# Last updated : May 31, 2024
 #
 ################################################################################
 
@@ -21,7 +21,6 @@
 
 以下の内容は、Windows10/11のパソコン（ノート型、デスクトップ型を問わない）を使用している方のみに向けたものです。
 macOSの場合は、以下の内容の作業を行わなくてもターミナルからアクセスすることができます。
-
 The following content is intended only for users of Windows 10/11 computers (whether laptop or desktop).
 For macOS, the following operations are not performed.
 
@@ -35,12 +34,12 @@ please send a message to the faculty members in charge (Ohno or Mori) via the Ac
 
 ################################################################################
 
-<<Windows10/11で、WSLを使用している場合のUSBメモリマウント方法
-       /How to mount a USB memory device when using WSL on Windows 10/11>>
+<<Windows11/10で、WSLを使用している場合のUSBメモリマウント方法
+       /How to mount a USB memory device when using WSL on Windows 11/10>>
 
-(0) USBメモリをパソコンに差し込み、Windows10/11のエクスプローラーでUSBメモリにアクセスできることを確認する。
+(0) USBメモリをパソコンに差し込み、Windows11/10のエクスプローラーでUSBメモリにアクセスできることを確認する。
 (0) Insert the USB memory device into your computer 
-    and confirm that the USB memory device can be accessed in Explorer of Windows10/11.
+    and confirm that the USB memory device can be accessed in Explorer of Windows11/10.
 
 
 ------------------
@@ -119,8 +118,8 @@ $ ls /mnt/usb（↲エンターキーを押す/Press the Enter key）
 以下のような表示がされればマウント成功です。
 If the following message is displayed, the mount is successful.
 
-PT4A				Readme2_tree.txt		         Readme4_PT4A_REV.2.0.txt          data
-Readme1_Rev.2.0.txt		Readme3_USB_MOUNT_REV.2.0.txt	'System Volume Information'
+PT4A                  Readme2_tree.txt              Readme4_PT4A_REV.2.0.txt          data
+Readme1_Rev.4.0.txt		Readme3_USB_MOUNT_REV.4.0.txt	'System Volume Information'
 
 
 何も表示されない場合は、マウント失敗です。
@@ -146,22 +145,23 @@ $ cd /mnt/usb（↲エンターキーを押す/Press the Enter key）
 注意：ディレクトリの移動については、
       https://eng-entrance.com/linux-command-cd
       に詳細が書かれているので、アクセスすること。
+      または、生成AIに「Linuxでディレクトリを移動する方法を教えてください。」などと聞くと良いでしょう。
 Note: For information on moving directories, 
       https://eng-entrance.com/linux-command-cd 
       for more information.
+      Also, You could ask the generating AI, e.g. ‘Can you tell me how to move directories in Linux?’.
 
 
 以上
 That is all.
 ################################################################################
 
-<<Windows10/11で、WSLを使用している場合のUSBメモリアンマウント方法
-       /How to mount USB memory device on Windows 10/11 when using WSL>>
+<<Windows11/10で、WSLを使用している場合のUSBメモリアンマウント方法
+       /How to mount USB memory device on Windows 11/10 when using WSL>>
 
 Linux(WSL)では、マウントしたUSBメモリをパソコンから抜き取る前に、
 必ず「アンマウント」をしなくてはならない。
-In Linux (WSL), a mounted USB memory device 
-must be "unmounted" before it can be removed from the computer.
+In Linux (WSL), you must always ‘unmount’ a mounted USB drive before you can remove it from your computer.
 
 パソコンからUSBメモリを抜く前に、以下の手順に従って、必ずアンマウントすること。
 Before unplugging the USB memory device from the computer, 
@@ -199,3 +199,5 @@ That is all.
  2022年10月1日 Ver.2.1a
  2022年10月11日 Ver.2.2
  2023年9月29日 Ver.3.0
+ 2024年5月31日 Ver.3.1
+

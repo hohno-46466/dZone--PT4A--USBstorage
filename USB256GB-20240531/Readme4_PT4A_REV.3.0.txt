@@ -10,19 +10,19 @@
 # Author/Contact:
 #     金沢大学学術メディア創成センター 大野、森
 #     Emerging Media Initiative, Kanazawa University: Ohno, Mori
-#     USP研究所 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
-#     UniversalShellProgrammingLaboratory: Watano, Yamada, Matsuura
-# 最終更新日   : 2023年10月17日
-# Last updated : October 17, 2023
+#     有限会社ユニバーサル・シェル・プログラミング研究所（USP研究所、https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
+#     Universal Shell Programming Laboratory LLC: Watano, Yamada, Matsuura
+# 最終更新日   : 2024年5月31日
+# Last updated : May 31, 2024
 #
 ################################################################################
 
 <<PT4A インストール方法(Windowds)/PT4A Installation Instructions (Windowds)>>
 
-(0) 「Readme3_USB_MOUNT_REV.3.0.txt／Readme3_USB_MOUNT_REV.3.0_JPonly.txt」に書かれている、
-    <<Windows10で、WSLを使用している場合のUSBメモリマウント方法>>の作業を終了させる。
-(0) In "Readme3_USB_MOUNT_REV.3.0.txt/Readme3_USB_MOUNT_REV.3.0_JPonly.txt",
-    <<How to mount a USB memory device when using WSL on Windows 10/11>>.
+(0) 「Readme3_USB_MOUNT_REV.3.1.txt」に書かれている、
+    <<Windows11/10で、WSLを使用している場合のUSBメモリマウント方法>>の作業を終了させる。
+(0) In "Readme3_USB_MOUNT_REV.3.1.txt",
+    <<How to mount a USB memory device when using WSL on Windows 11/10>>.
 
 
 ------------------
