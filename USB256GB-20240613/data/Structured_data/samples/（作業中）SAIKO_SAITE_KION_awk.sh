@@ -47,29 +47,25 @@ export LANG=ja_JP.UTF8
 
 # ファイル読み込み
 # Read file
-zcat < ../amed_2020.txt.gz		|
+zcat < ../amed_2020.txt.gz		    |
 # 2020年のファイルを用いる
 # Use file 2020
 
 # 気温データ抜き出し
 # Extract temperature data
-self 1 16 17 51 52				|
-# 1:アメダス観測所番号 2: 観測年月日 3:観測時間 4:気温 5:気温利用フラグ
-# 1:AMeDAS observatory number 2:Observation date 3:Observation time 4:Temperature 5:Temperature usage flag
-
-# 利用フラグ0,1,2,3（正常数値、正常数値、正常現象無し、正常現象無し）のものだけ抜き出す
-# 第5フィールドの値が3以下という条件を満たすレコードのみ抽出している
-# Only those with use flags 0,1,2,3 (normal value, normal value, no normal phenomenon, no normal phenomenon) are extracted
-# Only records that meet the condition that the value of the fifth field is 3 or less are extracted
-cond '$5 le 3'					|
-
-# 第5フィールド(気温利用フラグ)を削除
-# Delete 5th field (temperature use flag)
-delf 5						> 1.temp.2020
+# $52の利用フラグ0,1,2,3（正常数値、正常数値、正常現象無し、正常現象無し）のものだけ抜き出す
+# Only those with use flags 0,1,2,3 of $52(normal value, normal value, no normal phenomenon, no normal phenomenon) are extracted
 # 1.temp.2020ファイルへの書き出しを行う
 # Export to 1.temp.2020 file.
+awk '{if($52<=3){print $1,$16,$17,$51}}' > 1.temp.2020
 # 1:アメダス観測所番号 2: 観測年月日 3:観測時間 4:気温 
 # 1: AMeDAS observatory number 2: Observation date 3: Observation time 4: Temperature 
+
+#self 1 16 17 51 52			    	|
+#cond '$5 le 3'					|
+#delf 5						> 1.temp.2020
+
+
 
 ################################################################
 # 最高気温ランキングの作成
