@@ -7,8 +7,6 @@
 # Author/Contact: 
 #     金沢大学学術メディア創成センター 大野、森
 #     Emerging Media Initiative, Kanazawa University: Ohno, Mori
-#     USP研究所 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
-#     UniversalShellProgrammingLaboratory: Watano, Yamada, Matsuura
 # 最終更新日   : 2024年6月12日
 # Last updated : Jun 12, 2024
 #

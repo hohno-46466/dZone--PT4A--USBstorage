@@ -10,8 +10,6 @@
 # Author/Contact:
 #     金沢大学学術メディア創成センター 大野、森
 #     Emerging Media Initiative, Kanazawa University: Ohno, Mori
-#     有限会社ユニバーサル・シェル・プログラミング研究所（USP研究所、https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
-#     Universal Shell Programming Laboratory LLC: Watano, Yamada, Matsuura
 # 最終更新日   : 2024年6月12日
 # Last updated : Jun 12, 2024
 #
@@ -19,18 +17,17 @@
 
 <<注意/Attention>>
 
-以下の内容は、Windows10/11のパソコン（ノート型、デスクトップ型を問わない）を使用している方のみに向けたものです。
+以下の内容は、Windows11/10のパソコン（ノート型、デスクトップ型を問わない）を使用している方のみに向けたものです。
 macOSの場合は、以下の内容の作業を行わなくてもターミナルからアクセスすることができます。
-The following content is intended only for users of Windows 10/11 computers (whether laptop or desktop).
+The following content is intended only for users of Windows 11/10 computers (whether laptop or desktop).
 For macOS, the following operations are not performed.
 
 なお、分からない単語がある場合は、Google検索等で検索して、調べてください。
 If you do not understand a word, please search for it on Google or other search engines.
 
-作業内容が分からない、上手く行かない場合は、アカンサスポータルから、担当教員（大野、森）にメッセージで質問してください。
-If you do not understand the work or if it does not go well,
-please send a message to the faculty members in charge (Ohno or Mori) via the Acanthus Portal.
-
+作業内容が分からない、上手く行かない場合は、担当リーダー（大野）に質問してください。
+If you have any questions about the work or it is not going well, 
+please ask the leader (Ohno).
 
 ################################################################################
 

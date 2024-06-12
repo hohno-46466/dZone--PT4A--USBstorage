@@ -10,8 +10,6 @@
 # Author/Contact:
 #     金沢大学学術メディア創成センター 大野、森
 #     Emerging Media Initiative, Kanazawa University: Ohno, Mori
-#     有限会社ユニバーサル・シェル・プログラミング研究所（USP研究所、https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
-#     Universal Shell Programming Laboratory LLC: Watano, Yamada, Matsuura
 # 最終更新日   : 2024年6月12日
 # Last updated : Jun 12, 2024
 #
@@ -21,8 +19,12 @@
 
 WGで配布したUSBメモリに保存されているビッグデータおよびサンプルスクリプトは、
 金沢大学学術メディア創成センター大野、森と、USP研究所（https://www.usp-lab.com/）との共同研究によるものです。
+特に、本稿などの原案を作成していただいたUSP研究所 綿野氏、山田氏、松浦氏には深く感謝いたします。
 The big data and sample scripts stored on the USB memory devices distributed at the WG 
 were the result of collaboration between Ohno and Mori of EMI,KU and USP Laboratory.
+In particular, We would like to express our thanks to 
+Mr. Watano, Mr. Yamada, and Mr. Matsuura of the USP Laboratory, 
+who prepared the original draft of this paper.
 
 構造化データ（data/Structured_data/内の各種ファイル）と
 非構造化データ（data/Unstructured_data/Tokyo2020内の各種ファイル）で244GBのサイズがあります。
@@ -170,19 +172,11 @@ In addition, references are placed in a directory (folder) called References.
 ・この媒体に含まれる数値データは、日本の著作権法では、著作権保護の対象ではありませんので、自由に利用できます。
   Numerical data stored in this USB memory device is not subject to copyright protection under Japanese copyright law, and may be used freely.
 
-・この媒体に含まれるサンプルプログラム（シェルスクリプト）や技術資料は、
-  USP研究所の許諾により、複製、翻訳・変形等の翻案等、自由に利用できます。
-  ただし、商用利用はできません
-  The sample programs (shell scripts) and technical materials contained in this medium
-  may be freely used, including reproduction, translation, transformation, and other adaptations,
-  with the permission of the USP Laboratory.
-  However, commercial use is not permitted.
-
 ・この媒体に含まれる数値データ、サンプルプログラム（シェルスクリプト）を使用したことによって生じた
   すべての障害・損害・不具合等に関しては、
-  USP研究所、金沢大学学術メディア創成センターは一切の責任を負いません。
+  金沢大学学術メディア創成センター、USP研究所は一切の責任を負いません。
   各自の責任においてご使用ください。
-  USP Laboratory and Emerging Media Initiative, Kanazawa University are not responsible for any failure, damage, or malfunction caused by the use of the numerical data and sample programs (shell scripts) contained in this medium.
+  Emerging Media Initiative, Kanazawa University and USP Laboratory are not responsible for any failure, damage, or malfunction caused by the use of the numerical data and sample programs (shell scripts) contained in this medium.
   Use at your own risk.
 
 
