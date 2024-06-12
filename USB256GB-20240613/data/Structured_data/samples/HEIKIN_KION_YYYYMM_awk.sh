@@ -7,8 +7,8 @@
 # サンプル2.平均気温の推移
 # Sample 2. Average temperature
 # 
-# 実行方法: ./HEIKIN_KION_YYYY_awk.sh
-# Execution method: . /HEIKIN_KION_YYYY_awk.sh
+# 実行方法: ./HEIKIN_KION_YYYYMM_awk.sh
+# Execution method: . /HEIKIN_KION_YYYYMM_awk.sh
 #
 # 作成者: USP研究所 山田将誉 (m-yamada@usp-lab.com)
 # Author: Masataka Yamada, USP Laboratory (m-yamada@usp-lab.com)
@@ -82,7 +82,7 @@ export LANG=ja_JP.UTF8
 	# 1: 観測年月日 2: 観測時分 3:気温
 	# 1: Date of observation 4: Observation Time 3: Temperature
 
-done						> 2a.NENGAPPI_KION_YYYY.56227
+done						> 2a.NENGAPPI_KION_YYYYMM.56227
 # KION.観測所番号 ファイルに出力
 # Output to KION.Observatory_number file
 # 2009から2022までの気温データをまとめる
@@ -94,45 +94,45 @@ done						> 2a.NENGAPPI_KION_YYYY.56227
 
 # 上で出力したファイルを読み込む
 # Read the output file above
-cat 2a.NENGAPPI_KION_YYYY.56227					|
+cat 2a.NENGAPPI_KION_YYYYMM.56227					|
 # 1: 観測年月日 2: 観測時分 3:気温
 # 1: Date of observation 4: Observation Time 3: Temperature
 
-# 年ごとに集計するために、第1フィールドの年月日(yyyymmdd)から年(yyyy)のみを抜き出す
-# Extract only the year (yyyy) from the date (yyyymmdd) in the 1st field to aggregate by year
-awk '{printf "%s %s\n", substr($1,1,4), $3}'	|
-# 1:年 2:気温
-# 1:year 2:temperature
+# 年ごとに集計するために、第1フィールドの年月日(yyyymmdd)から年月(yyyymm)を抜き出す
+# Extract the year and the month (yyyymm) from the date (yyyymmdd) in the 1st field to aggregate by year
+awk '{printf "%s %s\n", substr($1,1,6), $3}'	|
+# 1:年月 2:気温
+# 1:year and month 2:temperature
 
-# 年ごとに気温を足す
-# Add the temperature for each year
+# 年月ごとに気温を足す
+# Add the temperature for each year and month
 # +countオプションを指定することで、足し合わせた項目数を表示できる
 # The number of items added can be displayed by specifying the +count option
 # 項目数は平均値の計算に用いる
 # number of items is used to calculate the average value
-awk '{year=$1; sum[year]+=$2; count[year]++} END{for (year in sum) print year,sum[year],count[year]}'					|
-# 1:年 2:カウント 3:気温
-# 1: Year 2: Count 3: Temperature
+awk '{yearmonth=$1; sum[yearmonth]+=$2; count[yearmonth]++} END{for (yearmonth in sum) print yearmonth,sum[yearmonth],count[yearmonth]}'					|
+# 1:年月 2:カウント 3:気温
+# 1: Year and month 2: Count 3: Temperature
 
 # 平均気温を算出
 # Calculate average temperature
 # 小数第２位を四捨五入
 # Rounded to the second decimal place
-# 年平均気温ファイル(NEN_HEIKIN_KION.56227)の作成
-# Create annual mean temperature file (NEN_HEIKIN_KION.56227)
-awk '{printf "%s %.1f\n", $1,$2/$3 }' > 2a.NEN_HEIKIN_KION.56227
+# 年平均気温ファイル(NEN-GETSU_HEIKIN_KION.56227)の作成
+# Create annual mean temperature file (NEN-GETSU_HEIKIN_KION.56227)
+awk '{printf "%s %.1f\n", $1,$2/$3 }' > 2a.NEN-GETSU_HEIKIN_KION.56227
+# 1:年月 2:年平均気温
+# 1: Year and month 2: Mean annual temperature
+
+# 出力ファイル 2a.NEN-GETSU_HEIKIN_KION.56227
+# Output file 2a.NEN-GETSU_HEIKIN_KION.56227
 # 1:年 2:年平均気温
 # 1: Year 2: Mean annual temperature
 
-# 出力ファイル 2a.NEN_HEIKIN_KION.56227
-# Output file 2a.NEN_HEIKIN_KION.56227
-# 1:年 2:年平均気温
-# 1: Year 2: Mean annual temperature
-
-# $ cat 2a.NEN_HEIKIN_KION.56227
+# $ cat 2a.NEN-GETSU_HEIKIN_KION.56227
 # で結果を確認する
 # Check the result with this command
-# $ cat 2a.NEN_HEIKIN_KION.56227
+# $ cat 2a.NEN-GETSU_HEIKIN_KION.56227
 
 
 exit 0

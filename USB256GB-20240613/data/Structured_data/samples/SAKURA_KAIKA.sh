@@ -65,17 +65,17 @@ export LANG=ja_JP.UTF8
 # Finally, the data is written to a file, and the data for each year is combined into a single file.
 
 # amed_yyyy.txt データ項目 
-# 1:アメダス観測所番号 2:観測年月日(yyyymmdd) 3:観測時間(hhmm) 
-# 4:雨(降水強度)mm/h 5:雨(降水強度)利用フラグ 
-# 6:風向 7:風向利用フラグ 8:風速m/s 9:風速利用フラグ 
-# 10:気温 11:気温利用フラグ 12:日照時間(s) 13:日照時間利用フラグ 
-# 14:積雪量 15:積雪量利用フラグ
+# 1:アメダス観測所番号(2:地上観測所番号) 16:観測年月日(yyyymmdd) 17:観測時間(hhmm) 
+# 22:雨(降水強度)mm/h 23:雨(降水強度)利用フラグ 
+# 41:風向 42:風向利用フラグ 48:風速m/s 49:風速利用フラグ 
+# 51:気温 52:気温利用フラグ 59:日照時間(s) 60:日照時間利用フラグ 
+# 67:積雪量 68:積雪量利用フラグ
 # amed_yyyy.txt Data items 
-# 1:AMeDAS observatory number 2:Date of observation (yyyymmdd) 3:Time of observation (hhmm) 
-# 4:Rain (precipitation intensity) mm/h 5:Rain (precipitation intensity) usage flag 
-# 6:Wind direction 7:Wind direction usage flag 8:Wind speed m/s 9:Wind speed usage flag 
-# 10: Temperature 11: Temperature usage flag 12: Sunshine hours (s) 13: Sunshine hours usage flag 
-# 14: Snow amount 15: Snow amount usage flag
+# 1:AMEDAS Observatory number(2:Surface Observatory number) 16:Observation date (yyyymmdd) 17:Observation time (hhmm) 
+# 22:Rain (precipitation intensity) mm/h 23:Rain (precipitation intensity) usage flag 
+# 41:Wind direction 42:Wind direction usage flag 48:Wind speed m/s 49:Wind speed usage flag 
+# 51: Temperature 52: Temperature usage flag 12: Sunshine hours (s) 13: Sunshine hours usage flag 
+# 67: Snow amount 68: Snow amount usage flag
 
 for i in 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022; do
 
