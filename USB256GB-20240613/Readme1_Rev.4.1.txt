@@ -9,7 +9,7 @@
 # 作成者・連絡先:
 # Author/Contact:
 #     金沢大学学術メディア創成センター 大野、森
-#     Emerging Media Initiative, Kanazawa University: Ohno, Mori
+#     Emerging Media Initiative, Kanazawa University: H.Ohno, Y.Mori
 # 最終更新日   : 2024年6月12日
 # Last updated : Jun 12, 2024
 #
@@ -21,18 +21,18 @@ WGで配布したUSBメモリに保存されているビッグデータおよび
 金沢大学学術メディア創成センター大野、森と、USP研究所（https://www.usp-lab.com/）との共同研究によるものです。
 特に、本稿などの原案を作成していただいたUSP研究所 綿野氏、山田氏、松浦氏には深く感謝いたします。
 The big data and sample scripts stored on the USB memory devices distributed at the WG 
-were the result of collaboration between Ohno and Mori of EMI,KU and USP Laboratory.
+were the result of collaboration between H.Ohno and Y.Mori of EMI of Kanazawa University and the USP Laboratory.
 In particular, We would like to express our thanks to 
 Mr. Watano, Mr. Yamada, and Mr. Matsuura of the USP Laboratory, 
-who prepared the original draft of this paper.
+who prepared the original draft of these documents.
 
 構造化データ（data/Structured_data/内の各種ファイル）と
-非構造化データ（data/Unstructured_data/Tokyo2020内の各種ファイル）で244GBのサイズがあります。
-Structured data (various files in data/Structured_data/) and
-Unstructured data (various files in data/Unstructured_data/Tokyo2020) is over 244 GB in size.
+非構造化データ（data/Unstructured_data/Tokyo2020内の各種ファイル）で219GBのサイズがあります。
+Structured data (files in data/Structured_data/) and
+Unstructured data (files in data/Unstructured_data/Tokyo2020) is over 219 GB in size.
 
 これらのデータは、年月日時でファイルが分かれています。
-特に構造化データは、1つのファイルあたり「68百万行」以上の大きさがあり、
+特に構造化データは、1つのファイルあたり「6千8百万行」以上の大きさがあり、
 Excelなどの表計算ソフトウェアでは処理できません。
 These data were divided into files by year, month, day, and hour.
 Structured data, in particular, can be over "68,000,000 lines" per file 
@@ -94,7 +94,7 @@ Please check the file composition in "Readme2_tree_2024.txt" stored in this USB 
 <<サンプルスクリプト/Sample Scripts>>
 
 このUSBメモリ内に保存されているサンプルスクリプトは、USP研究所から提供されたものです。
-Sample scripts stored on this USB memory device were provided by the USP Lab.
+Sample scripts stored on this USB memory device were provided by the USP Laboratory.
 
 
 構造化データ（Structured_data）の場合は、
@@ -106,8 +106,7 @@ there are several sample scripts that use AMEDAS data in the directory (folder) 
 First, go to the directory (folder) data/Structured_data/samples and check out the sample scripts.
 
 USP研究所が用意してくれたサンプルスクリプト（ファイル名の最後に「.sh」がついているもの）が4つ置かれています。
-In the directory you have moved to,
-you will find four sample scripts (with ".sh" at the end of the file name) provided by the USP Laboratory.
+In the directory, there are four sample scripts (with ".sh" at the end of the file name) provided by the USP Laboratory.
 
 
 サンプル1. 最高気温、最低気温の抽出
@@ -176,7 +175,7 @@ In addition, references are placed in a directory (folder) called References.
   すべての障害・損害・不具合等に関しては、
   金沢大学学術メディア創成センター、USP研究所は一切の責任を負いません。
   各自の責任においてご使用ください。
-  Emerging Media Initiative, Kanazawa University and USP Laboratory are not responsible for any failure, damage, or malfunction caused by the use of the numerical data and sample programs (shell scripts) contained in this medium.
+  Emerging Media Initiative, Kanazawa University and the USP Laboratory are not responsible for any failure, damage, or malfunction caused by the use of the numerical data and sample programs (shell scripts) contained in this medium.
   Use at your own risk.
 
 
