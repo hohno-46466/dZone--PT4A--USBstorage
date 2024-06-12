@@ -60,8 +60,7 @@ export LANG=ja_JP.UTF8
 # for文をもちいることでdoからdoneまでの処理を繰り返すことができる
 # The for statement can be used to repeat the process from do to done.
 
-for i in 2008 2009; do
-#for i in 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022; do
+ for i in 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022; do
 
 	zcat < ../amed_$i.txt.gz						|
 
