@@ -1,0 +1,139 @@
+#!/bin/bash -vx
+#
+# 金沢大学 学術メディア創成センターMONKチーム
+# 気象データ処理用サンプルスクリプト
+# Sample scripts for weather data processing
+#
+# サンプル2.平均気温の推移
+# Sample 2. Average temperature
+# 
+# 実行方法: ./HEIKIN_KION_YYYY_awk.sh
+# Execution method: . /HEIKIN_KION_YYYY_awk.sh
+#
+# 作成者: USP研究所 山田将誉 (m-yamada@usp-lab.com)
+# Author: Masataka Yamada, USP Laboratory (m-yamada@usp-lab.com)
+# 最終更新日: 2024/06/12 (modified by @mori4416)
+# Last modified by @mori4416 on 2024/06/12
+#
+
+#####注意/Attention#####
+# 本サンプルスクリプトは /data/samples で実行してください
+# This sample script should be run in /data/samples
+################################################################
+# 年平均気温の推移を観察する
+# Observe the annual average temperature trend
+# 気温データを年ごとに集計し、平均値を求める処理を行う
+# Aggregate temperature data by year and process to obtain average values
+# 本サンプルスクリプトでは金沢の気温を抽出して処理を行っている
+# In this sample script, extract and process temperatures in Kanazawa
+################################################################
+
+export LANG=ja_JP.UTF8
+
+################################################################
+# 年ごとに気温データを整理
+# Organize temperature data by year
+
+# はじめに、気温データから金沢のデータのみを抜き出している
+# First, only Kanazawa data is extracted from all temperature data
+# 気温のデータ項目のみを抜き出し、利用フラグが正常なデータのみを抜き出す
+# Extract only temperature data items, and extract only data with normal usage flags
+# 2009~2021のファイルに対して同様の処理を行い、
+# Do the same process for the files 2009~2021, and
+# 最後に各年のデータを一つのファイルにまとめて出力している
+# The same process is applied to the 2009~2021 files, and finally, the data of each year is output in one file.
+
+
+# amed_yyyy.txt データ項目 
+# 1:アメダス観測所番号(2:地上観測所番号) 16:観測年月日(yyyymmdd) 17:観測時間(hhmm) 
+# 22:雨(降水強度)mm/h 23:雨(降水強度)利用フラグ 
+# 41:風向 42:風向利用フラグ 48:風速m/s 49:風速利用フラグ 
+# 51:気温 52:気温利用フラグ 59:日照時間(s) 60:日照時間利用フラグ 
+# 67:積雪量 68:積雪量利用フラグ
+# amed_yyyy.txt Data items 
+# 1:AMEDAS Observatory number(2:Surface Observatory number) 16:Observation date (yyyymmdd) 17:Observation time (hhmm) 
+# 22:Rain (precipitation intensity) mm/h 23:Rain (precipitation intensity) usage flag 
+# 41:Wind direction 42:Wind direction usage flag 48:Wind speed m/s 49:Wind speed usage flag 
+# 51: Temperature 52: Temperature usage flag 12: Sunshine hours (s) 13: Sunshine hours usage flag 
+# 67: Snow amount 68: Snow amount usage flag
+
+# for文をもちいることでdoからdoneまでの処理を繰り返すことができる
+# The for statement can be used to repeat the process from do to done.
+
+for i in 2008 2009; do
+#for i in 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022; do
+
+	zcat < ../amed_$i.txt.gz						|
+
+	# 観測所番号でデータを抜きだし
+	# Extract data by Observatory number
+	# 56227=金沢のデータのみ抽出
+	# 56227=Only Kanazawa data is extracted
+	# この番号を変更すれば他の地域の気温を抽出できる
+	# Change this number to extract temperatures in other areas
+	# 気温データのフィールドを抜き出し
+	# Extract temperature data fields
+	awk '{if($1=="56227"){print $16,$17,$51,$52}}'	|
+	# 1: 観測年月日 2: 観測時分 3:気温 4:気温利用フラグ
+	# 1: Date of observation 4: Observation Time 3: Temperature 4: Temperature usage flag
+
+	# 利用フラグ0,1,2,3（正常数値、正常数値、正常現象無し、正常現象無し）のものだけ抜き出す
+	# Extract only those with use flag 0,1,2,3 (normal value, normal value, no normal phenomenon, no normal phenomenon)
+	awk '{if($4<=3){print $1,$2,$3}}'
+	# 1: 観測年月日 2: 観測時分 3:気温
+	# 1: Date of observation 4: Observation Time 3: Temperature
+
+done						> 2a.NENGAPPI_KION_YYYY.56227
+# KION.観測所番号 ファイルに出力
+# Output to KION.Observatory_number file
+# 2009から2022までの気温データをまとめる
+# Summarize temperature data from 2009-2022
+
+################################################################
+# 平均値の計算
+# Calculate average
+
+# 上で出力したファイルを読み込む
+# Read the output file above
+cat 2a.NENGAPPI_KION_YYYY.56227					|
+# 1: 観測年月日 2: 観測時分 3:気温
+# 1: Date of observation 4: Observation Time 3: Temperature
+
+# 年ごとに集計するために、第1フィールドの年月日(yyyymmdd)から年(yyyy)のみを抜き出す
+# Extract only the year (yyyy) from the date (yyyymmdd) in the 1st field to aggregate by year
+awk '{printf "%s %s\n", substr($1,1,4), $3}'	|
+# 1:年月 2:気温
+# 1:year and month 2:temperature
+
+# 年月ごとに気温を足す
+# Add the temperature for each year and month
+# +countオプションを指定することで、足し合わせた項目数を表示できる
+# The number of items added can be displayed by specifying the +count option
+# 項目数は平均値の計算に用いる
+# number of items is used to calculate the average value
+awk '{year=$1; sum[year]+=$2; count[year]++} END{for (year in sum) print year,sum[year],count[year]}'					|
+# 1:年月 2:カウント 3:気温
+# 1: Year and month 2: Count 3: Temperature
+
+# 平均気温を算出
+# Calculate average temperature
+# 小数第２位を四捨五入
+# Rounded to the second decimal place
+# 年平均気温ファイル(NEN_HEIKIN_KION.56227)の作成
+# Create annual mean temperature file (NEN_HEIKIN_KION.56227)
+awk '{printf "%s %.1f\n", $1,$2/$3 }' > 2a.NEN_HEIKIN_KION.56227
+# 1:年月 2:年平均気温
+# 1: Year and month 2: Mean annual temperature
+
+# 出力ファイル 2a.NEN_HEIKIN_KION.56227
+# Output file 2a.NEN_HEIKIN_KION.56227
+# 1:年 2:年平均気温
+# 1: Year 2: Mean annual temperature
+
+# $ cat 2a.NEN_HEIKIN_KION.56227
+# で結果を確認する
+# Check the result with this command
+# $ cat 2a.NEN_HEIKIN_KION.56227
+
+
+exit 0

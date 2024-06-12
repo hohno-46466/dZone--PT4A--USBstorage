@@ -12,8 +12,8 @@
 #     Emerging Media Initiative, Kanazawa University: Ohno, Mori
 #     USP研究所（https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
 #     Universal Shell Programming Laboratory: Watano, Yamada, Matsuura
-# 最終更新日   : 2023年9月29日
-# Last updated : September 29, 2023
+# 最終更新日   : 2024年5月31日
+# Last updated : May 31, 2024
 #
 ################################################################################
 

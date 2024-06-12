@@ -7,8 +7,8 @@
 # サンプル2.平均気温の推移
 # Sample 2. Average temperature
 # 
-# 実行方法: ./HEIKIN_KION23.sh
-# Execution method: . /HEIKIN_KION23.sh
+# 実行方法: ./HEIKIN_KION_YYYYMM.sh
+# Execution method: . /HEIKIN_KION_YYYYMM.sh
 #
 # 作成者: USP研究所 山田将誉 (m-yamada@usp-lab.com)
 # Author: Masataka Yamada, USP Laboratory (m-yamada@usp-lab.com)

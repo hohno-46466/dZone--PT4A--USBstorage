@@ -1,0 +1,91 @@
+列番号,変数名／出力データ名（英語）,出力データ名,単位,Type,Length,Bytes,Remarks
+1,amedas_station_number,アメダス観測所番号（5桁）,,Text,5,6,nnnnn
+2,surface_station_number,地上観測所番号（5桁）,,Text,5,6,nnnnn
+3,station_type,観測所種別,,Text,1,2,n
+4,latitude_d,緯度（度）,度,Text,2～3,4,nnn
+5,latitude_m,緯度（分）,分,Text,3～4,4,nn.n
+6,longitude_d,経度（度）,度,Text,3,4,nnn
+7,longitude_m,経度（分）,分,Text,3～4,4,nn.n
+8,elevation,標高,0.1m,Text,3～6,2,nnnn.n
+9,height_above_ground_of_rain_gauge,雨量計地上の高さ,0.1m,Text,3～6,2,nnnn.n
+10,height_above_ground_of_anemometer,風向風速計の高さ,0.1m,Text,3～6,2,nnnn.n
+11,height_above_ground_of_thermometers,温度計地上の高さ,0.1m,Text,3～6,2,nnnn.n
+12,height_above_ground_of_daylight_meter,日照計地上の高さ,0.1m,Text,3～6,2,nnnn.n
+13,height_above_ground_of_allsky_pyranometer,全天日射計地上の高さ,0.1m,Text,3～6,2,nnnn.n
+14,height_above_barometer,気圧計の高さ,0.1m,Text,3～6,2,nnnn.n
+15,height_above_ground_of_visibility_meter,視程計地上の高さ,0.1m,Text,3～6,2,nnnn.n
+16,date,観測年月日,,Text,8,8,yyyymmdd
+17,time,観測時間,,Text,4,4,hhmm
+18,fault_condition_identifier_rain,障害状況識別符,,Text,3,1,原則、127が入っている
+19,precipitation_total_counter,降水積算カウンタ,mm,Text,1～3,4,nnn
+20,precipitation_in_last_minute,前1分間降水量,0.1mm,Text,3～4,4,nnn.n
+21,usage_flag_20,利用フラグ,,Text,1～2,1,nn
+22,precipitation_intensity,降水強度,0.1mm/h,Text,3～4,4,nnn.n
+23,usage_flag_22,利用フラグ,,Text,1～2,1,nn
+24,maximum_intensity_of_precipitation,最大降水強度,0.1mm/h,Text,3～4,4,nnn.n
+25,usage_flag_24,利用フラグ,,Text,1～2,1,nn
+26,presence_of_precipitation,降水の有無,,Text,1,4,"n: 1 if precipitation was observed in the last minute, 0 if not precipitated"
+27,usage_flag_26,利用フラグ,,Text,1～2,1,nn
+28,type_of_precipitation,降水種別,,Text,1～2,4,視程計による観測を行っている場合は、88番目の15分現在天気の値を参照。対応表は「03-04_weather_chart.csv」となっている。視程計による観測を行っていない場合にデータは記載され、対応表は「03-04_weather_chart02.csv」となっている。
+29,usage_flag_28,利用フラグ,,Text,1～2,1,nn
+30,fault_condition_identifier_wind,障害状況識別符,,Text,3,1,原則、127が入っている
+31,cw_maximum_wind_direction,CW風向の最大値,度,Text,1～3,4,nnn
+32,usage_flag_31,利用フラグ,,Text,1～2,1,nn
+33,ccw_maximum_wind_direction,CCW風向の最大値,度,Text,1～3,4,nnn
+34,usage_flag_33,利用フラグ,,Text,1～2,1,nn
+35,maximum_instantaneous_wind_speed,最大瞬間風速（3秒移動平均）,0.1m/s,Text,3～4,4,nn.n
+36,usage_flag_35,利用フラグ,,Text,1～2,1,nn
+37,wind_direction16,最大瞬間風速（3秒移動平均）時の風向（16方位）,,Text,,4,"""-""、""N""、""NNE""、""NE""、、、""　※""-""は、0.2 m/s以下の場合を表わし、静穏（Calm）を意味する。"
+38,wind_direction36,最大瞬間風速（3秒移動平均）時の風向（36方位）,,Text,,4,"""-""、""1""、""2""、""3""、、、""　※""-""は、0.2 m/s以下の場合を表わし、静穏（Calm）を意味する。"
+39,minimum_instantaneous_wind_speed,最小瞬間風速（3秒移動平均）,0.1 m/s,Text,,4,
+40,usage_flag_39,利用フラグ,,Text,1～2,1,nn
+41,average_wind_direction16,平均風向（前10分間のベクトル平均）（16方位）,,Text,,4,"""-""、""N""、""NNE""、""NE""、、、""　※""-""は、0.2 m/s以下の場合を表わし、静穏（Calm）を意味する。"
+42,usage_flag_41,利用フラグ,,Text,1～2,1,nn
+43,average_wind_direction36,平均風向（前10分間のベクトル平均）（36方位）,,Text,,4,"""-""、""1""、""2""、""3""、、、""　※""-""は、0.2 m/s以下の場合を表わし、静穏（Calm）を意味する。"
+44,usage_flag_43,利用フラグ,,Text,1～2,1,nn
+45,wind_run_counter,風程カウンタ,,Text,1～3,4,nnn
+46,usage_flag_45,利用フラグ,,Text,1～2,1,nn
+47,number_of_valid_data_for_wind_run,風程有効データ数,,Text,1～3,4,nnn
+48,average_wind_speed,平均風速（10分移動平均）,0.1m/s,Text,3～4,4,nn.n
+49,usage_flag_48,利用フラグ,,Text,1～2,1,nn
+50,fault_condition_identifier_temp,障害状況識別符,,Text,3,1,原則、127が入っている
+51,temperature,気温,0.1℃,Text,3～5,4,-nn.n ~ nn.n
+52,usage_flag_51,利用フラグ,,Text,1～2,1,nn
+53,maximum_temperature,最高気温（前1分間）,0.1℃,Text,3～5,4,-nn.n ~ nn.n
+54,usage_flag_53,利用フラグ,,Text,1～2,1,nn
+55,minimum_temperature,最低気温(前1分間）,0.1℃,Text,3～5,4,-nn.n ~ nn.n
+56,usage_flag_55,利用フラグ,,Text,1～2,1,nn
+57,fault_condition_identifier_sunshine,障害状況識別符,,Text,3,1,原則、127が入っている
+58,sunshine_accumulation_counter,日照積算カウンタ,,Text,1～3,4,nnn
+59,sunshine_duration,日照時間,1s,Text,1～2,4,nn
+60,usage_flag_59,利用フラグ,,Text,1～2,1,nn
+61,fault_condition_identifier_radiation,障害状況識別符,,Text,3,1,原則、127が入っている
+62,direct_solar_radiation,直達日射量,0.01KJ/m2,Text,4～6,4,nnn.nn
+63,usage_flag_62,利用フラグ,,Text,1～2,1,nn
+64,global_solar_radiation,全天日射量,0.01KJ/m2,Text,4～6,4,nnn.nn
+65,usage_flag_64,利用フラグ,,Text,1～2,1,nn
+66,fault_condition_identifier_snow,障害状況識別符,,Text,3,1,原則、127が入っている
+67,depth_of_snow_cover,積雪の深さ,(1cm),Text,1～3,4,nnn
+68,usage_flag_67,利用フラグ,,Text,1～2,1,nn
+69,fault_condition_identifier_pressure,障害状況識別符,,Text,3,1,原則、127が入っている
+70,gravitational_acceleration,重力加速度,0.0001m/s2,Text,6,2,0.nnnn
+71,local_pressure,現地気圧,0.1hPa,Text,5～6,4,nnnn.n
+72,usage_flag_71,利用フラグ,,Text,1～2,1,nn
+73,sea_level_pressure,海面気圧,0.1hPa,Text,5～6,4,nnnn.n
+74,usage_flag_73,利用フラグ,,Text,1～2,1,nn
+75,minimum_sea_level_pressure,最低海面気圧,0.1hPa,Text,5～6,4,nnnn.n
+76,usage_flag_75,利用フラグ,,Text,1～2,1,nn
+77,fault_condition_identifier_humidity,障害状況識別符,,Text,3,1,原則、127が入っている
+78,relative_humidity,相対湿度,%,Text,1～3,4,nnn
+79,usage_flag_78,利用フラグ,,Text,1～2,1,nn
+80,minimum_relative_humidity,最小相対湿度,%,Text,1～3,4,nnn
+81,usage_flag_80,利用フラグ,,Text,1～2,1,nn
+82,vapor_pressure,蒸気圧,0.1hPa,Text,5～6,4,nnnn.n
+83,usage_flag_82,利用フラグ,,Text,1～2,1,nn
+84,dewpoint_temperature,露点温度,0.1℃,Text,3～5,4,-nn.n ~ nn.n
+85,usage_flag_84,利用フラグ,,Text,1～2,1,nn
+86,fault_condition_identifier_visibility,障害状況識別符,,Text,3,1,原則、127が入っている
+87,range_of_visibility,視程,0.001km,Text,6～7,4,nn.nnnn
+88,usage_flag_87,利用フラグ,,Text,1～2,1,nn
+89,fifteen_minute_current_weathe,15分現在天気,,Text,1～2,1,nn
+90,usage_flag_89,利用フラグ,,Text,1～2,1,nn

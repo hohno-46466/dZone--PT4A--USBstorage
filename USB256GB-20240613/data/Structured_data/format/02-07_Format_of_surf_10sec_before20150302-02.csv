@@ -1,0 +1,47 @@
+﻿Serial Number,Observation element,Detailed Item,Unit,Bytes,Start Byte,Japanese,Remarks
+0,Wind,Maximum value of CW wind direction,Degree,4,0,CW風向の最大値,Surface meteorological observation points are stored in 1-degree increments (1 degree to 360 degrees).
+1,Wind,Maximum value of CCW wind direction,Degree,4,4,CCW風向の最大値,Surface meteorological observation points are stored in 1-degree increments (1 degree to 360 degrees).
+2,Wind,Maximum instantaneous wind speed for 10 seconds,0.1m/s,4,8,10秒間の最大瞬間風速,
+3,Wind,Wind direction (360 degrees) at maximum instantaneous wind speed for 10 seconds,Degree,4,12,10秒間最大瞬間風速時の風向（360度）,Surface meteorological observation points are stored in 1-degree increments (1 degree to 360 degrees).
+4,Wind,Minimum instantaneous wind speed for 10 seconds,0.1m/s,4,16,10秒間の最小瞬間風速,
+5,Wind,Wind run counter,,4,20,風程カウンタ,
+6,Wind,Wind direction vector X component in the last 10 seconds,,4,24,前10秒間積算風向ベクトルX成分,Vector components are multiplied by 1000 to the third decimal place of the significant digits
+7,Wind,Wind direction vector Y component in the last 10 seconds,,4,28,前10秒間積算風向ベクトルY成分,Vector components are multiplied by 1000 to the third decimal place of the significant digits
+8,Wind,Maximum value of CW wind direction (0.25 second value processing),,4,32,CW風向の最大値（0.25秒値処理）,
+9,Wind,Maximum value of CCW wind direction (0.25 second value processing),,4,36,CCW風向の最大値（0.25秒値処理）,
+10,Wind,Maximum instantaneous wind speed for 10 seconds (0.25 second value processing),,4,40,10秒間の最大瞬間風速（0.25秒値処理）,
+11,Wind,Wind direction (360 degrees) at maximum instantaneous wind speed for 10 seconds (0.25 second value processing),,4,44,10秒間最大瞬間風速時の（0.25秒値処理）風向（360度）,
+12,Wind,Minimum instantaneous wind speed for 10 seconds (0.25 second value processing),,4,48,10秒間の最小瞬間風速（0.25秒値処理）,
+13,Wind,Wind run counter (0.25 second value processing),,4,52,風程カウンタ（0.25秒値処理）,
+14,Wind,Wind direction vector X component in the last 10 seconds (0.25 second value processing),,4,56,前10秒間積算風向ベクトルX成分（0.25秒値処理）,Vector components are multiplied by 1000 to the third decimal place of the significant digits
+15,Wind,Wind direction vector Y component in the last 10 seconds (0.25 second value processing),,4,60,前10秒間積算風向ベクトルY成分（0.25秒値処理）,Vector components are multiplied by 1000 to the third decimal place of the significant digits
+16,Solar radiation,Output Electrical Potential 1,mV,4,64,出力電位1,
+17,Solar radiation,Azimuth 1,,4,68,方位角1,
+18,Solar radiation,Height angle 1,,4,72,高度角1,
+19,Solar radiation,Machine temperature 1,℃,4,76,機械温度1,
+20,Solar radiation,Output Electrical Potential 2,mV,4,80,出力電位2,
+21,Solar radiation,Azimuth 2,,4,84,方位角2,
+22,Solar radiation,Height angle 2,,4,88,高度角2,
+23,Solar radiation,Machine temperature 2,℃,4,92,機械温度2,
+24,Solar radiation,Direct solar radiation in the last 10 seconds,0.01KJ/m2,4,96,前10秒間直達日射量,
+25,Solar radiation,Global solar radiation in the last 10 seconds,0.01KJ/m2,4,100,前10秒間全天日射量,
+26,Temperature,Temperature,0.1℃,4,104,気温データ,
+27,Sunshine,Sunshine 1 Flag,,1,108,日照1フラグ,
+28,Sunshine,Sunshine 2 Flag,,1,109,日照2フラグ,
+29,Snow,Distance to snow surface,0.1cm,4,110,雪面までの距離,
+30,Atmospheric pressure,Atmospheric pressure,0.1hPa,4,114,現地気圧,
+31,Humidity,Humidity,0.1%,4,118,湿度データ,
+32,Range of visibility,Average visibility in the last 10 minutes,m,4,122,視程（10分平均）,
+33,Range of visibility,Current weather (15 minutes),,4,126,15分現在天気,
+34,HK,Rain,,4,130,雨,
+35,HK,Wind,,4,134,風,
+36,HK,Wind (2.5-second value),,4,138,風（2.5秒値）,
+37,HK,Temperature,,4,142,気温,
+38,HK,Sunshine,,4,146,日照,
+39,HK,Sunshine (Special),,4,150,日照（特）,Voltage value of the sensitive area for determining the amount of solar radiation measured by a direct solar radiation meter
+40,HK,Snow,,4,154,積雪,
+41,HK,Humidity,,4,158,湿度,
+42,HK,Atmospheric Pressure,,4,162,気圧,
+43,HK,Range of Visibility,,4,166,視程,
+44,HK,Solar radiation,,4,170,日射,Solar radiation measured by surface meteorological observation equipment solar irradiometers
+45,HK,Devices,,4,174,装置,
