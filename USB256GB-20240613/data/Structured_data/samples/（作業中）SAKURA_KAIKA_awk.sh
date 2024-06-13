@@ -171,34 +171,23 @@ awk '{print $1, $4, $2, $3}'			|
 # 1:観測年月日 2:最高気温 3:平均気温 4:最高気温の観測時間
 # 1: Date of observation 2: Maximum temperature 3: Average temperature 4: Observation time of Maximum temperature
 
-# 年ごとに気温を積算するためのフィールドを追加
-# Add field to totalize temperature by year
-awk '{printf "%s %s %s %s %s\n", $1, substr($1,1,4), $2, $3, $4}'	|
-self 1 1.1.4 2 3				|
-# 1:観測年月日 2:観測年(yyyy) 3:最高気温 4:平均気温 5:最高気温の観測時間
-# 1: Date of observation 2: Year of observation (yyyy) 3: Maximum temperature 4: Average temperature 5: Observation time of Maximum temperature
-
 # データ積算
 # Data Accumulation
 # 年ごとに最高気温、平均気温を積算
 # Accumulate maximum and average temperatures by year
-kasan +r key=2 val=3/4				|
-# 1:観測年月日 2:観測年(yyyy) 3:最高気温(積算) 4:平均気温(積算)
-# 1: Date of observation 2: Year of observation (yyyy) 3: Maximum temperature (total) 4: Average temperature (total)
-
-# フィールド削除
-# Field deletion
-delf 2						|
+awk '{
+    year = substr($1, 1, 4)
+    if (year != prev_year) {
+        avg_sum = 0;
+        max_sum = 0;
+    }
+    avg_sum += $3;
+    max_sum += $4;
+    print $1, avg_sum, max_sum
+    prev_year = year
+}'										> 3.KAIKABI_KION.56227
 # 1:観測年月日 2:最高気温(積算) 3:平均気温(積算)
 # 1: Date of observation 2: Maximum temperature (total) 3: Average temperature (total)
-
-# 開花情報マスタと結合
-# Combine with bloom information master
-# KAIKA_MASTER.観測所番号.txt 1:開花日(yyyymmdd) 2:観測所番号 3:地点名
-# KAIKA_MASTER.observatory_number.txt 1:bloom date(yyyymmdd) 2:observatory number 3:observatory name
-# 開花日時点での累計気温情報の取得
-# Obtain cumulative temperature information as of bloom date
-join0 key=1 KAIKA_MASTER/KAIKA_MASTER.56227.txt -		> 3.KAIKABI_KION.56227
 
 # 出力 KAIKABI_KION.56227
 # 1:開花日 2:開花日までの積算最高気温 3:開花日までの積算平均気温
