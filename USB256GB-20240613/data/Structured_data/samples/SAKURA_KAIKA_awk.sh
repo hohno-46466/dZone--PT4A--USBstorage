@@ -180,7 +180,7 @@ awk '{
         max_sum = 0;
     }
     avg_sum += $3;
-    max_sum += $4;
+    max_sum += $2;
     print $1, avg_sum, max_sum
     prev_year = year
 }'										> 3.KAIKABI_KION.56227
