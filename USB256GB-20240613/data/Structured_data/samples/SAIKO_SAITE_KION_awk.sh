@@ -120,7 +120,7 @@ cat -n 						> 1a.SAIKO_KION.2020
 # Find the minimum temperature for each day
 # 先ほど書き出したファイルtemp.2020を読み込む
 # Read the file temp.2020 that was written out earlier
-cat 1.temp.2020					|
+cat 1a.temp.2020					|
 # 1:アメダス観測所番号 2: 観測年月日 3:観測時間 4:気温 
 # 1: AMeDAS observatory number 2: Date of observation 3: Time of observation 4: Temperature 
 
