@@ -9,9 +9,9 @@
 # 作成者・連絡先:
 # Author/Contact:
 #     金沢大学学術メディア創成センター 大野、森
-#     Emerging Media Initiative, Kanazawa University: Ohno, Mori
-# 最終更新日   : 2024年6月12日
-# Last updated : Jun 12, 2024
+#     Emerging Media Initiative, Kanazawa University: H.Ohno, Y.Mori
+# 最終更新日   : 2024年6月13日
+# Last updated : Jun 13, 2024
 #
 ################################################################################
 
@@ -27,7 +27,7 @@ If you do not understand a word, please search for it on Google or other search 
 
 作業内容が分からない、上手く行かない場合は、担当リーダー（大野）に質問してください。
 If you have any questions about the work or it is not going well, 
-please ask the leader (Ohno).
+please ask the leader (H.Ohno).
 
 ################################################################################
 
@@ -197,4 +197,4 @@ That is all.
  2022年10月11日 Ver.2.2
  2023年9月29日 Ver.3.0
  2024年5月31日 Ver.3.1
- 2024年6月12日 Ver.3.2 WG対応に改訂
+ 2024年6月13日 Ver.3.2 WG対応に改訂

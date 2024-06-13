@@ -6,9 +6,9 @@
 # 作成者・連絡先: 
 # Author/Contact: 
 #     金沢大学学術メディア創成センター 大野、森
-#     Emerging Media Initiative, Kanazawa University: Ohno, Mori
-# 最終更新日   : 2024年6月12日
-# Last updated : Jun 12, 2024
+#     Emerging Media Initiative, Kanazawa University: H.Ohno, Y.Mori
+# 最終更新日   : 2024年6月13日
+# Last updated : Jun 13, 2024
 #
 ################################################################################
 
@@ -16,7 +16,7 @@
 ├── Readme1_Rev.4.0.txt
 ├── Readme2_tree_2024.txt
 ├── Readme3_USB_MOUNT_REV.3.1.txt
-├── Readme4_PT4A_REV.3.1.txt
+├── _USB256GB-20240613_
 ├── data
 │   ├── Structured_data
 │   │   ├── Readme_Rev.4.0.txt

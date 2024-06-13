@@ -6,13 +6,13 @@
 # サンプル1.最高気温、最低気温の抽出
 # Sample 1. Extraction of maximum and minimum temperatures
 #
-# 実行方法: ./SAIKO_SAITE_KION.sh
-# Execution method: . /SAIKO_SAITE_KION.sh
+# 実行方法: ./SAIKO_SAITE_KION_awk.sh
+# Execution method: . /SAIKO_SAITE_KION_awk.sh
 #
 # 作成者: USP研究所 山田将誉 (m-yamada@usp-lab.com)
 # Author: Masataka Yamada, USP Laboratory (m-yamada@usp-lab.com)
-# 最終更新日: 2024/05/31 (modified by @mori4416)
-# Last modified by @mori4416 on 2024/05/31
+# 最終更新日: 2024/06/13 (modified by @mori4416)
+# Last modified by @mori4416 on 2024/06/13
 #
 
 ################################################################
@@ -120,7 +120,7 @@ cat -n 						> 1a.SAIKO_KION.2020
 # Find the minimum temperature for each day
 # 先ほど書き出したファイルtemp.2020を読み込む
 # Read the file temp.2020 that was written out earlier
-cat 1.temp.2020					|
+cat 1a.temp.2020					|
 # 1:アメダス観測所番号 2: 観測年月日 3:観測時間 4:気温 
 # 1: AMeDAS observatory number 2: Date of observation 3: Time of observation 4: Temperature 
 
