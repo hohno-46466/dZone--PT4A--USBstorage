@@ -6,13 +6,13 @@
 # サンプル1.最高気温、最低気温の抽出
 # Sample 1. Extraction of maximum and minimum temperatures
 #
-# 実行方法: ./SAIKO_SAITE_KION.sh
-# Execution method: . /SAIKO_SAITE_KION.sh
+# 実行方法: ./SAIKO_SAITE_KION_awk.sh
+# Execution method: . /SAIKO_SAITE_KION_awk.sh
 #
 # 作成者: USP研究所 山田将誉 (m-yamada@usp-lab.com)
 # Author: Masataka Yamada, USP Laboratory (m-yamada@usp-lab.com)
-# 最終更新日: 2024/05/31 (modified by @mori4416)
-# Last modified by @mori4416 on 2024/05/31
+# 最終更新日: 2024/06/13 (modified by @mori4416)
+# Last modified by @mori4416 on 2024/06/13
 #
 
 ################################################################

@@ -77,8 +77,7 @@ export LANG=ja_JP.UTF8
 # 51: Temperature 52: Temperature usage flag 12: Sunshine hours (s) 13: Sunshine hours usage flag 
 # 67: Snow amount 68: Snow amount usage flag
 
-for i in 2021 2022; do
-#for i in 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022; do
+for i in 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022; do
 
 	# データの読み込みを行う
 	# Load data.
@@ -106,8 +105,7 @@ for i in 2021 2022; do
 
 	# 2月1日以降のデータに限定
 	# Limited to data from February 1 onward
-	awk '{if($1>='${i}'0201){print $1,$2,$3}}'
-	#cond '$1 ge '${i}'0201'			|
+	awk '{if($1 >= "'"$i"'0201"){print $1, $2, $3}}' 
 	# 1: 観測年月日 2:観測時間 3:気温
 	# 1: Date of observation 2: Time of observation 3: Temperature
 
@@ -167,7 +165,7 @@ sort -k 1 -n						> 3a.HEIKIN
 # 観測年月日をキーとしてデータを結合する
 # Combine data using the date of observation as a key.
 join -1 1 -2 1 3a.SAIKO 3a.HEIKIN		|
-awk '{print $1, $4, $2, $3}'			|
+awk '{print $1, $3, $4, $2}'			|
 # 1:観測年月日 2:最高気温 3:平均気温 4:最高気温の観測時間
 # 1: Date of observation 2: Maximum temperature 3: Average temperature 4: Observation time of Maximum temperature
 
