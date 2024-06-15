@@ -7,13 +7,13 @@
 # PT4A installation instructions
 #
 # 作成者・連絡先:
-# Author/Contact:
+# Author/Contact: 
 #     金沢大学学術メディア創成センター 大野、森
-#     Emerging Media Initiative, Kanazawa University: Ohno, Mori
+#     Emerging Media Initiative, Kanazawa University: H.Ohno, Y.Mori
 #     有限会社ユニバーサル・シェル・プログラミング研究所（USP研究所、https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
-#     Universal Shell Programming Laboratory LLC: Watano, Yamada, Matsuura
-# 最終更新日   : 2024年6月3日
-# Last updated : Jun 3, 2024
+#     Universal Shell Programming Laboratory LLC: S.Watano, M.Yamada, T.Matsuura
+# 最終更新日   : 2024年6月16日
+# Last updated : Jun 16, 2024
 #
 ################################################################################
 
@@ -161,3 +161,5 @@ That is all.
  2022年10月11日 Ver.2.4
  2023年9月29日 Ver.3.0
  2024年6月3日 Ver.3.1
+ 2024年6月13日 Ver.3.2 WG対応に改訂
+ 2024年6月16日 Ver.3.3 2024年度講義用に改訂

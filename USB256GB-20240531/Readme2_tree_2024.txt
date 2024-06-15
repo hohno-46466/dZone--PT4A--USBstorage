@@ -6,11 +6,11 @@
 # 作成者・連絡先: 
 # Author/Contact: 
 #     金沢大学学術メディア創成センター 大野、森
-#     Emerging Media Initiative, Kanazawa University: Ohno, Mori
-#     USP研究所 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
-#     UniversalShellProgrammingLaboratory: Watano, Yamada, Matsuura
-# 最終更新日   : 2024年6月5日
-# Last updated : Jun 5, 2024
+#     Emerging Media Initiative, Kanazawa University: H.Ohno, Y.Mori
+#     有限会社ユニバーサル・シェル・プログラミング研究所（USP研究所、https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
+#     Universal Shell Programming Laboratory LLC: S.Watano, M.Yamada, T.Matsuura
+# 最終更新日   : 2024年6月16日
+# Last updated : Jun 16, 2024
 #
 ################################################################################
 
@@ -20,13 +20,13 @@
 │   ├── PT4A_M1Mac_20240217.tar.gz
 │   ├── PT4A_Ubuntu22_20240217.tar.gz
 │   └── PT4A_WSL_ubuntu_20240305.tar.gz
-├── Readme1_Rev.4.0.txt
+├── Readme1_Rev.4.2.txt
 ├── Readme2_tree_2024.txt
-├── Readme3_USB_MOUNT_REV.3.1.txt
+├── Readme3_USB_MOUNT_REV.3.2.txt
 ├── Readme4_PT4A_REV.3.1.txt
 ├── data
 │   ├── Structured_data
-│   │   ├── Readme_Rev.4.0.txt
+│   │   ├── Readme_Rev.4.2.txt
 │   │   ├── amed_2008.txt.gz
 │   │   ├── amed_2009.txt.gz
 │   │   ├── amed_2010.txt.gz

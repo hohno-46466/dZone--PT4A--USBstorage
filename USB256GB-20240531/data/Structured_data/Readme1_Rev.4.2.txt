@@ -3,8 +3,8 @@
 # 金沢大学 学術メディア創成センター MONKチーム
 # MONK Team, Emerging Media Initiative, Kanazawa University
 #
-# 構造化データおよびサンプルスクリプトについて
-# About Structured Data and Sample Scripts
+# USBメモリ内のビッグデータ（構造化、非構造化）およびサンプルスクリプトについて
+# Big data (Structured and Unstructured) and sample scripts in USB memory device
 #
 # 作成者・連絡先:
 # Author/Contact:
@@ -15,27 +15,74 @@
 #
 ################################################################################
 
-<<構造化データ概要/Structured Data Overview>>
+<< 概要/Overview >>
 
-この構造化データは、金沢大学学術メディア創成センターとUSP研究所との共同研究の中で、
-日本の気象庁が日本各地に設置しているアメダスと地上観測所から送られてくるデータを入手し、
-講義で使用できるように処理したものです。
-This structured data was obtained in a joint research project 
-between the Emerging Media Initiative, Kanazawa University and the USP Laboratory, 
-and was processed for use in lectures by obtaining data sent from AMeDAS and surface stations 
-located throughout Japan by the Japan Meteorological Agency.
+講義で配布したUSBメモリに保存されているビッグデータおよびサンプルスクリプトは、
+金沢大学学術メディア創成センター大野、森と、USP研究所（https://www.usp-lab.com/）との共同研究によるものです。
+特に、本稿などの原案を作成していただいたUSP研究所 綿野氏、山田氏、松浦氏には深く感謝いたします。
+The big data and sample scripts stored on the USB memory devices distributed at the 講義 
+were the result of collaboration between H.Ohno and Y.Mori of EMI of Kanazawa University and the USP Laboratory.
+In particular, We would like to express our thanks to 
+Mr. Watano, Mr. Yamada, and Mr. Matsuura of the USP Laboratory, 
+who prepared the original draft of these documents.
 
-データは、気象庁の外郭団体「気象業務支援センター」から購入しました。
-購入したデータファイルから、講義で使用するのに十分な項目を抜き出し、テキストファイルに保存しなおしました。
-The data was purchased from the Japan Meteorological Agency's affiliated organization, the Japan Meteorological Service Support Center.
-From the purchased data files, we extracted sufficient items for use in lectures and re-saved them in text files.
+構造化データ（data/Structured_data/内の各種ファイル）と
+非構造化データ（data/Unstructured_data/Tokyo2020内の各種ファイル）で219GBのサイズがあります。
+Structured data (files in data/Structured_data/) and
+Unstructured data (files in data/Unstructured_data/Tokyo2020) is over 219 GB in size.
 
-データのフォーマット（保存形式や設置場所の情報など）は、「format」というディレクトリの中に、csvファイル形式で保存されています。
-The format of the data (storage format, location information, etc.) is stored in the directory "format" in the form of csv files.
+これらのデータは、年月日時でファイルが分かれています。
+特に構造化データは、1つのファイルあたり「6千8百万行」以上の大きさがあり、
+Excelなどの表計算ソフトウェアでは処理できません。
+These data were divided into files by year, month, day, and hour.
+Structured data, in particular, can be over "68,000,000 lines" per file 
+and cannot be processed by spreadsheet software such as Excel.
+
+講義では、このようなビッグデータを、学生の皆さんが使用している携帯型パソコンで処理する方法を学びます。
+その上で、学生の皆さんには、課題として、これらのデータを使って、
+さまざまなデータ処理をし、レポートにまとめてもらいます。
+In the lecture, students will learn how to process such big data on their laptops.
+Then, as an assignment, students will be asked to use these data to process various data and compile them into a report.
+
+皆さんが、この講義で学ぶ「データ処理方法」は、学生生活や研究活動、卒業後の仕事現場でも役に立ちます。
+しっかりと学んでください。
+The "data processing methods" you will learn in this lecture 
+will be useful in your student life, in your research activities, and in the workplace after graduation.
+Study it carefully.
+
+なお、データおよびサンプルスクリプトの取扱いについては、
+このファイルの最後に≪著作権および免責事項≫にまとめましたので、その内容に従って、上手に利用してください。
+Please note that the handling of data and sample scripts are summarized
+in the <<Copyright and Disclaimer>> at the end of this file, so please use them in accordance with its contents.
+
 
 ################################################################################
 
-<<ファイル構成/File Structure>>
+<<動作条件/Operating Conditions>>
+
+・POSIXに準拠したコマンドラインインターフェースが使用できる環境であること。
+  The PC environment must be able to use a POSIX-compliant command line interface (CLI / CUI).
+  ※Windows11/10であれば、「Linux用Windowsサブシステム（WSL）」をインストールし、初期設定が終了していること。
+    For Windows 11/10, "Windows Subsystem for Linux (WSL)" must be installed and initially configured.
+  ※macOSであれば、「ターミナル（Terminal）」を使用する。
+    For macOS, you must be able to use "Terminal".
+
+・サンプルスクリプトを使用する場合は、
+  最新版の Personal Tukubai for Academic（PT4A）がインストールされていること。
+  The latest version of Personal Tukubai for Academic (PT4A) must be installed 
+  to use sample scripts.
+
+  ※PT4Aのインストール及び利用に必要なリソース。
+    Resources required to install and use PT4A.
+    ・Windows11/10のWSLの場合：メモリ8GB以上、インストール作業時のディスク空き容量 500MB以上
+      For Windows11/10's WSL: 8GB or more memory, 500MB or more free disk space for installation.
+    ・macOSの場合：メモリ8GB以上、インストール作業時のディスク空き容量 500MB
+      For macOS: 8GB or more memory, 500MB or more free disk space for installation.
+
+
+################################################################################
+
+<<ファイル構成/File Configuration>>
 
 Structured_data
 │   
@@ -160,40 +207,50 @@ Structured_data
 
 ################################################################################
 
-<<サンプルスクリプト/Sample Script>>
+<<サンプルスクリプト/Sample Scripts>>
 
 このUSBメモリ内に保存されているサンプルスクリプトは、USP研究所から提供されたものです。
-The sample scripts stored on this USB memory device were provided by the USP Laboratory.
+Sample scripts stored on this USB memory device were provided by the USP Laboratory.
 
-samplesというディレクトリ（フォルダ）の中に、アメダスデータを用いたサンプル・スクリプトが置かれています。
-In the directory (folder) named "samples," sample scripts using AMeDAS data are placed.
+
+構造化データ（Structured_data）の場合は、
+samplesというディレクトリ（フォルダ）の中に、アメダスデータを用いたサンプル・スクリプトがあります。
+For structured data (Structured_data),
+there are several sample scripts that use AMEDAS data in the directory (folder) named samples.
+
+まずは、data/Structured_data/samplesのディレクトリ（フォルダ）に移動して、サンプルスクリプトを確認してみてください。
+First, go to the directory (folder) data/Structured_data/samples and check out the sample scripts.
+
+USP研究所が用意してくれたサンプルスクリプト（ファイル名の最後に「.sh」がついているもの）が4つ置かれています。
+In the directory, there are four sample scripts (with ".sh" at the end of the file name) provided by the USP Laboratory.
+
 
 サンプル1. 最高気温、最低気温の抽出
 Sample 1. Extraction of maximum and minimum temperatures
   年ごとに最高気温が最も高い日、最低気温が最も低い日を抽出する。
   Extract the highest and lowest maximum and minimum temperatures for each year.
-  サンプルスクリプトファイル: SAIKO_SAITE_KION_awk.sh
-  Sample script file: SAIKO_SAITE_KION_awk.sh
-  実行方法: ./SAIKO_SAITE_KION_awk.sh
-  Execution method: . /SAIKO_SAITE_KION_awk.sh
+  サンプルスクリプトファイル: SAIKO_SAITE_KION.sh / SAIKO_SAITE_KION_awk.sh
+  Sample script file: SAIKO_SAITE_KION.sh / SAIKO_SAITE_KION_awk.sh
+  実行方法: ./SAIKO_SAITE_KION.sh / ./SAIKO_SAITE_KION_awk.sh
+  Execution method: ./SAIKO_SAITE_KION.sh / ./SAIKO_SAITE_KION_awk.sh
 
 サンプル2-1. 平均気温の推移1
 Sample 2-1. Trends in average temperature 1
   年平均気温を求め、その推移を確認する。
   Find the annual average temperature and check its transition.
-  サンプルスクリプトファイル: HEIKIN_KION_YYYY_awk.sh
-  Sample script file: HEIKIN_KION_YYYY_awk.sh
-  実行方法: ./HEIKIN_KION_YYYY_awk.sh
-  Execution method: . /HEIKIN_KION_YYYY_awk.sh
+  サンプルスクリプトファイル: HEIKIN_KION_YYYY.sh / HEIKIN_KION_YYYY_awk.sh
+  Sample script file: HEIKIN_KION_YYYY.sh / HEIKIN_KION_YYYY_awk.sh
+  実行方法: ./HEIKIN_KION_YYYY.sh / ./HEIKIN_KION_YYYY_awk.sh
+  Execution method: ./HEIKIN_KION_YYYY.sh / ./HEIKIN_KION_YYYY_awk.sh
 
 サンプル2-2. 平均気温の推移2
 Sample 2-1. Trends in average temperature 2
   年月平均気温を求め、その推移を確認する。
   Find the month-year average temperature and check its transition.
-  サンプルスクリプトファイル: HEIKIN_KION_YYYYMM_awk.sh
-  Sample script file: HEIKIN_KION_YYYYMM_awk.sh
-  実行方法: ./HEIKIN_KION_YYYYMM_awk.sh
-  Execution method: . /HEIKIN_KION_YYYYMM_awk.sh
+  サンプルスクリプトファイル: HEIKIN_KION_YYYYMM.sh / HEIKIN_KION_YYYYMM_awk.sh
+  Sample script file: HEIKIN_KION_YYYYMM.sh / HEIKIN_KION_YYYYMM_awk.sh
+  実行方法: ./HEIKIN_KION_YYYYMM.sh / ./HEIKIN_KION_YYYYMM_awk.sh
+  Execution method: ./HEIKIN_KION_YYYYMM.sh / ./HEIKIN_KION_YYYYMM_awk.sh
 
 サンプル3. 桜の開花時期
 Sample 3: Cherry blossom season
@@ -207,20 +264,28 @@ Sample 3: Cherry blossom season
      or "when the average temperature total after February 1 exceeds 400 degrees Celsius."
     気温データを計算し、実際の開花情報と比較して、これらの法則が適用可能か調べる。
     Calculate temperature data and compare with actual bloom information to determine if these laws are applicable.
-  サンプルスクリプトファイル: SAKURA_KAIKA_awk.sh
-  Sample script file: SAKURA_KAIKA_awk.sh
-  実行方法: ./SAKURA_KAIKA_awk.sh
-  Execution method: . /SAKURA_KAIKA_awk.sh
+  サンプルスクリプトファイル: SAKURA_KAIKA_awk.sh / SAKURA_KAIKA_awk.sh
+  Sample script file: SAKURA_KAIKA_awk.sh / SAKURA_KAIKA_awk.sh
+  実行方法: ./SAKURA_KAIKA_awk.sh / ./SAKURA_KAIKA_awk.sh
+  Execution method: ./SAKURA_KAIKA_awk.sh / ./SAKURA_KAIKA_awk.sh
   さくらの開花日(気象庁): https://www.data.jma.go.jp/sakura/data/sakura003_06.html
   Cherry blossom bloom date (Japan Meteorological Agency): https://www.data.jma.go.jp/sakura/data/sakura003_06.html
+
+非構造化データ（Unstructured_data）の場合は、
+TUTORIAL.txtというテキストファイルの中に書かれています。
+For unstructured data (Unstructured_data),
+sample scripts are in a text file "TUTORIAL.txt".
+
+また、参考文献がReferencesというディレクトリ（フォルダ）の中に置かれています。
+In addition, references are placed in a directory (folder) called References.
+
 
 ################################################################################
 
 ≪著作権および免責事項/Copyright and Disclaimer≫
 
 ・この媒体に含まれる数値データは、日本の著作権法では、著作権保護の対象ではありませんので、自由に利用できます。
-  Numerical data stored in this USB memory device is not subject to copyright protection under Japanese copyright law,
-  and may be used freely.
+  Numerical data stored in this USB memory device is not subject to copyright protection under Japanese copyright law, and may be used freely.
 
 ・この媒体に含まれるサンプルプログラム（シェルスクリプト）や技術資料は、
   USP研究所の許諾により、複製、翻訳・変形等の翻案等、自由に利用できます。
@@ -232,9 +297,9 @@ Sample 3: Cherry blossom season
 
 ・この媒体に含まれる数値データ、サンプルプログラム（シェルスクリプト）を使用したことによって生じた
   すべての障害・損害・不具合等に関しては、
-  USP研究所、金沢大学学術メディア創成センターは一切の責任を負いません。
-  USP Laboratory and Emerging Media Initiative, Kanazawa University are not responsible for any failure, damage, or malfunction caused by the use of the numerical data and sample programs (shell scripts) contained in this medium.
+  金沢大学学術メディア創成センター、USP研究所は一切の責任を負いません。
   各自の責任においてご使用ください。
+  Emerging Media Initiative, Kanazawa University and the USP Laboratory are not responsible for any failure, damage, or malfunction caused by the use of the numerical data and sample programs (shell scripts) contained in this medium.
   Use at your own risk.
 
 
@@ -243,11 +308,12 @@ Sample 3: Cherry blossom season
 ≪履歴/Update History≫
 
  2021年6月11日 Ver.1.0 初版
- 2021年8月 5日 Ver.2.0 改訂版
- 2022年6月17日 Ver.2.1 改訂版
+ 2021年8月 4日 Ver.2.0 改訂版
+ 2022年6月14日 Ver.2.1 2022年度改訂版
  2022年10月1日 Ver.2.1a 改訂版
- 2022年10月13日 Ver.2.2
- 2023年8月3日 Ver.2.3
- 2023年9月29日 Ver.3.0
- 2024年5月31日 Ver.4.0
- 2024年6月13日 Ver.4.1 WG改訂版
+ 2022年10月13日 Ver.2.2 日本語英語併記
+ 2023年9月29日 Ver.3.0 改訂版
+ 2024年5月31日 Ver.4.0 改訂版
+ 2024年6月13日 Ver.4.1 WG対応に改訂
+ 2024年6月16日 Ver.4.2 2024年度講義用に改訂
+

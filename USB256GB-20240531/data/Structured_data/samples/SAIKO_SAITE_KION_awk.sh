@@ -6,13 +6,13 @@
 # サンプル1.最高気温、最低気温の抽出
 # Sample 1. Extraction of maximum and minimum temperatures
 #
-# 実行方法: ./SAIKO_SAITE_KION.sh
-# Execution method: . /SAIKO_SAITE_KION.sh
+# 実行方法: ./SAIKO_SAITE_KION_awk.sh
+# Execution method: . /SAIKO_SAITE_KION_awk.sh
 #
 # 作成者: USP研究所 山田将誉 (m-yamada@usp-lab.com)
 # Author: Masataka Yamada, USP Laboratory (m-yamada@usp-lab.com)
-# 最終更新日: 2024/05/31 (modified by @mori4416)
-# Last modified by @mori4416 on 2024/05/31
+# 最終更新日: 2024/06/13 (modified by @mori4416)
+# Last modified by @mori4416 on 2024/06/13
 #
 
 ################################################################
@@ -47,29 +47,25 @@ export LANG=ja_JP.UTF8
 
 # ファイル読み込み
 # Read file
-zcat < ../amed_2020.txt.gz		|
+zcat < ../amed_2020.txt.gz		    |
 # 2020年のファイルを用いる
 # Use file 2020
 
 # 気温データ抜き出し
 # Extract temperature data
-self 1 16 17 51 52				|
-# 1:アメダス観測所番号 2: 観測年月日 3:観測時間 4:気温 5:気温利用フラグ
-# 1:AMeDAS observatory number 2:Observation date 3:Observation time 4:Temperature 5:Temperature usage flag
-
-# 利用フラグ0,1,2,3（正常数値、正常数値、正常現象無し、正常現象無し）のものだけ抜き出す
-# 第5フィールドの値が3以下という条件を満たすレコードのみ抽出している
-# Only those with use flags 0,1,2,3 (normal value, normal value, no normal phenomenon, no normal phenomenon) are extracted
-# Only records that meet the condition that the value of the fifth field is 3 or less are extracted
-cond '$5 le 3'					|
-
-# 第5フィールド(気温利用フラグ)を削除
-# Delete 5th field (temperature use flag)
-delf 5						> 1.temp.2020
+# $52の利用フラグ0,1,2,3（正常数値、正常数値、正常現象無し、正常現象無し）のものだけ抜き出す
+# Only those with use flags 0,1,2,3 of $52(normal value, normal value, no normal phenomenon, no normal phenomenon) are extracted
 # 1.temp.2020ファイルへの書き出しを行う
 # Export to 1.temp.2020 file.
+awk '{if($52<=3){print $1,$16,$17,$51}}' > 1a.temp.2020
 # 1:アメダス観測所番号 2: 観測年月日 3:観測時間 4:気温 
 # 1: AMeDAS observatory number 2: Observation date 3: Observation time 4: Temperature 
+
+#self 1 16 17 51 52			    	|
+#cond '$5 le 3'					|
+#delf 5						> 1.temp.2020
+
+
 
 ################################################################
 # 最高気温ランキングの作成
@@ -79,18 +75,20 @@ delf 5						> 1.temp.2020
 # First, find the maximum temperature for each day
 # 先ほど書き出したファイルtemp.2020を読み込む
 # Read the file temp.2020 that was written out earlier
-cat 1.temp.2020					|
+cat 1a.temp.2020					|
 
 # 1:アメダス観測所番号 2: 観測年月日 3:観測時間 4:気温 
 # 1: AMeDAS observatory number 2: Date of observation 3: Time of observation 4: Temperature 
 
 # 気温の高い順にソート
 # Sort by temperature in descending order
-msort key=1n@2n@4nr				|
+sort -k 4 -nr                   |
+#msort key=1n@2n@4nr				|
 
 # 日ごとの最高気温を抽出する
 # Sort by temperature in descending order
-getfirst 1 2					|
+awk '!a[$2]++'                  |
+#getfirst 1 2					|
 # 1:アメダス観測所番号 2: 観測年月日 3:観測時間 4:最高気温
 # 1: AMeDAS observatory number 2: Date of observation 3: Time of observation 4: Maximum temperature
 
@@ -98,7 +96,8 @@ getfirst 1 2					|
 # Find the ranking of highest temperatures
 # 最高気温の高い順にソート
 # Sort by highest temperature
-msort key=4nr					|
+sort -k 4 -nr                   |
+#msort key=4nr					|
 
 # 最高気温の高いレコードtop10を抽出
 # Extract the top 10 highest temperature records
@@ -108,7 +107,8 @@ head -n 10					|
 # Rank in order of temperature
 # 結果をファイル1.SAIKO_KION.2020に書き出す
 # Write the results to file 1.SAIKO_KION.2020
-juni 						> 1.SAIKO_KION.2020
+cat -n 						> 1a.SAIKO_KION.2020
+#juni 						> 1.SAIKO_KION.2020
 # 1:順位 2:アメダス観測所番号 3: 観測年月日 4:観測時間 5:最高気温
 # 1:Rank 2:AMeDAS observatory number 3:Date of observation 4:Time of observation 5:Maximum temperature
 
@@ -120,17 +120,19 @@ juni 						> 1.SAIKO_KION.2020
 # Find the minimum temperature for each day
 # 先ほど書き出したファイルtemp.2020を読み込む
 # Read the file temp.2020 that was written out earlier
-cat 1.temp.2020					|
+cat 1a.temp.2020					|
 # 1:アメダス観測所番号 2: 観測年月日 3:観測時間 4:気温 
 # 1: AMeDAS observatory number 2: Date of observation 3: Time of observation 4: Temperature 
 
 # 気温の低い順にソート
 # Sort by coolest to coldest temperatures
-msort key=1n@2n@4n				|
+sort -k 4 -n                    |
+#msort key=1n@2n@4n				|
 
 # 日ごとの最低気温を抽出する
 # Extract daily minimum temperatures
-getfirst 1 2					|
+awk '!a[$2]++'                  |
+#getfirst 1 2					|
 # 1:アメダス観測所番号 2: 観測年月日 3:観測時間 4:最低気温
 # 1: AMeDAS observatory number 2: Date of observation 3: Time of observation 4: Minimum temperature
 
@@ -138,7 +140,8 @@ getfirst 1 2					|
 # Find the ranking of lowest temperatures
 # 最低気温の低い順にソート
 # Sort by lowest temperature
-msort key=4n					|
+sort -k 4 -n                    |
+#msort key=4n					|
 
 # 気温の低いレコードtop10を抽出
 # Extract the top 10 records with the lowest temperature
@@ -148,20 +151,21 @@ head -n 10					|
 # Rank the temperatures in order of decreasing temperature
 # 結果をファイル1.SAIKO_KION.2020に書き出す
 # Write the results to file 1.SAIKO_KION.2020
-juni						> 1.SAITE_KION.2020	
+cat -n						> 1a.SAITE_KION.2020	
+#juni						> 1.SAITE_KION.2020	
 # 1:順位 2:アメダス観測所番号 3: 観測年月日 4:観測時間 5:最低気温
 # 1: Rank 2: AMeDAS observatory number 3: Date of observation 4: Time of observation 5: Minimum temperature
 
 # 出力ファイル
 # Output file
-# 1.SAIKO_KION.2020
-# 1.SAITE_KION.2020
+# 1a.SAIKO_KION.2020
+# 1a.SAITE_KION.2020
 
-# $ cat 1.SAIKO_KION.2020
+# $ cat 1a.SAIKO_KION.2020
 # 1:順位 2:アメダス観測所番号 3: 観測年月日 4:観測時間 5:最高気温
 # 1: Rank 2: AMeDAS observatory number 3: Date of observation 4: Time of observation 5: Maximum temperature
 
-# $ cat 1.SAITE_KION.2020
+# $ cat 1a.SAITE_KION.2020
 # 1:順位 2:アメダス観測所番号 3: 観測年月日 4:観測時間 5:最低気温
 # 1: Rank 2: AMeDAS Observatory number 3: Date of observation 4: Time of observation 5: Minimum temperature
 

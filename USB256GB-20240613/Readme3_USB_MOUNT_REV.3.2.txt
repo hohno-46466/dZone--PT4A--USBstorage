@@ -115,8 +115,8 @@ $ ls /mnt/usb（↲エンターキーを押す/Press the Enter key）
 以下のような表示がされればマウント成功です。
 If the following message is displayed, the mount is successful.
 
-PT4A                  Readme2_tree.txt              Readme4_PT4A_REV.2.0.txt          data
-Readme1_Rev.4.0.txt		Readme3_USB_MOUNT_REV.4.0.txt	'System Volume Information'
+PT4A                  Readme2_tree.txt              'System Volume Information'
+Readme1_Rev.4.1.txt		Readme3_USB_MOUNT_REV.3.2.txt	data
 
 
 何も表示されない場合は、マウント失敗です。

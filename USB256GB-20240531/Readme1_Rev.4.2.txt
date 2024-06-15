@@ -9,11 +9,11 @@
 # 作成者・連絡先:
 # Author/Contact:
 #     金沢大学学術メディア創成センター 大野、森
-#     Emerging Media Initiative, Kanazawa University: Ohno, Mori
+#     Emerging Media Initiative, Kanazawa University: H.Ohno, Y.Mori
 #     有限会社ユニバーサル・シェル・プログラミング研究所（USP研究所、https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
-#     Universal Shell Programming Laboratory LLC: Watano, Yamada, Matsuura
-# 最終更新日   : 2024年5月31日
-# Last updated : May 31, 2024
+#     Universal Shell Programming Laboratory LLC: S.Watano, M.Yamada, T.Matsuura
+# 最終更新日   : 2024年6月16日
+# Last updated : Jun 16, 2024
 #
 ################################################################################
 
@@ -22,7 +22,7 @@
 講義で配布したUSBメモリに保存されているビッグデータおよびサンプルスクリプトは、
 金沢大学学術メディア創成センター大野、森と、USP研究所（https://www.usp-lab.com/）との共同研究によるものです。
 The big data and sample scripts stored on the USB memory devices distributed at the lecture 
-were the result of collaboration between Ohno and Mori of EMI,KU and USP Laboratory.
+were the result of collaboration between H.Ohno and Y.Mori of EMI of Kanazawa University and USP Laboratory.
 
 構造化データ（data/Structured_data/内の各種ファイル）と
 非構造化データ（data/Unstructured_data/Tokyo2020内の各種ファイル）で244GBのサイズがあります。
@@ -112,28 +112,28 @@ you will find four sample scripts (with ".sh" at the end of the file name) provi
 Sample 1. Extraction of maximum and minimum temperatures
   年ごとに最高気温が最も高い日、最低気温が最も低い日を抽出する。
   Extract the highest and lowest maximum and minimum temperatures for each year.
-  サンプルスクリプトファイル: SAIKO_SAITE_KION.sh
-  Sample script file: SAIKO_SAITE_KION.sh
-  実行方法: ./SAIKO_SAITE_KION.sh
-  Execution method: . /SAIKO_SAITE_KION.sh
+  サンプルスクリプトファイル: SAIKO_SAITE_KION.sh / SAIKO_SAITE_KION_awk.sh
+  Sample script file: SAIKO_SAITE_KION.sh / SAIKO_SAITE_KION_awk.sh
+  実行方法: ./SAIKO_SAITE_KION.sh / ./SAIKO_SAITE_KION_awk.sh
+  Execution method: ./SAIKO_SAITE_KION.sh / ./SAIKO_SAITE_KION_awk.sh
 
 サンプル2-1. 平均気温の推移1
 Sample 2-1. Trends in average temperature 1
   年平均気温を求め、その推移を確認する。
   Find the annual average temperature and check its transition.
-  サンプルスクリプトファイル: HEIKIN_KION_YYYY.sh
-  Sample script file: HEIKIN_KION_YYYY.sh
-  実行方法: ./HEIKIN_KION_YYYY.sh
-  Execution method: . /HEIKIN_KION_YYYY.sh
+  サンプルスクリプトファイル: HEIKIN_KION_YYYY.sh / HEIKIN_KION_YYYY_awk.sh
+  Sample script file: HEIKIN_KION_YYYY.sh / HEIKIN_KION_YYYY_awk.sh
+  実行方法: ./HEIKIN_KION_YYYY.sh / ./HEIKIN_KION_YYYY_awk.sh
+  Execution method: ./HEIKIN_KION_YYYY.sh / ./HEIKIN_KION_YYYY_awk.sh
 
 サンプル2-2. 平均気温の推移2
 Sample 2-1. Trends in average temperature 2
   年月平均気温を求め、その推移を確認する。
   Find the month-year average temperature and check its transition.
-  サンプルスクリプトファイル: HEIKIN_KION_YYYYMM.sh
-  Sample script file: HEIKIN_KION_YYYYMM.sh
-  実行方法: ./HEIKIN_KION_YYYYMM.sh
-  Execution method: . /HEIKIN_KION_YYYYMM.sh
+  サンプルスクリプトファイル: HEIKIN_KION_YYYYMM.sh / HEIKIN_KION_YYYYMM_awk.sh
+  Sample script file: HEIKIN_KION_YYYYMM.sh / HEIKIN_KION_YYYYMM_awk.sh
+  実行方法: ./HEIKIN_KION_YYYYMM.sh / ./HEIKIN_KION_YYYYMM_awk.sh
+  Execution method: ./HEIKIN_KION_YYYYMM.sh / ./HEIKIN_KION_YYYYMM_awk.sh
 
 サンプル3. 桜の開花時期
 Sample 3: Cherry blossom season
@@ -147,10 +147,10 @@ Sample 3: Cherry blossom season
      or "when the average temperature total after February 1 exceeds 400 degrees Celsius."
     気温データを計算し、実際の開花情報と比較して、これらの法則が適用可能か調べる。
     Calculate temperature data and compare with actual bloom information to determine if these laws are applicable.
-  サンプルスクリプトファイル: SAKURA_KAIKA.sh
-  Sample script file: SAKURA_KAIKA.sh
-  実行方法: ./SAKURA_KAIKA.sh
-  Execution method: . /SAKURA_KAIKA.sh
+  サンプルスクリプトファイル: SAKURA_KAIKA_awk.sh / SAKURA_KAIKA_awk.sh
+  Sample script file: SAKURA_KAIKA_awk.sh / SAKURA_KAIKA_awk.sh
+  実行方法: ./SAKURA_KAIKA_awk.sh / ./SAKURA_KAIKA_awk.sh
+  Execution method: ./SAKURA_KAIKA_awk.sh / ./SAKURA_KAIKA_awk.sh
   さくらの開花日(気象庁): https://www.data.jma.go.jp/sakura/data/sakura003_06.html
   Cherry blossom bloom date (Japan Meteorological Agency): https://www.data.jma.go.jp/sakura/data/sakura003_06.html
 
@@ -197,4 +197,6 @@ In addition, references are placed in a directory (folder) called References.
  2022年10月13日 Ver.2.2 日本語英語併記
  2023年9月29日 Ver.3.0 改訂版
  2024年5月31日 Ver.4.0 改訂版
+ 2024年6月13日 Ver.4.1 WG対応に改訂
+ 2024年6月16日 Ver.4.2 2024年度講義用に改訂
 
