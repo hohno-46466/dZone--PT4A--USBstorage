@@ -29,7 +29,7 @@ If you do not understand a word, please search for it on Google or other search 
 
 作業内容が分からない、上手く行かない場合は、アカンサスポータルから、担当教員（大野、森）にメッセージで質問してください。
 If you do not understand the work or if it does not go well,
-please send a message to the faculty members in charge (Ohno or Mori) via the Acanthus Portal.
+please send a message to the faculty members in charge (H.Ohno or Y.Mori) via the Acanthus Portal.
 
 
 ################################################################################
@@ -118,8 +118,8 @@ $ ls /mnt/usb（↲エンターキーを押す/Press the Enter key）
 以下のような表示がされればマウント成功です。
 If the following message is displayed, the mount is successful.
 
-PT4A                  Readme2_tree.txt              Readme4_PT4A_REV.2.0.txt          data
-Readme1_Rev.4.0.txt		Readme3_USB_MOUNT_REV.4.0.txt	'System Volume Information'
+PT4A                  Readme2_tree_2024.txt         Readme4_PT4A_REV.3.3.txt          data
+Readme1_Rev.4.2.txt		Readme3_USB_MOUNT_REV.3.3.txt	'System Volume Information'
 
 
 何も表示されない場合は、マウント失敗です。

@@ -86,7 +86,7 @@ in the <<Copyright and Disclaimer>> at the end of this file, so please use them 
 
 Structured_data
 │   
-├── Readme_Rev.4.1.txt このファイル
+├── Readme_Rev.4.2.txt このファイル
 ├── amed_2008.txt.gz 2008年アメダスと地上観測所1分データをgzip形式で圧縮した
 ├── amed_2009.txt.gz 2009年アメダスと地上観測所1分データをgzip形式で圧縮した
 ├── amed_2010.txt.gz 2010年アメダスと地上観測所1分データをgzip形式で圧縮した

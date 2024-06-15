@@ -22,8 +22,8 @@
 │   └── PT4A_WSL_ubuntu_20240305.tar.gz
 ├── Readme1_Rev.4.2.txt
 ├── Readme2_tree_2024.txt
-├── Readme3_USB_MOUNT_REV.3.2.txt
-├── Readme4_PT4A_REV.3.1.txt
+├── Readme3_USB_MOUNT_REV.3.3.txt
+├── Readme4_PT4A_REV.3.3.txt
 ├── data
 │   ├── Structured_data
 │   │   ├── Readme_Rev.4.2.txt
@@ -43,6 +43,7 @@
 │   │   ├── amed_2021.txt.gz
 │   │   ├── amed_2022.txt.gz
 │   │   ├── format
+│   │   │   ├── 00_README.md
 │   │   │   ├── 01-01_Observaory_station_list.csv
 │   │   │   ├── 01-01_Observaory_station_list_Eng.csv
 │   │   │   ├── 01-02_Observaory_station_list_History_amedas.csv
@@ -75,7 +76,9 @@
 │   │   │   └── memo.txt
 │   │   └── samples
 │   │       ├── HEIKIN_KION_YYYY.sh
+│   │       ├── HEIKIN_KION_YYYY_awk.sh
 │   │       ├── HEIKIN_KION_YYYYMM.sh
+│   │       ├── HEIKIN_KION_YYYYMM_awk.sh
 │   │       ├── KAIKA_MASTER
 │   │       │   ├── KAIKA_MASTER.11016.txt
 │   │       │   ├── KAIKA_MASTER.12442.txt
@@ -137,7 +140,9 @@
 │   │       │   ├── KAIKA_MASTER.93041.txt
 │   │       │   └── KAIKA_MASTER.94081.txt
 │   │       ├── SAIKO_SAITE_KION.sh
-│   │       └── SAKURA_KAIKA.sh
+│   │       ├── SAIKO_SAITE_KION_awk.sh
+│   │       ├── SAKURA_KAIKA.sh
+│   │       └── SAKURA_KAIKA_awk.sh
 │   └── Unstructured_data
 │       ├── README.txt
 │       ├── References
