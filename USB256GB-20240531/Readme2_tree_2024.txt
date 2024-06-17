@@ -9,8 +9,8 @@
 #     Emerging Media Initiative, Kanazawa University: H.Ohno, Y.Mori
 #     有限会社ユニバーサル・シェル・プログラミング研究所（USP研究所、https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
 #     Universal Shell Programming Laboratory LLC: S.Watano, M.Yamada, T.Matsuura
-# 最終更新日   : 2024年6月16日
-# Last updated : Jun 16, 2024
+# 最終更新日   : 2024年6月17日
+# Last updated : Jun 17, 2024
 #
 ################################################################################
 
@@ -42,6 +42,8 @@
 │   │   ├── amed_2020.txt.gz
 │   │   ├── amed_2021.txt.gz
 │   │   ├── amed_2022.txt.gz
+│   │   ├── surf_2008-2022_Hokuriku6.txt.gz
+│   │   ├── surf_2020-2022_Hokuriku6.txt
 │   │   ├── format
 │   │   │   ├── 00_README.md
 │   │   │   ├── 01-01_Observaory_station_list.csv

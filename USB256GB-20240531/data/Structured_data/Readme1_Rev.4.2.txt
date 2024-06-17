@@ -10,8 +10,8 @@
 # Author/Contact:
 #     金沢大学学術メディア創成センター 大野、森
 #     Emerging Media Initiative, Kanazawa University: H.Ohno, Y.Mori
-# 最終更新日   : 2024年6月13日
-# Last updated : Jun 13, 2024
+# 最終更新日   : 2024年6月17日
+# Last updated : Jun 17, 2024
 #
 ################################################################################
 
@@ -102,6 +102,8 @@ Structured_data
 ├── amed_2020.txt.gz 2020年アメダスと地上観測所1分データをgzip形式で圧縮した
 ├── amed_2021.txt.gz 2021年アメダスと地上観測所1分データをgzip形式で圧縮した
 ├── amed_2022.txt.gz 2022年アメダスと地上観測所1分データをgzip形式で圧縮した
+├── surf_2008-2022_Hokuriku6.txt.gz 2008年から2022年までの北陸三県の地上観測所6ヶ所の1分データだけを抜き出しgzip形式で圧縮した
+├── surf_2020-2022_Hokuriku6.txt 2020年から2022年までの北陸三県の地上観測所6ヶ所の1分データだけを抜き出しテキスト形式で保存した
 ├── format
 │   ├── 00_README.md formatフォルダ内のファイル（以下のもの）の内容について記したファイル
 │   ├── 01-01_Observaory_station_list.csv
