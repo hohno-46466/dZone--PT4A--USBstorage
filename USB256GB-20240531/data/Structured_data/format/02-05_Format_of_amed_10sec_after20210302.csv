@@ -1,0 +1,84 @@
+﻿Serial Number,Observation element,Detailed Item,Unit,Bytes,Start Byte,Japanese,Remarks
+0,Information of station,Institution number,,2,0,機関番号,Observations by JMA are always 1
+1,Information of station,Station number (upper 2 digits),,2,2,観測所番号（上2桁）,
+2,Information of station,Station number (last 3 digits),,4,4,観測所番号（下3桁）,
+3,Information of station,Station type,,2,8,観測所種別,"0 for Surface meteorological observation stations, 1 for all other stations."
+4,Information of station,Latitude,Degree + 0.1 minute,4,10,緯度,"For latitude, multiply degrees by 100, add minutes (to the nearest 0.1 minute), and then multiply by 10. Example: 42 degrees 51.7 minutes is 4251.7 multiplied by 10 and contains 42517."
+5,Information of station,Longitude,Degree + 0.1 minute,4,14,経度,"For longitude, multiply degrees by 100, add minutes (to the nearest 0.1 minute), and then multiply by 10. Example: 42 degrees 51.7 minutes is 4251.7 multiplied by 10 and contains 42517."
+6,Information of station,Elevation,0.1m,2,18,標高,Elevation is 2000m added and multiplied by 10. Example: 2.1m plus 2000m multiplied by 10 gives 20021
+7,Information of station,Height above ground of rain gauge,0.1m,2,20,雨量計地上の高さ,
+8,Information of station,Height above ground of anemometer,0.1m,2,22,風向風速計の高さ,
+9,Information of station,Height above ground of thermometers,0.1m,2,24,温度計地上の高さ,
+10,Information of station,Reserve,,2,26,予備,
+11,Information of station,Reserve,,2,28,予備,
+12,Information of station,Reserve,,2,30,予備,
+13,Information of station,Reserve,,2,32,予備,
+14,Information of station,Reserve,,2,34,予備,
+15,Information of station,Reserve,,2,36,予備,
+16,Information of station,Reserve,,2,38,予備,
+17,Information of station,Year,,2,40,年,
+18,Information of station,Month,,2,42,月,
+19,Information of station,Day,,2,44,日,
+20,Information of station,hour,,2,46,時,
+21,Information of station,minute,,2,48,分,
+22,Information of station,second,,2,50,秒,
+23,Rain,Fault condition identifier,,1,52,障害状況識別符,
+24,Rain,Precipitation in the last 10 seconds,0.1m,4,53,前10秒間降水量,
+25,Rain,Time of rainfall pulse,,4,57,雨量パルス発生時刻,
+26,Rain,Reserve,,4,61,予備,
+27,Wind (3-second average),Fault condition identifier,,1,65,障害状況識別符,
+28,Wind (3-second average),Maximum value of CW wind direction in last 10 seconds,Degree,4,66,前10秒間CW風向の最大値,Surface meteorological observation points are stored in 1-degree increments (1 degree to 360 degrees). Other points are stored in units of 10 degrees (10 to 360 degrees).
+29,Wind (3-second average),Maximum value of CCW wind direction in last 10 seconds,Degree,4,70,前10秒間CCW風向の最大値,Surface meteorological observation points are stored in 1-degree increments (1 degree to 360 degrees). Other points are stored in units of 10 degrees (10 to 360 degrees).
+30,Wind (3-second average),Maximum instantaneous wind speed in the last 10 seconds,0.1m/s,4,74,前10秒間最大瞬間風速,
+31,Wind (3-second average),Wind direction at the maximum instantaneous wind speed in the last 10 seconds,Degree,4,78,前10秒間最大瞬間風速時の風向,Surface meteorological observation points are stored in 1-degree increments (1 degree to 360 degrees). Other points are stored in units of 10 degrees (10 to 360 degrees).
+32,Wind (3-second average),Minimum value of CW wind direction in the last 10 seconds,0.1m/s,4,82,前10秒間最小瞬間風速,
+33,Wind (3-second average),Number of valid data of wind direction in the last 10 seconds,,4,86,前10秒間風向有効データ数,
+34,Wind (3-second average),Number of valid data of wind speed in the last 10 seconds,,4,90,前10秒間風速有効データ数,
+35,Wind (3-second average),Wind run in the last 10 seconds,,4,94,前10秒間風程,
+36,Wind (3-second average),Wind direction vector X component in the last 10 seconds,,4,98,前10秒間積算風向ベクトルX成分,Vector components are multiplied by 1000 to the third decimal place of the significant digits
+37,Wind (3-second average),Wind direction vector Y component in the last 10 seconds,,4,102,前10秒間積算風向ベクトルY成分,Vector components are multiplied by 1000 to the third decimal place of the significant digits
+38,Temperature,Fault condition identifier,,1,106,障害状況識別符,
+39,Temperature,Temperature,0.1℃,4,107,気温データ,Temperatures are added to 50 and multiplied by 10. Example: 4.4 °C ---->544
+40,Sunshine,Fault condition identifier,,1,111,障害状況識別符,
+41,Sunshine,Sunshine 1 data,,4,112,日照1データ,
+42,Sunshine,Sunshine 2 data,,4,116,日照2データ,
+43,Reserve,Reserve,,1,120,予備,
+44,Reserve,Reserve,,4,121,予備,
+45,Reserve,Reserve,,4,125,予備,
+46,Snow,Fault condition identifier,,1,129,障害状況識別符,
+47,Snow,Distance to snow surface,0.1cm,4,130,雪面までの距離,
+48,Reserve,Reserve,,1,134,予備,
+49,Reserve,Reserve,,4,135,予備,
+50,Reserve,Reserve,,4,139,予備,
+51,Humidity,Fault condition identifier,,1,143,障害状況識別符,
+52,Humidity,Humidity,0.1%,4,144,湿度データ,
+53,Reserve,Reserve,,1,148,予備,
+54,Reserve,Reserve,,4,149,予備,
+55,Reserve,Reserve,,4,153,予備,
+56,Reserve,Reserve,,4,157,予備,
+57,Reserve,Reserve,,4,161,予備,
+58,Reserve,Reserve,,4,165,予備,
+59,Reserve,Reserve,,4,169,予備,
+60,Reserve,Reserve,,4,173,予備,
+61,Wind (0.25-second value),Fault condition identifier,,1,177,障害状況識別符,
+62,Wind (0.25-second value),Maximum value of CW wind direction in last 10 seconds,Degree,4,178,前10秒間CW風向の最大値,Surface meteorological observation points are stored in 1-degree increments (1 degree to 360 degrees). Other points are stored in units of 10 degrees (10 to 360 degrees).
+63,Wind (0.25-second value),Maximum value of CCW wind direction in last 10 seconds,Degree,4,182,前10秒間CCW風向の最大値,Surface meteorological observation points are stored in 1-degree increments (1 degree to 360 degrees). Other points are stored in units of 10 degrees (10 to 360 degrees).
+64,Wind (0.25-second value),Maximum instantaneous wind speed in the last 10 seconds,0.1m/s,4,186,前10秒間最大瞬間風速,
+65,Wind (0.25-second value),Wind direction at the maximum instantaneous wind speed in the last 10 seconds,Degree,4,190,前10秒間最大瞬間風速時の風向,Surface meteorological observation points are stored in 1-degree increments (1 degree to 360 degrees). Other points are stored in units of 10 degrees (10 to 360 degrees).
+66,Wind (0.25-second value),Minimum value of CW wind direction in the last 10 seconds,0.1m/s,4,194,前10秒間最小瞬間風速,
+67,Wind (0.25-second value),Number of valid data of wind direction in the last 10 seconds,,4,198,前10秒間風向有効データ数,
+68,Wind (0.25-second value),Number of valid data of wind speed in the last 10 seconds,,4,202,前10秒間風速有効データ数,
+69,Wind (0.25-second value),Wind run in the last 10 seconds,,4,206,前10秒間風程,
+70,Wind (0.25-second value),Wind direction vector X component in the last 10 seconds,,4,210,前10秒間積算風向ベクトルX成分,Vector components are multiplied by 1000 to the third decimal place of the significant digits
+71,Wind (0.25-second value),Wind direction vector Y component in the last 10 seconds,,4,214,前10秒間積算風向ベクトルY成分,Vector components are multiplied by 1000 to the third decimal place of the significant digits
+72,HK,Rainfall HK,,4,218,雨量HK,
+73,HK,Wind HK (3-seconds average),,4,222,風HK（3秒平均値）,
+74,HK,Wind HK (2.5-second value),,4,226,風HK（2.5秒値）,
+75,HK,Temperature HK,,4,230,気温HK,
+76,HK,Sunshine HK,,4,234,日照HK,
+77,HK,Reserve,,4,238,予備,
+78,HK,Snow HK,,4,242,積雪HK,
+79,HK,Reserve,,4,246,予備,
+80,HK,Humidity HK,,4,250,湿度HK,
+81,HK,Reserve,,4,254,予備,
+82,HK,Reserve,,4,258,予備,

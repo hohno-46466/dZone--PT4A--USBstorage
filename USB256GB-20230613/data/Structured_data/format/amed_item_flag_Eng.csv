@@ -1,0 +1,33 @@
+Value,Quality,No Phenomenon Category,Statistics Category,Meaning of Quality
+0,Normal,Numerical,Normal Value,The quality of the observed or statistical value is normal.
+1,Normal,Numerical,Normal Value,The quality of the observed or statistical value is normal.
+2,Normal,No Phenomenon,Normal Value,The quality of the observed or statistical value is normal.
+3,Normal,No Phenomenon,Normal Value,The quality of the observed or statistical value is normal.
+8,Quasi-Normal,Numerical,Quasi-Normal Value,There are some doubts about the observation or statistics results. Some of the materials for statistics are missing within an acceptable range.
+9,Quasi-Normal,Numerical,Quasi-Normal Value,There are some doubts about the observation or statistics results. Some of the materials for statistics are missing within an acceptable range.
+10,Quasi-Normal,No Phenomenon,Quasi-Normal Value,There are some doubts about the observation or statistics results. Some of the materials for statistics are missing within an acceptable range.
+11,Quasi-Normal,No Phenomenon,Quasi-Normal Value,There are some doubts about the observation or statistics results. Some of the materials for statistics are missing within an acceptable range.
+16,Somewhat Doubtful,Numerical,Doubtful Value,There are considerable doubts about the observation or statistical results.
+17,Somewhat Doubtful,Numerical,Doubtful Value,There are considerable doubts about the observation or statistical results.
+18,Somewhat Doubtful,No Phenomenon,Doubtful Value,There are considerable doubts about the observation or statistical results.
+19,Somewhat Doubtful,No Phenomenon,Doubtful Value,There are considerable doubts about the observation or statistical results.
+24,Unsuitable for Use,Numerical,Missing,Observation or statistical values cannot be obtained due to a stop or malfunction of the measuring instrument. It is judged to be clearly wrong due to large errors.
+25,Unsuitable for Use,Numerical,Missing,Observation or statistical values cannot be obtained due to a stop or malfunction of the measuring instrument. It is judged to be clearly wrong due to large errors.
+26,Unsuitable for Use,No Phenomenon,Missing,Observation or statistical values cannot be obtained due to a stop or malfunction of the measuring instrument. It is judged to be clearly wrong due to large errors.
+27,Unsuitable for Use,No Phenomenon,Missing,Observation or statistical values cannot be obtained due to a stop or malfunction of the measuring instrument. It is judged to be clearly wrong due to large errors.
+32,Observation Value is Insufficient within the Period,Numerical,Insufficient Material Value,Some of the materials for statistics are missing beyond an acceptable range.
+33,Observation Value is Insufficient within the Period,Numerical,Insufficient Material Value,Some of the materials for statistics are missing beyond an acceptable range.
+34,Observation Value is Insufficient within the Period,No Phenomenon,Insufficient Material Value,Some of the materials for statistics are missing beyond an acceptable range.
+35,Observation Value is Insufficient within the Period,No Phenomenon,Insufficient Material Value,Some of the materials for statistics are missing beyond an acceptable range.
+40,Missing due to Planned Suspension,-,Missing,Observation or statistical values cannot be obtained due to a stop or malfunction of the measuring instrument. It is judged to be clearly wrong due to large errors.
+41,Missing due to Planned Suspension,-,Missing,Observation or statistical values cannot be obtained due to a stop or malfunction of the measuring instrument. It is judged to be clearly wrong due to large errors.
+42,Missing due to Planned Suspension,-,Missing,Observation or statistical values cannot be obtained due to a stop or malfunction of the measuring instrument. It is judged to be clearly wrong due to large errors.
+43,Missing due to Planned Suspension,-,Missing,Observation or statistical values cannot be obtained due to a stop or malfunction of the measuring instrument. It is judged to be clearly wrong due to large errors.
+48,Missing due to Failure,-,Missing,Observation or statistical values cannot be obtained due to a stop or malfunction of the measuring instrument. It is judged to be clearly wrong due to large errors.
+49,Missing due to Failure,-,Missing,Observation or statistical values cannot be obtained due to a stop or malfunction of the measuring instrument. It is judged to be clearly wrong due to large errors.
+50,Missing due to Failure,-,Missing,Observation or statistical values cannot be obtained due to a stop or malfunction of the measuring instrument. It is judged to be clearly wrong due to large errors.
+51,Missing due to Failure,-,Missing,Observation or statistical values cannot be obtained due to a stop or malfunction of the measuring instrument. It is judged to be clearly wrong due to large errors.
+56,This Element is not Observed,-,-,This element is not observed.
+57,This Element is not Observed,-,-,This element is not observed.
+58,This Element is not Observed,-,-,This element is not observed.
+59,This Element is not Observed,-,-,This element is not observed.

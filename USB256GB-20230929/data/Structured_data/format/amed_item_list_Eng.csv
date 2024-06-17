@@ -1,0 +1,35 @@
+Field,Type,Length,MaxByte,Remarks
+AMeDAS Observation Station Number,Text,5,5,
+Blank,Text,1,1,Blank
+Observation Date,Test,8,8,yyyymmdd
+Blank,Text,1,1,Blank
+Observation Time,Text,4,4,hhmm
+Blank,Text,1,1,Blank
+Precipitation (1 minute) mm,Text,3~5,5,nnn.n
+Blank,Text,1,1,Blank
+Precipitation (1 minute) Utilization Flag,Text,1~2,2,nn
+Blank,Text,1,1,Blank
+Wind Direction (Vector Average of the Last 10 Minutes),Text,1~3,3," '-' or 'N' or 'NNE' or 'NE',,,  * '-' indicates a calm condition of 0.2 m/s or less. means calm."
+Blank,Text,1,1,Blank
+Wind Direction Utilization Flag,Text,1~2,2,nn
+Blank,Text,1,1,Blank
+Wind Speed (10-minute Average) m/s,Text,3~5,5,nnn.n
+Blank,Text,1,1,Blank
+Wind Speed Utilization Flag,Text,1~2,2,nn
+Blank,Text,1,1,Blank
+Temperature,Text,3~5,5,-nn.n ~ nn.n
+Blank,Text,1,1,Blank
+Temperature Utilization Flag,Text,1~2,2,nn
+Blank,Text,1,1,Blank
+Sunshine Duration (seconds),Text,1~3,3,nnn
+Blank,Text,1,1,Blank
+Sunshine Duration Utilization Flag,Text,1~2,2,nn
+Blank,Text,1,1,Blank
+Snow Depth (cm),Text,1~4,4,nnnn
+Blank,Text,1,1,Blank
+Snow Depth Utilization Flag,Text,1~2,2,nn
+Blank,Text,1,1,Blank
+Humidity,Text,1~3,3,nnn
+Blank,Text,1,1,Blank
+Humidity Utilization Flag,Text,1~2,2,nn
+Newline Code (/LF),Text,1,1,

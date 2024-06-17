@@ -1,0 +1,91 @@
+Column Number, Variable Name / Output Data Name (English), Output Data Name, Unit, Type, Length, Bytes, Remarks
+1, amedas_station_number, AMEDAS Observation Station Number (5 digits), , Text, 5, 6, nnnnn
+2, surface_station_number, Surface Observation Station Number (5 digits), , Text, 5, 6, nnnnn
+3, station_type, Observation Station Type, , Text, 1, 2, n
+4, latitude_d, Latitude (degrees), Degrees, Text, 2-3, 4, nnn
+5, latitude_m, Latitude (minutes), Minutes, Text, 3-4, 4, nn.n
+6, longitude_d, Longitude (degrees), Degrees, Text, 3, 4, nnn
+7, longitude_m, Longitude (minutes), Minutes, Text, 3-4, 4, nn.n
+8, elevation, Elevation, 0.1m, Text, 3-6, 2, nnnn.n
+9, height_above_ground_of_rain_gauge, Height above ground of rain gauge, 0.1m, Text, 3-6, 2, nnnn.n
+10, height_above_ground_of_anemometer, Height above ground of anemometer, 0.1m, Text, 3-6, 2, nnnn.n
+11, height_above_ground_of_thermometers, Height above ground of thermometers, 0.1m, Text, 3-6, 2, nnnn.n
+12, height_above_ground_of_daylight_meter, Height above ground of daylight meter, 0.1m, Text, 3-6, 2, nnnn.n
+13, height_above_ground_of_allsky_pyranometer, Height above ground of all-sky pyranometer, 0.1m, Text, 3-6, 2, nnnn.n
+14, height_above_barometer, Height above barometer, 0.1m, Text, 3-6, 2, nnnn.n
+15, height_above_ground_of_visibility_meter, Height above ground of visibility meter, 0.1m, Text, 3-6, 2, nnnn.n
+16, date, Observation Date, , Text, 8, 8, yyyymmdd
+17, time, Observation Time, , Text, 4, 4, hhmm
+18, fault_condition_identifier_rain, Fault Condition Identifier, , Text, 3, 1, "Usually contains 127"
+19, precipitation_total_counter, Precipitation Total Counter, mm, Text, 1-3, 4, nnn
+20, precipitation_in_last_minute, Precipitation in the last minute, 0.1mm, Text, 3-4, 4, nnn.n
+21, usage_flag_20, Usage Flag, , Text, 1-2, 1, nn
+22, precipitation_intensity, Precipitation Intensity, 0.1mm/h, Text, 3-4, 4, nnn.n
+23, usage_flag_22, Usage Flag, , Text, 1-2, 1, nn
+24, maximum_intensity_of_precipitation, Maximum Intensity of Precipitation, 0.1mm/h, Text, 3-4, 4, nnn.n
+25, usage_flag_24, Usage Flag, , Text, 1-2, 1, nn
+26, presence_of_precipitation, Presence of Precipitation, , Text, 1, 4, "n: 1 if precipitation was observed in the last minute, 0 if not precipitated"
+27, usage_flag_26, Usage Flag, , Text, 1-2, 1, nn
+28, type_of_precipitation, Type of Precipitation, , Text, 1-2, 4, "If observation by visibility meter is conducted, refer to the 88th value of the 15-minute current weather. The corresponding table is '03-04_weather_chart.csv'. If observation by visibility meter is not conducted, the data is recorded, and the corresponding table is '03-04_weather_chart02.csv'."
+29, usage_flag_28, Usage Flag, , Text, 1-2, 1, nn
+30, fault_condition_identifier_wind, Fault Condition Identifier, , Text, 3, 1, "Usually contains 127"
+31, cw_maximum_wind_direction, CW Maximum Wind Direction, Degrees, Text, 1-3, 4, nnn
+32, usage_flag_31, Usage Flag, , Text, 1-2, 1, nn
+33, ccw_maximum_wind_direction, CCW Maximum Wind Direction, Degrees, Text, 1-3, 4, nnn
+34, usage_flag_33, Usage Flag, , Text, 1-2, 1, nn
+35, maximum_instantaneous_wind_speed, Maximum Instantaneous Wind Speed (3-second moving average), 0.1m/s, Text, 3-4, 4, nn.n
+36, usage_flag_35, Usage Flag, , Text, 1-2, 1, nn
+37, wind_direction16, Wind Direction (16 directions) at maximum instantaneous wind speed (3-second moving average), , Text, , 4, """-"" represents less than 0.2 m/s, indicating Calm."
+38, wind_direction36, Wind Direction (36 directions) at maximum instantaneous wind speed (3-second moving average), , Text, , 4, """-"" represents less than 0.2 m/s, indicating Calm."
+39, minimum_instantaneous_wind_speed, Minimum Instantaneous Wind Speed (3-second moving average), 0.1m/s, Text, , 4, 
+40, usage_flag_39, Usage Flag, , Text, 1-2, 1, nn
+41, average_wind_direction16, Average Wind Direction (vector average of the last 10 minutes) (16 directions), , Text, , 4, """-"" represents less than 0.2 m/s, indicating Calm."
+42, usage_flag_41, Usage Flag, , Text, 1-2, 1, nn
+43, average_wind_direction36, Average Wind Direction (vector average of the last 10 minutes) (36 directions), , Text, , 4, """-"" represents less than 0.2 m/s, indicating Calm."
+44, usage_flag_43, Usage Flag, , Text, 1-2, 1, nn
+45, wind_run_counter, Wind Run Counter, , Text, 1-3, 4, nnn
+46, usage_flag_45, Usage Flag, , Text, 1-2, 1, nn
+47, number_of_valid_data_for_wind_run, Number of Valid Data for Wind Run, , Text, 1-3, 4, nnn
+48, average_wind_speed, Average Wind Speed (10-minute moving average), 0.1m/s, Text, 3-4, 4, nn.n
+49, usage_flag_48, Usage Flag, , Text, 1-2, 1, nn
+50, fault_condition_identifier_temp, Fault Condition Identifier, , Text, 3, 1, "Usually contains 127"
+51, temperature, Temperature, 0.1°C, Text, 3-5, 4, -nn.n ~ nn.n
+52, usage_flag_51, Usage Flag, , Text, 1-2, 1, nn
+53, maximum_temperature, Maximum Temperature (last 1 minute), 0.1°C, Text, 3-5, 4, -nn.n ~ nn.n
+54, usage_flag_53, Usage Flag, , Text, 1-2, 1, nn
+55, minimum_temperature, Minimum Temperature (last 1 minute), 0.1°C, Text, 3-5, 4, -nn.n ~ nn.n
+56, usage_flag_55, Usage Flag, , Text, 1-2, 1, nn
+57, fault_condition_identifier_sunshine, Fault Condition Identifier, , Text, 3, 1, "Usually contains 127"
+58, sunshine_accumulation_counter, Sunshine Accumulation Counter, , Text, 1-3, 4, nnn
+59, sunshine_duration, Sunshine Duration, 1s, Text, 1-2, 4, nn
+60, usage_flag_59, Usage Flag, , Text, 1-2, 1, nn
+61, fault_condition_identifier_radiation, Fault Condition Identifier, , Text, 3, 1, "Usually contains 127"
+62, direct_solar_radiation, Direct Solar Radiation, 0.01KJ/m2, Text, 4-6, 4, nnn.nn
+63, usage_flag_62, Usage Flag, , Text, 1-2, 1, nn
+64, global_solar_radiation, Global Solar Radiation, 0.01KJ/m2, Text, 4-6, 4, nnn.nn
+65, usage_flag_64, Usage Flag, , Text, 1-2, 1, nn
+66, fault_condition_identifier_snow, Fault Condition Identifier, , Text, 3, 1, "Usually contains 127"
+67, depth_of_snow_cover, Depth of Snow Cover, (1cm), Text, 1-3, 4, nnn
+68, usage_flag_67, Usage Flag, , Text, 1-2, 1, nn
+69, fault_condition_identifier_pressure, Fault Condition Identifier, , Text, 3, 1, "Usually contains 127"
+70, gravitational_acceleration, Gravitational Acceleration, 0.0001m/s2, Text, 6, 2, 0.nnnn
+71, local_pressure, Local Pressure, 0.1hPa, Text, 5-6, 4, nnnn.n
+72, usage_flag_71, Usage Flag, , Text, 1-2, 1, nn
+73, sea_level_pressure, Sea Level Pressure, 0.1hPa, Text, 5-6, 4, nnnn.n
+74, usage_flag_73, Usage Flag, , Text, 1-2, 1, nn
+75, minimum_sea_level_pressure, Minimum Sea Level Pressure, 0.1hPa, Text, 5-6, 4, nnnn.n
+76, usage_flag_75, Usage Flag, , Text, 1-2, 1, nn
+77, fault_condition_identifier_humidity, Fault Condition Identifier, , Text, 3, 1, "Usually contains 127"
+78, relative_humidity, Relative Humidity, %, Text, 1-3, 4, nnn
+79, usage_flag_78, Usage Flag, , Text, 1-2, 1, nn
+80, minimum_relative_humidity, Minimum Relative Humidity, %, Text, 1-3, 4, nnn
+81, usage_flag_80, Usage Flag, , Text, 1-2, 1, nn
+82, vapor_pressure, Vapor Pressure, 0.1hPa, Text, 5-6, 4, nnnn.n
+83, usage_flag_82, Usage Flag, , Text, 1-2, 1, nn
+84, dewpoint_temperature, Dewpoint Temperature, 0.1°C, Text, 3-5, 4, -nn.n ~ nn.n
+85, usage_flag_84, Usage Flag, , Text, 1-2, 1, nn
+86, fault_condition_identifier_visibility, Fault Condition Identifier, , Text, 3, 1, "Usually contains 127"
+87, range_of_visibility, Range of Visibility, 0.001km, Text, 6-7, 4, nn.nnnn
+88, usage_flag_87, Usage Flag, , Text, 1-2, 1, nn
+89, fifteen_minute_current_weather, 15-minute Current Weather, , Text, 1-2, 1, nn
+90, usage_flag_89, Usage Flag, , Text, 1-2, 1, nn
