@@ -54,8 +54,12 @@ PT4A を用いた大規模データ処理演習で配布する USB メモリの�
 
 
 Note: URL = https://github.com/hohno-46466/dZone--PT4A--USBstorage
+      Branch: USB256GB-20240613
+      ( use with $ git clone -b USB256GB-20240613 https://github.com/hohno-46466/dZone--PT4A--USBstorage )
 
 Note: URL = git@github.com:hohno-46466/dZone--PT4A--USBstorage.git
+      Branch: USB256GB-20240613
+      ( use with $ git clone -b USB256GB-20240613 git@github.com:hohno-46466/dZone--PT4A--USBstorage.git )
 
 -EOF-
 
