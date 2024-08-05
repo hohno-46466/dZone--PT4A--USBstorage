@@ -10,7 +10,7 @@
 # Author/Contact: 
 #     金沢大学学術メディア創成センター 大野、森
 #     Emerging Media Initiative, Kanazawa University: H.Ohno, Y.Mori
-#     有限会社ユニバーサル・シェル・プログラミング研究所（USP研究所、https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
+#     有限会社ユニバーサル・シェル・プログラミング研究所（USP研究所、https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田 <m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
 #     Universal Shell Programming Laboratory LLC: S.Watano, M.Yamada, T.Matsuura
 # 最終更新日   : 2024年6月16日
 # Last updated : Jun 16, 2024
