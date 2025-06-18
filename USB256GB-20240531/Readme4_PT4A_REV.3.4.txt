@@ -10,19 +10,19 @@
 # Author/Contact: 
 #     金沢大学学術メディア創成センター 大野、森
 #     Emerging Media Initiative, Kanazawa University: H.Ohno, Y.Mori
-#     有限会社ユニバーサル・シェル・プログラミング研究所（USP研究所、https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田 <m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
+#     有限会社ユニバーサル・シェル・プログラミング研究所（USP研究所、https://www.usp-lab.com/） 綿野 <s-watano@usp-lab.com>、山田<m-yamada@usp-lab.com>、松浦 <t-matsuura@usp-lab.com>
 #     Universal Shell Programming Laboratory LLC: S.Watano, M.Yamada, T.Matsuura
-# 最終更新日   : 2024年6月16日
-# Last updated : Jun 16, 2024
+# 最終更新日   : 2025年6月18日
+# Last updated : Jun 18, 2025
 #
 ################################################################################
 
 <<PT4A インストール方法(Windowds)/PT4A Installation Instructions (Windowds)>>
 
-(0) 「Readme3_USB_MOUNT_REV.3.1.txt」に書かれている、
-    <<Windows11/10で、WSLを使用している場合のUSBメモリマウント方法>>の作業を終了させる。
-(0) In "Readme3_USB_MOUNT_REV.3.1.txt",
-    <<How to mount a USB memory device when using WSL on Windows 11/10>>.
+(0) 「Readme3_USB_MOUNT_REV.3.4.txt」に書かれている、
+    <<Windows11で、WSLを使用している場合のUSBメモリマウント方法>>の作業を終了させる。
+(0) In "Readme3_USB_MOUNT_REV.3.4.txt",
+    <<How to mount a USB memory device when using WSL on Windows 11>>.
 
 
 ------------------
@@ -57,24 +57,23 @@ $ ls（↲エンターキーを押す/Press the Enter key）
 以下の表示がされない場合は、(1)をやり直すこと。
 If the following is not displayed, redo (1).
 
-PT4A_CentOS_20240217.tar.gz  PT4A_Ubuntu22_20240217.tar.gz  
-PT4A_M1Mac_20240217.tar.gz   PT4A_WSL_ubuntu_20240305.tar.gz
+PT4A_CentOS_20250216.tar.gz  PT4A_Ubuntu24_20250216.tar.gz  
+PT4A_M1Mac_20250216.tar.gz   PT4A_Win11WSL2_20250214.tar.gz
 
 (3) WSLで以下のコマンドを実行し、ファイルを解凍する。
 (3) Execute the following command in WSL to extract the file.
 
-$ tar -zxvf PT4A_WSL_ubuntu_20240305.tar.gz（↲エンターキーを押す/Press the Enter key）
+$ tar -zxvf PT4A_Win11WSL2_20250214.tar.gz（↲エンターキーを押す/Press the Enter key）
 
 以下の表示がされれば良い。
 The following should be displayed.
 
 PT4A/
-PT4A/INSTALL.SH
+PT4A/install.sh
+PT4A/uspTukubai-20250214.tar.gz
 PT4A/INSTALL_EN.TXT
 PT4A/PT4A_License_2023.pdf
 PT4A/INSTALL_JP.TXT
-PT4A/UNINSTALL.SH
-PT4A/uspTukubai-20240305.tar.gz
 
 
 (4) WSLで以下のコマンドを実行し、「PT4A」というディレクトリが作成されていることを確認する。
@@ -85,8 +84,8 @@ $ ls（↲エンターキーを押す/Press the Enter key）
 以下の表示がされれば良い。
 The following should be displayed.
 
-PT4A/                         PT4A_M1Mac_20240217.tar.gz     PT4A_WSL_ubuntu_20240305.tar.gz
-PT4A_CentOS_20240217.tar.gz  PT4A_Ubuntu22_20240217.tar.gz
+PT4A/                        PT4A_M1Mac_20250216.tar.gz     PT4A_Win11WSL2_20250214.tar.gz
+PT4A_CentOS_20250216.tar.gz  PT4A_Ubuntu24_20250216.tar.gz  
 
 
 (5) WSLで以下のコマンドを実行し、「PT4A」のディレクトリに移動する。
@@ -103,14 +102,13 @@ $ ls（↲エンターキーを押す/Press the Enter key）
 以下の表示がされれば良い。
 The following should be displayed.
 
-INSTALL.SH       INSTALL_JP.TXT          UNINSTALL.SH
-INSTALL_EN.TXT   PT4A_License_2023.pdf   uspTukubai-20240305.tar.gz
+INSTALL_EN.TXT  INSTALL_JP.TXT  PT4A_License_2023.pdf  install.sh*  uspTukubai-20250214.tar.gz
 
 
 (7) WSLで以下のコマンドを実行し、PT4Aをインストールする。
 (7) Execute the following command in WSL to install PT4A.
 
-$ sudo ./INSTALL.SH（↲エンターキーを押す/Press the Enter key）
+$ sudo ./install.sh（↲エンターキーを押す/Press the Enter key）
 
 ※「sudo」を最初に書いたコマンドを実行すると、WSLインストール時の初期設定で入力したパスワードの入力を要求されるので、間違えずに入力すること。
 * When you execute the command with "sudo" written first, 
@@ -163,3 +161,4 @@ That is all.
  2024年6月3日 Ver.3.1
  2024年6月13日 Ver.3.2 WG対応に改訂
  2024年6月16日 Ver.3.3 2024年度講義用に改訂
+ 2025年6月18日 Ver.3.4 2025年度講義用に改訂

@@ -19,9 +19,9 @@
 
 <<注意/Attention>>
 
-以下の内容は、Windows10/11のパソコン（ノート型、デスクトップ型を問わない）を使用している方のみに向けたものです。
+以下の内容は、Windows11のパソコン（ノート型、デスクトップ型を問わない）を使用している方のみに向けたものです。
 macOSの場合は、以下の内容の作業を行わなくてもターミナルからアクセスすることができます。
-The following content is intended only for users of Windows 10/11 computers (whether laptop or desktop).
+The following content is intended only for users of Windows11 computers (whether laptop or desktop).
 For macOS, the following operations are not performed.
 
 なお、分からない単語がある場合は、Google検索等で検索して、調べてください。
@@ -34,12 +34,12 @@ please send a message to the faculty members in charge (H.Ohno or Y.Mori) via th
 
 ################################################################################
 
-<<Windows11/10で、WSLを使用している場合のUSBメモリマウント方法
-       /How to mount a USB memory device when using WSL on Windows 11/10>>
+<<Windows11で、WSLを使用している場合のUSBメモリマウント方法
+       /How to mount a USB memory device when using WSL on Windows11>>
 
-(0) USBメモリをパソコンに差し込み、Windows11/10のエクスプローラーでUSBメモリにアクセスできることを確認する。
+(0) USBメモリをパソコンに差し込み、Windows11のエクスプローラーでUSBメモリにアクセスできることを確認する。
 (0) Insert the USB memory device into your computer 
-    and confirm that the USB memory device can be accessed in Explorer of Windows11/10.
+    and confirm that the USB memory device can be accessed in Explorer of Windows11.
 
 
 ------------------
@@ -99,14 +99,14 @@ $ sudo mount -t drvfs z: /mnt/usb（↲エンターキーを押す/Press the Ent
 注意：このコマンドで入力している「z:」のアルファベット部分は、
      USBメモリを差し込んだパソコンによって自動的に設定されるドライブを表わしている。
      そのため、パソコンによって、異なるアルファベットが設定されている。
-     USBメモリを差し込んだ後に、Windows10/11のエクスプローラーで、
+     USBメモリを差し込んだ後に、Windows11のエクスプローラーで、
      USBメモリに割り振られたアルファベットを確認すること。
 
 Note: The alphabetical part of "z:" entered in this command represents the drive 
      that is automatically set by the computer into which the USB memory device is inserted.
      Therefore, different alphabets are set for different computers.
      After inserting the USB memory device, 
-     check the alphabet assigned to the USB memory device in Windows 10/11 Explorer.
+     check the alphabet assigned to the USB memory device in Windows11 Explorer.
 
 
 
@@ -156,8 +156,8 @@ Note: For information on moving directories,
 That is all.
 ################################################################################
 
-<<Windows11/10で、WSLを使用している場合のUSBメモリアンマウント方法
-       /How to mount USB memory device on Windows 11/10 when using WSL>>
+<<Windows11で、WSLを使用している場合のUSBメモリアンマウント方法
+       /How to mount USB memory device on Windows 11 when using WSL>>
 
 Linux(WSL)では、マウントしたUSBメモリをパソコンから抜き取る前に、
 必ず「アンマウント」をしなくてはならない。
@@ -202,5 +202,6 @@ That is all.
  2024年5月31日 Ver.3.1
  2024年6月13日 Ver.3.2 WG対応に改訂
  2024年6月16日 Ver.3.3 2024年度講義用に改訂
+ 2025年6月18日 Ver.3.4 2025年度講義用に改訂
 
 
